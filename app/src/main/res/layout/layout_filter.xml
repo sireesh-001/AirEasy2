@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/spinner_rect1"
+    android:orientation="vertical"
+    android:overScrollMode="never">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="21.7sp"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:text="Sort By"
+        android:textColor="@color/blue"
+        android:textSize="16.7sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="23.3dp">
+
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23.3dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingLeft="11.7dp"
+            android:text="Low to High Price"
+            android:textColor="@color/txt_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23.3dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingLeft="11.7dp"
+            android:text="Short to Long Duration"
+            android:textColor="@color/txt_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23.3dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingLeft="11.7dp"
+            android:text="Early to Late Departure"
+            android:textColor="@color/txt_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23.3dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingLeft="11.7dp"
+            android:text="Late to Early Departure"
+            android:textColor="@color/txt_color"
+            android:textSize="16sp" />
+    </RadioGroup>
+</LinearLayout>

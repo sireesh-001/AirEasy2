@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".twowaybooking">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_second"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Fri, 05 sep"
+                            android:textColor="@color/txt_color"
+                            android:textSize="13.3sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:text="₹1120"
+                            android:textColor="#24ae5f"
+                            android:textSize="13.3sp" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#087cba" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.8dp"
+                        android:layout_height="37dp"
+                        android:layout_gravity="center"
+                        android:background="#cccccc" />
+
+                    <LinearLayout
+                        android:id="@+id/linear2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Sat, 06 sep"
+                            android:textColor="@color/txt_color"
+                            android:textSize="13.3sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:text="₹3220"
+                            android:textColor="#ff8872"
+                            android:textSize="13.3sp" />
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#087cba"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.8dp"
+                        android:layout_height="37dp"
+                        android:layout_gravity="center"
+                        android:background="#cccccc" />
+
+                    <LinearLayout
+                        android:id="@+id/linear3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Sun, 07 sep"
+                            android:textColor="@color/txt_color"
+                            android:textSize="13.3sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:text="₹1520"
+                            android:textColor="#fdbb51"
+                            android:textSize="13.3sp" />
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#087cba"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.8dp"
+                        android:layout_height="37dp"
+                        android:layout_gravity="center"
+                        android:background="#cccccc" />
+
+                    <LinearLayout
+                        android:id="@+id/linear4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Mon, 08 sep"
+                            android:textColor="@color/txt_color"
+                            android:textSize="13.3sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:text="₹3220"
+                            android:textColor="#ff8872"
+                            android:textSize="13.3sp" />
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#087cba"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.8dp"
+                        android:layout_height="37dp"
+                        android:layout_gravity="center"
+                        android:background="#cccccc" />
+
+                    <LinearLayout
+                        android:id="@+id/linear5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Tue, 09 sep"
+                            android:textColor="@color/txt_color"
+                            android:textSize="13.3sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_light"
+                            android:text="₹1520"
+                            android:textColor="#fdbb51"
+                            android:textSize="13.3sp" />
+
+                        <View
+                            android:id="@+id/view5"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#087cba"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="0.8dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#cccccc" />
+
+            <ImageView
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_calendar" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cccccc" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:gravity="center"
+                    android:padding="15sp"
+                    android:textSize="15sp"
+                    android:text="Departure"
+                    android:fontFamily="@font/sf_pro_text_medium"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:gravity="center"
+                    android:padding="15sp"
+                    android:textSize="15sp"
+                    android:text="Return"
+                    android:fontFamily="@font/sf_pro_text_medium"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="150dp"
+            android:id="@+id/rvlflightSearchResult"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_cardview"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/sort_linear"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_sort_hotel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="Sort"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.7dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:id="@+id/filterLinear"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_filter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="Filter"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="17.3dp"
+                android:paddingBottom="17.3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="For 2 Travellers"
+                    android:textColor="@color/hint_txt_color"
+                    android:textSize="11.7sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="₹ 1000"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16.7dp"
+                android:background="@drawable/rectangle_blue"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:paddingLeft="24.3dp"
+                android:paddingRight="24.7dp"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16.7sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

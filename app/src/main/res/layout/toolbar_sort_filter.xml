@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cross_white"/>
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sort / Filter"
+        android:textSize="21.7sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sfprorounded_semibold"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="Reset"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/sf_pro_text_medium"/>
+
+</androidx.appcompat.widget.Toolbar>

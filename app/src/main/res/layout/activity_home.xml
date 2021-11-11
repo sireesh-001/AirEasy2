@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <View
+        android:id="@+id/home_picture"
+        android:layout_width="match_parent"
+        android:layout_height="461dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="-52dp"
+        android:background="#3489DE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discover"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/home_picture"
+        android:id="@+id/dis"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/hv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dis"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp" />
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+    <TextView
+
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="100dp"
+        android:text="HELLO"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/h1"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="21dp"
+        android:text="where are we going?" />
+
+    <EditText
+        android:id="@+id/rectangle_4"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="261dp"
+        android:background="@drawable/rectangle_4"
+        android:hint="Find a flight"
+        android:paddingLeft="60dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="36dp"
+        android:layout_height="28dp"
+        android:layout_below="@id/textView2"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/img_3" />
+
+    <RelativeLayout
+        android:id="@+id/men_"
+        android:layout_width="421dp"
+        android:layout_height="89dp"
+        android:layout_below="@id/hv"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/img_4" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imageView2"
+            app:srcCompat="@drawable/img12" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imageView3"
+            app:srcCompat="@drawable/img13" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imageView4"
+            app:srcCompat="@drawable/img14" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/imageView5"
+            app:srcCompat="@drawable/img_5" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView3"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@id/textView3"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.01"
+            android:text="Check-in"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.01"
+            android:text="Explore"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView4"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/textView"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.01"
+            android:text="Alerts"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView5"
+            android:layout_marginStart="38dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/textView4"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.01"
+            android:text="my trips"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_below="@+id/imageView6"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/textView5"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.01"
+            android:text="log in"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</RelativeLayout>

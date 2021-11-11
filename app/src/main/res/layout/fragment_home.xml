@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shadeapp"
+    >
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Hello World hhh!"-->
+    <!--         />-->
+
+
+
+
+
+    <TextView
+
+        android:layout_width="212dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="76dp"
+        android:textSize="40dp"
+        android:text="HELLO where are we going?"
+        />
+    <Button
+        android:layout_width="289dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="242dp"
+        android:backgroundTint="@color/orange"
+        android:id="@+id/sea"
+        android:text="Find flight?"
+        />
+
+
+
+    <ImageButton
+        android:id="@+id/btn1"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/explo" />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn1"
+
+        android:src="@drawable/img_1" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/img_2"
+        android:id="@+id/btn3"
+        android:layout_toRightOf="@id/btn2"/>
+    <!--    <ImageButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginLeft="5dp"-->
+    <!--        android:src="@drawable/img_3"-->
+    <!--        android:id="@+id/btn4"-->
+    <!--        android:layout_toRightOf="@id/btn3"/>-->
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/bnt5"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_toRightOf="@id/btn4"-->
+    <!--        android:src="@drawable/img_4" />-->
+
+    <ImageButton
+        android:layout_width="400dp"
+        android:layout_height="432dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="65dp"
+        android:src="@drawable/desc2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="explore"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn1"
+        android:text="checkin"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn2"
+        android:text="alerts"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn3"
+        android:text="mytrips"/>
+
+
+    <com.cuberto.liquid_swipe.LiquidPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_toRightOf="@id/btn4"-->
+    <!--        android:text="login"/>-->
+
+
+
+</RelativeLayout>

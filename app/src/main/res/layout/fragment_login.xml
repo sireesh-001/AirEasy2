@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shadeapp"
+    >
+
+    <ImageView
+        android:id="@+id/back1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/img_2" />
+    <ImageView
+        android:layout_width="164dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/img"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logo"
+        />
+
+    <EditText
+        android:id="@+id/lgmail"
+        android:layout_width="340dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/logindetails"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp" />
+    <EditText
+        android:layout_width="340dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lgmail"
+        android:layout_marginTop="40dp"
+        android:id="@+id/lpass"
+        android:textColor="@color/black"
+        android:hint="Password"
+        android:textColorHint="@color/black"
+        android:inputType="textPassword"
+        android:background="@drawable/logindetails"
+        android:paddingLeft="20dp"
+        />
+
+    <Button
+        android:id="@+id/signuplb"
+        android:layout_width="116dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/lpass"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/loding"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/log"
+        android:layout_width="116dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/lpass"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/signuplb"
+        android:background="@drawable/loding"
+        android:text="@string/login"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+    <ImageView
+        android:layout_width="330dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/log"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/img44"
+        />
+
+    <com.cuberto.liquid_swipe.LiquidPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

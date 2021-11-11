@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".FlightFilter_mpActivity">
+
+    <include layout="@layout/toolbar_sort_filter" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="26.7dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:paddingLeft="8dp"
+                    android:text="Refundable"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:paddingLeft="8dp"
+                    android:text="Non Refundable"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="26.7dp"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="Number of Stops"
+                android:textColor="@color/blue"
+                android:textSize="16.7sp" />
+
+            <com.warkiz.tickseekbar.TickSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tsb_show_tick_marks_type="divider"
+                app:tsb_show_tick_texts="below"
+                app:tsb_tick_marks_size="0dp"
+                app:tsb_track_progress_color="@color/blue"
+                app:tsb_only_thumb_draggable="false"
+                app:tsb_tick_marks_color="@color/transperent"
+                app:tsb_thumb_drawable="@drawable/ic_ellipse_355"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:tsb_tick_texts_array="@array/irregular_length_6"
+                app:tsb_tick_texts_color="@color/txt_color"
+                app:tsb_ticks_count="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="26.7dp"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="On Ward"
+                android:textColor="@color/blue"
+                android:textSize="16.7sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ward_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15.7dp"
+                android:overScrollMode="never"
+                android:layout_marginTop="15.3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="26.7dp"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="Airlines"
+                android:textColor="@color/blue"
+                android:textSize="16.7sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/airlines_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15.7dp"
+                android:layout_marginTop="15.3dp"
+                android:overScrollMode="never" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginRight="16.7dp"
+                android:background="@color/viewline" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:text="Apply"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16.7sp" />
+</LinearLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">AirEasy</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="i_would_lik">I would like to receive your newsletter and other promotional information.</string>
+    <string name="forgot_your">Forgot your password?</string>
+    <string name="you_handle_">
+
+You handle the booking, we\'ll take it from there\u000D\n
+
+</string>
+    <string name="unlike_othe">
+
+Unlike other travel apps, AirEasy can organize your travel plans no matter where you book.
+</string>
+    <string name="packed_with">
+
+Packed with features that give you a leg up on changes and help you make the most of all your trips.
+</string>
+    <string name="need_a_remi">
+
+Need a reminder when it\'s time to leave for the airport? when its time to book a cab? AirEasy has you covered.
+</string>
+
+
+    <string name="gamecoin">GameCoin</string>
+    <string name="skip">SKIP</string>
+    <string name="online">Online</string>
+    <string name="gambling">GAMBLING</string>
+    <string name="temporibus_autem_aut_officiis_debitis_aut_rerum_necessitatibus">Temporibus autem aut\nofficiis debitis aut rerum\nnecessitatibus</string>
+    <string name="forr">For</string>
+    <string name="gamers">Gamers</string>
+    <string name="excepteur_sint_occaecat_cupidatat_non_proident_sunt_in_culpa_qui_officia">Excepteur sint occaecat\ncupidatat non proident, sunt\nin culpa qui officia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
