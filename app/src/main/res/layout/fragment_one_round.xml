@@ -134,7 +134,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="13.3dp"
                         android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="From"
+                        android:text="To"
                         android:textColor="@color/hint_txt_color"
                         android:textSize="15sp" />
 
