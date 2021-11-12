@@ -26,6 +26,7 @@
         <activity android:name=".successful"/>
         <activity android:name=".flight_review"/>
         <activity android:name=".payment"/>
+        <activity android:name=".flight_details"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
