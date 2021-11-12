@@ -13,6 +13,11 @@ You handle the booking, we\'ll take it from there\u000D\n
 
 Unlike other travel apps, AirEasy can organize your travel plans no matter where you book.
 </string>
+    <string name="terms_amp_conditions"><u><![CDATA[Terms & Conditions]]></u></string>
+    <string name="edit"><u>Edit</u></string>
+    <string name="view_terms"><u>View Terms</u></string>
+    <string name="view_terms_amp_conditions"><u><![CDATA[View Terms & Conditions]]></u></string>
+    <string name="need_help_about_this_booking"><u>Need help about this booking?</u></string>
     <string name="packed_with">
 
 Packed with features that give you a leg up on changes and help you make the most of all your trips.

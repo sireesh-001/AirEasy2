@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".flight_review">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="25dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="15sp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="37.3dp">
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_gravity="center"
+                            android:background="@color/viewline" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:id="@+id/fr1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/circle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_plane" />
+
+                                <ImageView
+                                    android:id="@+id/plan1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/circle_blue"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <ImageView
+                                android:id="@+id/circle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:src="@drawable/circle_gray" />
+
+                            <ImageView
+                                android:id="@+id/circle3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/circle_gray" />\
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Flight Review"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:gravity="center"
+                            android:text="Traveller Details "
+                            android:textColor="@color/hint_txt_color"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Payment"
+                            android:textColor="@color/hint_txt_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/llDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="23.3dp"
+                    android:layout_marginRight="16.7dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:text="HYD - BOM"
+                            android:textColor="@color/txt_color"
+                            android:textSize="21.7sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Non Stop | Business Class"
+                            android:textColor="@color/hint_txt_color"
+                            android:textSize="13.3sp" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/blue_gredient"
+                            android:orientation="vertical"
+                            android:paddingLeft="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="Departure"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="1.5dp"
+                                android:fontFamily="@font/sf_pro_text_regular"
+                                android:text="Thu 05 Sept"
+                                android:textColor="@color/white"
+                                android:textSize="13.3sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="16.7dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="43.3dp"
+                        android:layout_height="43.3dp"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11.7dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_pro_text_regular"
+                                android:text="Air India"
+                                android:textColor="@color/txt_color"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6.7dp"
+                                android:fontFamily="@font/sf_pro_text_regular"
+                                android:text="A6 323"
+                                android:textColor="@color/hint_txt_color"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/arrival_Txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="12:00"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="Thu 05 Sept"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="Hyderabad international airport"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/hour_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="2 hr"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="20sp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/hint_txt_color" />
+
+                                <TextView
+                                    android:id="@+id/stop_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="Non Stop"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/depart_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="15:00"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="20sp" />
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="Thu 08 Sept"
+                                    android:textAlignment="viewEnd"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/sf_pro_text_regular"
+                                    android:text="Mumbai international airport"
+                                    android:textAlignment="viewEnd"
+                                    android:textColor="@color/hint_txt_color"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="23.3sp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="Baggages"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="16.7dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Cabin Bag - 8 kg"
+                            android:textColor="@color/txt_color"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11.7dp"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Check in Bag - 15 kg"
+                            android:textColor="@color/txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_right_arrow" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/bg_color" />
+
+
+            <LinearLayout
+                android:id="@+id/llFairRule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="23.3sp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="Fare Rules"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="16.7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:text="Non Refundable"
+                        android:textColor="@color/txt_color"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_right_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/bg_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_insurance" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11.7dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:text="Travel Insurance"
+                        android:textColor="@color/blue"
+                        android:textSize="16.7sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:text="Secure your trip with reliance health with just\nRs. 300/person"
+                        android:textColor="@color/txt_color"
+                        android:textSize="12.7sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:text="@string/view_terms"
+                        android:textColor="@color/blue"
+                        android:textSize="12.7sp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:overScrollMode="never"
+                        android:paddingRight="15sp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16.7dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="68.7dp"
+                                android:background="@drawable/rectangle_grayborder"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10.7dp"
+                                    android:fontFamily="@font/sf_pro_text_light"
+                                    android:text="Baggages Loss"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/sf_pro_text_light"
+                                    android:text="₹ 1120"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="68.7dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/rectangle_grayborder"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10.7dp"
+                                    android:fontFamily="@font/sf_pro_text_light"
+                                    android:text="Hospital"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/sf_pro_text_light"
+                                    android:text="₹ 1120"
+                                    android:textColor="@color/txt_color"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="68.7dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/rectangle_grayborder"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/sf_pro_text_light"
+                                    android:gravity="center"
+                                    android:text="View\n12 More"
+                                    android:textColor="@color/blue"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:paddingLeft="11.7dp"
+                            android:text="Yes, Secure my trip (₹ 300 / person)"
+                            android:textColor="@color/txt_color"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:paddingLeft="11.7dp"
+                            android:text="No, I do not want to Secure my trip "
+                            android:textColor="@color/txt_color"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/bg_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="23.3sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_discount" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11.8dp"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="Apply Promo Code"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="21.1dp"
+                android:layout_marginRight="16.7dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grayborder"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:hint=""
+                    android:paddingLeft="18dp"
+                    android:paddingTop="15sp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_blueborder"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:paddingTop="15sp"
+                    android:paddingBottom="18dp"
+                    android:text="Apply"
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/discount_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="23.3dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:paddingLeft="8dp"
+                android:text="35% off on your 1st booking"
+                android:textColor="@color/txt_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/view_terms_amp_conditions"
+                android:textColor="@color/blue"
+                android:textSize="16.7sp" />
+
+            <RadioButton
+                android:id="@+id/zero_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginTop="23.3dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:paddingLeft="8dp"
+                android:text="Zero MorePay Fee"
+                android:textColor="@color/txt_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/view_terms_amp_conditions"
+                android:textColor="@color/blue"
+                android:textSize="16.7sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="17.3dp"
+                android:paddingBottom="17.3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="For 2 Travellers"
+                    android:textColor="@color/hint_txt_color"
+                    android:textSize="11.7sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="₹ 1000"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16.7dp"
+                android:background="@drawable/rectangle_blue"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:paddingLeft="24.3dp"
+                android:paddingRight="24.7dp"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16.7sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
