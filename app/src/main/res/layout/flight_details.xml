@@ -1,82 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".successful">
+    tools:context=".flight_details">
+
+    <include layout="@layout/toolbar_bus_booking_detail"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingBottom="60dp">
+            android:paddingBottom="30dp"
+            android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/green">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/back_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16.7dp"
-                        android:layout_marginTop="13.7dp"
-                        android:src="@drawable/back_black"
-                        app:tint="@color/white" />
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="63.5dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/success" />
-
-                    </FrameLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:gravity="center"
-                        android:letterSpacing="0.055"
-                        android:text="Successful!"
-                        android:textColor="@color/white"
-                        android:textSize="18.3sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6.7dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:gravity="center"
-                        android:letterSpacing="0.045"
-                        android:text="Booking #434321"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,55 +41,55 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_text_medium"
-                            android:text="HYD - BOM"
+                            android:textSize="21.7sp"
                             android:textColor="@color/txt_color"
-                            android:textSize="21.7sp" />
+                            android:text="HYD - BOM"
+                            android:fontFamily="@font/sf_pro_text_medium"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_text_regular"
                             android:text="Non Stop | Business Class"
                             android:textColor="@color/grey"
-                            android:textSize="13.3sp" />
+                            android:textSize="13.3sp"
+                            android:fontFamily="@font/sf_pro_text_regular"/>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/blue_gredient"
-                        android:orientation="vertical"
                         android:paddingLeft="11.7dp"
-                        android:paddingTop="5dp"
                         android:paddingRight="11.7dp"
-                        android:paddingBottom="5dp">
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:background="@drawable/blue_gredient"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/sf_pro_text_medium"
-                            android:gravity="center"
                             android:text="Return"
+                            android:gravity="center"
+                            android:layout_gravity="center"
                             android:textColor="@color/white"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:fontFamily="@font/sf_pro_text_medium"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="13.3sp"
                             android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="Thu 08 Sept"
                             android:textColor="@color/white"
-                            android:textSize="13.3sp" />
+                            android:text="Thu 08 Sept"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -162,6 +111,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11.7dp"
                         android:orientation="vertical">
+
 
 
                         <LinearLayout
@@ -306,11 +256,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="23dp"
-                    android:fontFamily="@font/sf_pro_text_semibold"
                     android:text="Travellers"
                     android:textColor="@color/blue"
-                    android:textSize="16.7sp" />
+                    android:textSize="16.7sp"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -319,21 +269,21 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Name"
-                        android:textColor="@color/grey"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textColor="@color/grey"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textColor="@color/grey"
+                        android:textSize="15sp"
                         android:text="PNR"
-                        android:textColor="@color/grey"
-                        android:textSize="15sp" />
+                        android:fontFamily="@font/sf_pro_text_regular"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -343,36 +293,36 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_text_regular"
                             android:text="John Doe"
+                            android:textSize="15sp"
                             android:textColor="@color/txt_color"
-                            android:textSize="15sp" />
+                            android:fontFamily="@font/sf_pro_text_regular"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="Male"
                             android:textColor="@color/grey"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:text="Male"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_regular"/>
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="FASD21"
+                        android:textSize="15sp"
                         android:textColor="@color/txt_color"
-                        android:textSize="15sp" />
+                        android:fontFamily="@font/sf_pro_text_regular"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -382,37 +332,38 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_text_regular"
                             android:text="Erik"
+                            android:textSize="15sp"
                             android:textColor="@color/txt_color"
-                            android:textSize="15sp" />
+                            android:fontFamily="@font/sf_pro_text_regular"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="Male"
                             android:textColor="@color/grey"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:text="Male"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/sf_pro_text_regular"/>
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="FASD21"
+                        android:textSize="15sp"
                         android:textColor="@color/txt_color"
-                        android:textSize="15sp" />
+                        android:fontFamily="@font/sf_pro_text_regular"/>
                 </LinearLayout>
+
 
 
             </LinearLayout>
@@ -421,52 +372,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="11dp"
                 android:layout_marginTop="23.3dp"
-                android:background="@color/bg_color" />
+                android:background="@color/bg_color"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="16.7dp"
                 android:paddingTop="23.3dp"
+                android:paddingBottom="23.3dp"
                 android:paddingRight="16.7dp"
-                android:paddingBottom="23.3dp">
+                android:paddingLeft="16.7dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:text="Fare Rules"
                         android:textColor="@color/blue"
-                        android:textSize="16.7sp" />
+                        android:textSize="16.7sp"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:text="Fare Rules"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Non Refundable"
+                        android:textSize="14sp"
+                        android:layout_marginTop="15dp"
                         android:textColor="@color/txt_color"
-                        android:textSize="14sp" />
+                        android:fontFamily="@font/sf_pro_text_regular"/>
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_gravity="bottom"
-                    android:src="@drawable/ic_right_arrow" />
+                    android:src="@drawable/ic_right_arrow"/>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="11dp"
-                android:background="@color/bg_color" />
+                android:background="@color/bg_color"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -477,6 +428,14 @@
                 android:orientation="vertical"
                 android:paddingBottom="15dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="Payment Breakdown"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -671,6 +630,7 @@
                 </LinearLayout>
 
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -733,11 +693,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Discount Applied (15% off)"
                         android:textColor="@color/green"
+                        android:layout_weight="1"
                         android:textSize="15sp" />
+
 
 
                     <LinearLayout
@@ -778,18 +739,17 @@
                 android:background="@color/hint_txt_color" />
 
             <LinearLayout
+                android:layout_marginTop="18.3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="18.3dp"
                 android:layout_marginRight="16.7dp"
-                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -841,13 +801,197 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="11dp"
-                android:background="@color/bg_color" />
+                android:layout_marginTop="23.3dp"
+                android:background="@color/bg_color"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="23.3dp"
+                android:layout_marginRight="16.7dp"
+                android:layout_marginLeft="16.7dp"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp"
+                    android:text="Cancellation Charge"
+                    android:fontFamily="@font/sf_pro_text_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DEL - BOM"
+                    android:textSize="16sp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/txt_color"
+                    android:fontFamily="@font/sf_pro_text_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:textSize="14sp"
+                    android:text="Airline Charge: ₹1000 per ticket"
+                    android:fontFamily="@font/sf_pro_text_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:textSize="14sp"
+                    android:text="Mobepay Charge: ₹500 per ticket"
+                    android:fontFamily="@font/sf_pro_text_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BOM - DEL"
+                    android:textSize="16sp"
+                    android:layout_marginTop="23.3dp"
+                    android:textColor="@color/txt_color"
+                    android:fontFamily="@font/sf_pro_text_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:textSize="14sp"
+                    android:text="Airline Charge: ₹1000 per ticket"
+                    android:fontFamily="@font/sf_pro_text_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt_color"
+                    android:textSize="14sp"
+                    android:text="Mobepay Charge: ₹500 per ticket"
+                    android:fontFamily="@font/sf_pro_text_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel Ticket"
+                    android:textSize="14sp"
+                    android:textColor="@color/grey"
+                    android:paddingLeft="14.7dp"
+                    android:paddingRight="14.7dp"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="7dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:background="@drawable/grey_rect2"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:background="@color/bg_color"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23.3dp"
+                android:layout_marginLeft="16.7dp"
+                android:layout_marginRight="16.7dp"
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="16.7sp"
+                    android:text="Customer Support"
+                    android:fontFamily="@font/sf_pro_text_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If you do not receive your ticket via sms/mail or
+Regarding any query contact us on below"
+                    android:textSize="13.3sp"
+                    android:fontFamily="@font/sf_pro_text_light"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/txt_color"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/txt_color"
+                        android:textSize="15sp"
+                        android:text="+91 3121311231"
+                        android:fontFamily="@font/sf_pro_text_regular"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textSize="14sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:background="@drawable/blue_rect2"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:paddingRight="18dp"
+                        android:paddingLeft="18dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/txt_color"
+                        android:textSize="15sp"
+                        android:text="zxc@gmail.com"
+                        android:fontFamily="@font/sf_pro_text_regular"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mail"
+                        android:textSize="14sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:background="@drawable/blue_rect2"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:paddingRight="18dp"
+                        android:paddingLeft="18dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:background="@color/bg_color"/>
+
+            <LinearLayout
+                android:layout_marginTop="23.3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.7dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -901,24 +1045,13 @@
                 </LinearLayout>
 
 
+
+
             </LinearLayout>
 
-        </LinearLayout>
 
+        </LinearLayout>
     </ScrollView>
 
 
-    <TextView
-        android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/blue"
-        android:fontFamily="@font/sf_pro_text_medium"
-        android:gravity="center"
-        android:padding="15sp"
-        android:text="OK"
-        android:textColor="@color/white"
-        android:textSize="16.7sp" />
-
-</RelativeLayout>
+</LinearLayout>

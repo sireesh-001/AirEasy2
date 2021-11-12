@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/print_invoice"
+        android:title="Print Invoice">
+    </item>
+    <item
+        android:id="@+id/download_ticket"
+        android:title="Download Ticket">
+    </item>
+
+    <item
+        android:id="@+id/rechedule"
+        android:title="Reschedule Flight">
+    </item>
+
+
+    <item
+        android:id="@+id/share_booking"
+        android:title="Share Booking">
+    </item>
+
+    <item
+        android:id="@+id/cancel_booking"
+        android:title="Cancel Booking">
+    </item>
+
+</menu>
