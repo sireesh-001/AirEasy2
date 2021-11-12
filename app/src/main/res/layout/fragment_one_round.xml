@@ -144,7 +144,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="23dp"
                         android:fontFamily="@font/sf_pro_text_medium"
-                        android:text="HYD"
+                        android:text="BOM"
                         android:textColor="@color/txt_color"
                         android:textSize="26sp" />
 
