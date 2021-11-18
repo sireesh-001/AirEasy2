@@ -78,17 +78,22 @@
 
             </LinearLayout>
         </LinearLayout>
-        <com.mukesh.OtpView
+
+
+        <in.aabhasjindal.otptextview.OtpTextView
             android:id="@+id/otp_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:inputType="number"
-            android:itemBackground="@color/white"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="72dp"
             android:textColor="@color/txt_color"
-            />
-
-
+            android:itemBackground="@color/white"
+            app:bar_enabled="true"
+            app:bar_height="2dp"
+            app:height="40dp"
+            app:length="6"
+            app:otp_text_size="24dp"
+            app:width="40dp" />
 
         <TextView
             android:layout_width="match_parent"
