@@ -6,24 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/white_rect3"
     tools:context=".MainActivity">
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/logo"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:layout_width="243dp"
-        android:layout_height="96dp"
-        android:layout_below="@id/gif"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="AirEasy"
-        android:textAlignment="center"
-        android:textColor="#10B5A5"
-        android:textSize="50dp" />
+    <com.cuberto.liquid_swipe.LiquidPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>
