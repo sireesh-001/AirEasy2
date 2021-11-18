@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cuberto.AirEasy">
+    package="com.cuberto.AirEasy" >
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.cuberto.AirEasy.MainActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Search_from_city"/>
-        <activity android:name=".to_city"/>
-        <activity android:name=".twowaybooking"/>
-        <activity android:name=".onewaybooking"/>
-        <activity android:name=".mobile_veri"/>
-        <activity android:name=".booking_details"/>
-        <activity android:name=".flight_traveller"/>
-        <activity android:name=".fare_rules"/>
-        <activity android:name=".successful"/>
-        <activity android:name=".flight_review"/>
-        <activity android:name=".payment"/>
-        <activity android:name=".flight_details"/>
+        <activity android:name=".Search_from_city" />
+        <activity android:name=".to_city" />
+        <activity android:name=".MainActivity1" />
+        <activity android:name=".twowaybooking" />
+        <activity android:name=".onewaybooking" />
+        <activity android:name=".mobile_veri" />
+        <activity android:name=".booking_details" />
+        <activity android:name=".flight_traveller" />
+        <activity android:name=".fare_rules" />
+        <activity android:name=".successful" />
+        <activity android:name=".flight_review" />
+        <activity android:name=".payment" />
+        <activity android:name=".flight_details" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

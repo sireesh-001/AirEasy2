@@ -15,7 +15,7 @@ public class ViewPager extends FragmentPagerAdapter {
         case 0:return new Onboarding1();
         case 1:return new Onboarding2();
         case 2:return new Onboarding3();
-        case 3:return new one_round();
+        case 3:return new Login();
 
     }
 

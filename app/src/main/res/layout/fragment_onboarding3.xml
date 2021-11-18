@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorAccent"
+    android:background="#382C49"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Onboarding3"
@@ -33,24 +33,34 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/img3" />
 
     <TextView
-        android:id="@+id/you_handle_"
         android:layout_width="337dp"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="400dp"
-        android:fontFamily="@font/scheherazade_bold"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/sf_pro_text_medium"
         android:text="Always know where to be and when"
         android:textAlignment="center"
         android:textAppearance="@style/you_handle_"
-        android:textColor="#ffffff"
-        android:textSize="35dp"
-        />
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <TextView
+        android:layout_width="213dp"
+        android:layout_height="66dp"
+
+
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="AirEasy"
+        android:textAlignment="center"
+        android:textColor="#f36122"
+        android:textSize="40dp" />
 
     <!--    <ImageView-->
     <!--        android:id="@+id/slider"-->
@@ -63,62 +73,61 @@
     <!--        android:background="#00000000"-->
     <!--        android:src="@drawable/img1"-->
     <!--        />-->
-    <TextView
-        android:id="@+id/unlike_othe"
-        android:layout_width="336dp"
-        android:layout_height="45dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="533dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/akronim"
-        android:text="@string/need_a_remi"
-        android:textAppearance="@style/unlike_othe"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:translationY="-8sp"
-        />
+    <!--    <TextView-->
+    <!--        android:id="@+id/unlike_othe"-->
+    <!--        android:layout_width="336dp"-->
+    <!--        android:layout_height="45dp"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_marginLeft="38dp"-->
+    <!--        android:layout_marginTop="533dp"-->
+    <!--        android:layout_marginBottom="30dp"-->
+    <!--        android:fontFamily="@font/akronim"-->
+    <!--        android:text="@string/need_a_remi"-->
+    <!--        android:textAppearance="@style/unlike_othe"-->
+    <!--        android:textColor="#ffffff"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:translationY="-8sp" />-->
 
     <TextView
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginLeft="170dp"
-        android:layout_marginTop="600dp"
-        android:background="@drawable/shape1"
-        />
+        android:layout_marginTop="720dp"
+        android:backgroundTint="@color/black"
+        android:background="@drawable/shape1" />
     <TextView
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="720dp"
+        android:backgroundTint="@color/black"
         android:background="@drawable/shape1"
         />
     <TextView
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_marginLeft="230dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="720dp"
         android:background="@drawable/shape"
         />
 
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="640dp"
-        android:background="@drawable/radius"
-        android:text="Lets Go"
-        android:id="@+id/next3"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        />
+    <!--    <Button-->
+    <!--        android:id="@+id/next3"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="75dp"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="640dp"-->
+    <!--        android:background="@drawable/radius"-->
+    <!--        android:fontFamily="@font/roboto_medium"-->
+    <!--        android:text="Lets Go"-->
+    <!--        android:textColor="#ffffff"-->
+    <!--        android:textSize="25dp" />-->
 
-    <com.cuberto.liquid_swipe.LiquidPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--    <com.cuberto.liquid_swipe.LiquidPager-->
+    <!--        android:id="@+id/pager"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
 
 
 
