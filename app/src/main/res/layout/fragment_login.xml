@@ -3,52 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shadeapp"
+    android:background="@color/white"
     >
 
+<!--    <ImageView-->
+<!--        android:id="@+id/back1"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:src="@drawable/img_2" />-->
     <ImageView
-        android:id="@+id/back1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/img_2" />
-    <ImageView
+        android:id="@+id/logo"
         android:layout_width="164dp"
         android:layout_height="162dp"
-        android:layout_marginTop="44dp"
-        android:src="@drawable/img"
         android:layout_centerHorizontal="true"
-        android:id="@+id/logo"
-        />
+        android:layout_marginTop="44dp"
+        android:background="@drawable/logoradius"
+        android:src="@drawable/pic" />
 
     <EditText
         android:id="@+id/lgmail"
         android:layout_width="340dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:background="@drawable/logindetails"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:paddingLeft="20dp" />
-    <EditText
-        android:layout_width="340dp"
-        android:layout_height="45dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/lgmail"
-        android:layout_marginTop="40dp"
-        android:id="@+id/lpass"
-        android:textColor="@color/black"
-        android:hint="Password"
-        android:textColorHint="@color/black"
-        android:inputType="textPassword"
-        android:background="@drawable/logindetails"
         android:paddingLeft="20dp"
-        />
+        android:textColor="@color/black"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/lpass"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/lgmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/logindetails"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/signuplb"
@@ -74,18 +74,27 @@
         android:text="@string/login"
         android:textSize="20dp"
         android:textColor="@color/white"/>
-    <ImageView
-        android:layout_width="330dp"
-        android:layout_height="250dp"
-        android:layout_below="@id/log"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/img44"
-        />
 
-    <com.cuberto.liquid_swipe.LiquidPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="565dp"
+        android:src="@drawable/login"
+        tools:ignore="MissingConstraints" />
+
+<!--    <ImageView-->
+<!--        android:layout_width="330dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_below="@id/log"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:src="@drawable/img44" />-->
+
+<!--    <com.cuberto.liquid_swipe.LiquidPager-->
+<!--        android:id="@+id/pager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 </RelativeLayout>
