@@ -6,13 +6,13 @@
     android:background="@drawable/shadeapp"
     >
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/img_1" />
+<!--    <ImageView-->
+<!--        android:id="@+id/back"-->
+<!--        android:layout_width="20dp"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:src="@drawable/img_1" />-->
 
     <TextView
         android:id="@+id/sign_up"
@@ -130,10 +130,10 @@
         android:text="@string/forgot_your"
         />
 
-    <com.cuberto.liquid_swipe.LiquidPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <com.cuberto.liquid_swipe.LiquidPager-->
+<!--        android:id="@+id/pager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 
 

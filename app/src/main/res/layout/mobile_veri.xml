@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:background="@drawable/blue_rect"
+            android:background="#ff8325"
             android:paddingLeft="19dp"
             android:paddingRight="19dp"
             android:paddingTop="11dp"
@@ -113,19 +113,21 @@
     </LinearLayout>
 
 
-
     <TextView
         android:id="@+id/tv_verify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="Verify"
-        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16.7dp"
+        android:layout_marginTop="16.7dp"
+        android:layout_marginEnd="16.7dp"
+        android:layout_marginBottom="16.7dp"
+        android:background="#ff8325"
         android:fontFamily="@font/sf_pro_text_medium"
-        android:background="@drawable/blue_rect"
         android:gravity="center"
         android:padding="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16.7dp"/>
+        android:text="Verify"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </RelativeLayout>
