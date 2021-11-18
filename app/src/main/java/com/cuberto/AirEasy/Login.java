@@ -52,6 +52,7 @@ public class Login extends Fragment {
         EditText view2=(EditText)view.findViewById(R.id.lpass);
         String v1=view1.getText().toString();
         String v2=view2.getText().toString();
+
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         DatabaseReference databaseReference=firebaseDatabase.getReference("login");
         Button button1=(Button)view.findViewById(R.id.log);
