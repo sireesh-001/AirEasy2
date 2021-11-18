@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
-    android:background="@drawable/shadeapp"
+    android:background="@drawable/white_rect3"
     tools:context=".MainActivity">
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif"
@@ -12,8 +12,9 @@
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:src="@drawable/gg1"
+        android:src="@drawable/logo"
         tools:ignore="MissingConstraints" />
+
     <TextView
         android:layout_width="243dp"
         android:layout_height="96dp"
@@ -25,5 +26,4 @@
         android:textAlignment="center"
         android:textColor="#10B5A5"
         android:textSize="50dp" />
-
 </RelativeLayout>
