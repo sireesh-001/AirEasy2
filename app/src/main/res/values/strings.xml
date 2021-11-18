@@ -2,6 +2,8 @@
     <string name="app_name">AirEasy</string>
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
+    <string name="term_of_user"><u>Term of User</u></string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
     <string name="i_would_lik">I would like to receive your newsletter and other promotional information.</string>
     <string name="forgot_your">Forgot your password?</string>
     <string name="you_handle_">
