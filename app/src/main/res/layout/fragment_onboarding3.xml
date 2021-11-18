@@ -38,17 +38,17 @@
 
     <TextView
         android:layout_width="337dp"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="530dp"
         android:fontFamily="@font/sf_pro_text_medium"
         android:text="Always know where to be and when"
         android:textAlignment="center"
         android:textAppearance="@style/you_handle_"
         android:textColor="@color/white"
-        android:textSize="35dp" />
+        android:textSize="27dp" />
 
     <TextView
         android:layout_width="213dp"
@@ -60,7 +60,7 @@
         android:text="AirEasy"
         android:textAlignment="center"
         android:textColor="#f36122"
-        android:textSize="40dp" />
+        android:textSize="35dp" />
 
     <!--    <ImageView-->
     <!--        android:id="@+id/slider"-->
