@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "309363559093",
+    "project_id": "aireasy-bd873",
+    "storage_bucket": "aireasy-bd873.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309363559093:android:09dccc4d409b39a68e4cfc",
+        "android_client_info": {
+          "package_name": "com.cuberto.AirEasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309363559093-k58bbjh174fc9ihmpdmtusfbk0coeio7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cuberto.AirEasy",
+            "certificate_hash": "ba980041e33af8d3cceb32f707fcb99c5573842e"
+          }
+        },
+        {
+          "client_id": "309363559093-ee7f81q2e4enisgcnjevugra7nq03cg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAem2Mhi8kjuZ72zTC85JpM2FLt4rxxoe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309363559093-ee7f81q2e4enisgcnjevugra7nq03cg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
