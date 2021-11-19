@@ -126,6 +126,7 @@
         android:layout_marginTop="261dp"
         android:background="@drawable/rectangle_4"
         android:hint="Find a flight"
+        android:editable="false"
         android:paddingLeft="60dp" />
 
     <ImageView

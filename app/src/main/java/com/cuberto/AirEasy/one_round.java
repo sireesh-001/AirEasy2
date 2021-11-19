@@ -193,9 +193,10 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     ImageView imageView;
     TextView oneWay_Txt, trip_Txt, today1, today2,textView;
     Spinner spinner_travellers, spinner_class;
-    LinearLayout depart_linear, return_linear;
+    LinearLayout depart_linear, return_linear,city1,city2;
     private int mMonth, mYear, mDay;
     Button searchBtn;
+    TextView textView1,textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,11 +204,19 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.fragment_one_round);
 
         searchBtn = findViewById(R.id.searchBtn);
+        textView1=findViewById(R.id.oneWay_Txt);
+        textView2=findViewById(R.id.trip_Txt);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(FlightBooking_mpActivity.this,FlightSearchResultOneway_mpActivity.class);
-//                startActivity(intent);
+                if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                    Intent intent = new Intent(one_round.this,onewaybooking.class);
+                    startActivity(intent);
+                }
+                else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                Intent intent = new Intent(one_round.this,twowaybooking.class);
+                startActivity(intent);
+                }
             }
         });
 
@@ -219,7 +228,22 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                 onBackPressed();
             }
         });
-
+city1=findViewById(R.id.fromcity);
+city1.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(one_round.this,Search_from_city.class);
+              startActivity(intent);
+    }
+});
+        city2=findViewById(R.id.tocity);
+        city2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(one_round.this,to_city.class);
+                startActivity(intent);
+            }
+        });
         textView = findViewById(R.id.txtmobepay);
         textView.setText("Flight Search");
 
