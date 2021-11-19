@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_text_semibold"
                 android:text="Popular Cities"
-                android:textColor="@color/blue"
+                android:textColor="#4180c8"
                 android:textSize="17sp" />
 
             <androidx.recyclerview.widget.RecyclerView

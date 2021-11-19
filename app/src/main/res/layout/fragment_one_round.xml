@@ -373,6 +373,7 @@
         android:background="#3e6bda"
         android:fontFamily="@font/sf_pro_text_medium"
         android:text="Search Flight"
+        android:backgroundTint="#ff8325"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16.7sp" />

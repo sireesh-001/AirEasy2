@@ -7,8 +7,11 @@
 
     <LinearLayout
         android:id="@+id/llBg"
-        android:layout_width="match_parent"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/searchresult_round"
         android:orientation="horizontal">
 
     <LinearLayout
@@ -38,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Air India"
-                    android:textColor="@color/txt_color"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <TextView
@@ -48,7 +51,7 @@
                     android:layout_marginTop="2dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="A6 323"
-                    android:textColor="@color/hint_txt_color"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -61,7 +64,7 @@
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/sf_pro_text_light"
                 android:text="₹1120"
-                android:textColor="#087cba"
+                android:textColor="@color/white"
                 android:textSize="21sp" />
         </LinearLayout>
 
@@ -83,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="12:00"
-                    android:textColor="@color/txt_color"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
                 <TextView
@@ -92,7 +95,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Delhi"
-                    android:textColor="@color/hint_txt_color"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -109,13 +112,13 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="2 hr"
-                    android:textColor="@color/hint_txt_color"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/hint_txt_color" />
+                    android:background="@color/white" />
 
                 <TextView
                     android:id="@+id/stop_txt"
@@ -125,7 +128,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Non Stop"
-                    android:textColor="@color/hint_txt_color"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -142,7 +145,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="15:00"
-                    android:textColor="@color/txt_color"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
                 <TextView
@@ -152,7 +155,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Mumbai"
-                    android:textColor="@color/hint_txt_color"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
