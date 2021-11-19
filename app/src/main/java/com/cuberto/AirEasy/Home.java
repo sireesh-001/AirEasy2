@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity {
     @Override
@@ -38,11 +39,13 @@ public class Home extends AppCompatActivity {
                 }
                 else {
                     String pass=String.valueOf(task.getResult().getValue());
-                    StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(pass);
+                    Log.i("getting data:", pass);
+//                    StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(pass);
                     ImageView imageView=findViewById(R.id.image6);
-                    Glide.with(Home.this /* context */)
-                            .load(storageReference)
-                            .into(imageView);
+//                    Glide.with(Home.this /* context */)
+//                            .load(storageReference)
+//                            .into(imageView);
+                    Picasso.get().load(pass).into(imageView);
                 }
             }
         });
