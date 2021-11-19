@@ -7,10 +7,10 @@
 
     <LinearLayout
         android:id="@+id/llBg"
-        android:layout_width="200dp"
+        android:layout_width="177dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="6dp"
         android:background="@drawable/searchresult_round"
         android:orientation="horizontal">
 
