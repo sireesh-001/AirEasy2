@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,8 @@ public class mobile_veri extends AppCompatActivity {
         otpView = findViewById(R.id.otp_view);
         StartFirebaseLogin();
         user = (User) getIntent().getSerializableExtra("key");
+        TextView textView1=findViewById(R.id.number);
+        textView1.setText(""+user.mnumber);
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(auth)
                         .setPhoneNumber("+91"+user.mnumber)// Phone number to verify
@@ -48,6 +51,14 @@ public class mobile_veri extends AppCompatActivity {
                         .setCallbacks(mCallback)          // OnVerificationStateChangedCallbacks
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
+        TextView textView=findViewById(R.id.edit);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         tv_verify = findViewById(R.id.tv_verify);
         tv_verify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +98,7 @@ public class mobile_veri extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            databaseReference.child("users").child(user.mnumber).setValue(user);
+                            databaseReference.child("users").child(user.mnumber).child("login_details").setValue(user);
                             startActivity(new Intent(mobile_veri.this,login1.class));
                             finish();
                         } else {

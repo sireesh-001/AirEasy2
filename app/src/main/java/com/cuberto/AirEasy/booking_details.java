@@ -17,10 +17,10 @@ import com.cuberto.AirEasy.AirEasy.FlightFragment;
 
 public class booking_details extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView imageView,ivBus,ivHotel,ivFlight;
-    TextView textView,tvBus,tvHotel,tvFlight;
+    ImageView imageView,ivFlight;
+    TextView textView,tvFlight;
 
-    LinearLayout llBus,llHotel,llFlight;
+    LinearLayout llFlight;
 
     Fragment fragment;
 
@@ -49,8 +49,6 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
         tvFlight = findViewById(R.id.tvFlight);
         llFlight = findViewById(R.id.llFlight);
 
-        llBus.setOnClickListener(this);
-        llHotel.setOnClickListener(this);
         llFlight.setOnClickListener(this);
     }
 
@@ -65,16 +63,8 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
             case R.id.llFlight:
 
 
-                llBus.setBackgroundResource(R.drawable.white_rect3);
-                llHotel.setBackgroundResource(R.drawable.white_rect3);
+
                 llFlight.setBackgroundResource(R.drawable.blue_rect3);
-
-//                ivBus.setImageResource(R.drawable.ic_bus_grey);
-//                ivHotel.setImageResource(R.drawable.ic_hotel_grey);
-//                ivFlight.setImageResource(R.drawable.ic_bus_blue);
-
-                tvBus.setTextColor(Color.parseColor("#adadad"));
-                tvHotel.setTextColor(Color.parseColor("#adadad"));
                 tvFlight.setTextColor(Color.parseColor("#087cba"));
 
                 fragment = new FlightFragment();

@@ -45,7 +45,7 @@ public class login1 extends AppCompatActivity {
                 String v2=view2.getText().toString();
 //                User user=new User(v1,v2);
 //               databaseReference.child("users").child("1").setValue(user);
-                databaseReference.child("users").child(v1).child("password").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                databaseReference.child("users").child(v1).child("login_details").child("password").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
@@ -55,6 +55,7 @@ public class login1 extends AppCompatActivity {
                             String pass=String.valueOf(task.getResult().getValue());
                             if(pass.equals(v2)){
                                 Intent intent = new Intent(login1.this,Home.class);
+                                intent.putExtra("logged",v1);
                                 startActivity(intent);
                             }
                             else{

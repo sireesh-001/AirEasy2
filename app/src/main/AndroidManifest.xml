@@ -20,6 +20,7 @@
         <activity android:name=".MainActivity1" />
         <activity android:name=".Home" />
         <activity android:name=".login1"/>
+        <activity android:name=".one_round"/>
         <activity android:name=".twowaybooking" />
         <activity android:name=".onewaybooking" />
         <activity android:name=".mobile_veri" />

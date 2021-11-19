@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
         android:background="@drawable/logindetails"
-        android:hint="Email"
+        android:hint="Phone Number"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:textColor="@color/black"

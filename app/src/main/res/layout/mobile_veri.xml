@@ -64,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="9429283905"
+                    android:id="@+id/number"
                     android:textSize="14sp"
                     android:fontFamily="@font/sf_pro_text_regular"/>
 
@@ -72,6 +73,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="@string/edit"
+                    android:id="@+id/edit"
                     android:textSize="14sp"
                     android:layout_marginLeft="3dp"
                     android:fontFamily="@font/sf_pro_text_regular"/>
