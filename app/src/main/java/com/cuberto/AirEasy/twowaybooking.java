@@ -1,5 +1,6 @@
 package com.cuberto.AirEasy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -132,7 +133,8 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
                         FlightSearchResultModelClass clickmodel=model;
                         clickeditem=getSnapshots().getSnapshot(positon).getKey();
                         Toast.makeText(twowaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
-
+                        Intent intent=new Intent(twowaybooking.this,flight_review.class);
+                        startActivity(intent);
                     }
                 });
             }

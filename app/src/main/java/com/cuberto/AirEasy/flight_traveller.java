@@ -26,8 +26,8 @@ public class flight_traveller extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(FightTravellerDetails_mpActivity.this, FlightPayment.class);
-//                startActivity(intent);
+                Intent intent = new Intent(flight_traveller.this, payment.class);
+                startActivity(intent);
             }
         });
         textView.setText("Traveller Detail");

@@ -22,8 +22,8 @@ public class successful extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(FlightBookingSuccessfull.this,FlightSearchResultReturn.class);
-//                startActivity(intent);
+                Intent intent = new Intent(successful.this,booking_details.class);
+                startActivity(intent);
             }
         });
     }

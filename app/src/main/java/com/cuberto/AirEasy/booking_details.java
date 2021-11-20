@@ -1,6 +1,7 @@
 package com.cuberto.AirEasy;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +37,8 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent=new Intent(booking_details.this,Home.class);
+                startActivity(intent);
             }
         });
 

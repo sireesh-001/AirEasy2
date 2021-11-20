@@ -202,6 +202,8 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                         FlightModel clickmodel=model;
                         clickeditem=getSnapshots().getSnapshot(positon).getKey();
                         Toast.makeText(onewaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(onewaybooking.this,flight_review.class);
+                        startActivity(intent);
                     }
                 });
             }

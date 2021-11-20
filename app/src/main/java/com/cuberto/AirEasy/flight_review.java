@@ -31,8 +31,8 @@ public class flight_review extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(FlightReview_mpActivity.this,FlightFareRulesCancellation.class);
-//                startActivity(intent);
+                Intent intent = new Intent(flight_review.this,fare_rules.class);
+                startActivity(intent);
             }
         });
         next = findViewById(R.id.next);
@@ -41,8 +41,8 @@ public class flight_review extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(FlightReview_mpActivity.this,FlightAddAncillarymeals.class);
-//                startActivity(intent);
+                Intent intent = new Intent(flight_review.this,flight_traveller.class);
+                startActivity(intent);
             }
         });
 
@@ -51,8 +51,8 @@ public class flight_review extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(FlightReview_mpActivity.this,FightTravellerDetails_mpActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(flight_review.this,flight_traveller.class);
+                startActivity(intent);
             }
         });
 

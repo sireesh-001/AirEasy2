@@ -36,8 +36,8 @@ public class payment extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(FlightPayment.this,FlightBookingSuccessfull.class);
-//                startActivity(intent);
+                Intent intent = new Intent(payment.this,successful.class);
+                startActivity(intent);
             }
         });
 
