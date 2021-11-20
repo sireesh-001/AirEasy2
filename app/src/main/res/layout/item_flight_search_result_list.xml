@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Air India"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -51,7 +51,7 @@
                     android:layout_marginTop="2dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="A6 323"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black_overlay"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -64,7 +64,7 @@
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/sf_pro_text_light"
                 android:text="₹1120"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="12:00"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Delhi"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -112,13 +112,13 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="2 hr"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black_overlay"
                     android:textSize="13sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white" />
+                    android:background="@color/black_overlay" />
 
                 <TextView
                     android:id="@+id/stop_txt"
@@ -128,7 +128,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Non Stop"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black_overlay"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -145,7 +145,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="15:00"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -155,22 +155,22 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Mumbai"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#acacac"/>
+<!--        <View-->
+<!--            android:layout_width="1dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#acacac"/>-->
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#acacac"/>
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#acacac"/>-->
 
 </LinearLayout>
