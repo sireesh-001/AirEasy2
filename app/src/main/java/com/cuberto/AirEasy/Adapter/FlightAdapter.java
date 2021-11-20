@@ -67,7 +67,7 @@ public class FlightAdapter extends RecyclerView.ViewHolder {
 //    }
 
         public ImageView flight_Img;
-        public TextView airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+        public TextView arrival_city,depart_city,airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
 ItemClickListener itemClickListener;
 public void setItemClickListener(ItemClickListener itemClickListener){
     this.itemClickListener=itemClickListener;
@@ -77,10 +77,13 @@ public void setItemClickListener(ItemClickListener itemClickListener){
             super(itemView);
 
 //            flight_Img = itemView.findViewById(R.id.flight_Img);
+            arrival_city=itemView.findViewById(R.id.arrival_city);
+            depart_city=itemView.findViewById(R.id.depart_city);
             airIndia_Txt = itemView.findViewById(R.id.airIndia_Txt);
             number_Txt = itemView.findViewById(R.id.number_Txt);
             rupees_Txt = itemView.findViewById(R.id.rupees_Txt);
             arrival_Txt = itemView.findViewById(R.id.arrival_Txt);
+
             hour_txt = itemView.findViewById(R.id.hour_txt);
             stop_txt = itemView.findViewById(R.id.stop_txt);
             depart_txt = itemView.findViewById(R.id.depart_txt);

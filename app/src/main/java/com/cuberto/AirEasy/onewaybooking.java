@@ -188,6 +188,8 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 
 
 //                holder.flight_Img.setImageResource(model.getFlight_Img());
+                holder.arrival_city.setText(model.getarrival_city());
+                holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
                 holder.number_Txt.setText(model.getNumber_Txt());
                 holder.rupees_Txt.setText(model.getRupees_Txt());

@@ -3,12 +3,14 @@ package com.cuberto.AirEasy.ModelClass;
 public class FlightSearchResultModelClass {
 
     String tvTitle;
-    String airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+    String arrival_city,depart_city,airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
     public FlightSearchResultModelClass(){}
 
 
-    public FlightSearchResultModelClass(String tvTitle, String tvPrice) {
+    public FlightSearchResultModelClass(String airIndia_Txt,String depart_city,String arrival_city, String number_Txt, String rupees_Txt, String arrival_Txt, String hour_txt, String stop_txt, String depart_txt) {
         this.tvTitle = tvTitle;
+        this.arrival_city=arrival_city;
+        this.depart_city=depart_city;
         this.airIndia_Txt = airIndia_Txt;
         this.number_Txt = number_Txt;
         this.rupees_Txt = rupees_Txt;
@@ -27,10 +29,24 @@ public class FlightSearchResultModelClass {
         this.tvTitle = tvTitle;
     }
 
+    public String getarrival_city() {
+        return arrival_city;
+    }
 
+    public void setarrival_city(String arrival_city) {
+        this.arrival_city= arrival_city;
+    }
     public String getAirIndia_Txt() {
         return airIndia_Txt;
     }
+    public String getdepart_city() {
+        return depart_city;
+    }
+
+    public void setdepart_city(String depart_city) {
+        this.depart_city = depart_city;
+    }
+
 
     public void setAirIndia_Txt(String airIndia_Txt) {
         this.airIndia_Txt = airIndia_Txt;
