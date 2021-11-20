@@ -7,13 +7,17 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,15 +33,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class onewaybooking extends AppCompatActivity implements View.OnClickListener{
-
+String clickeditem;
     TextView txtmobepay,tvSubtitle;
     ImageView imageView;
 
-FirebaseRecyclerAdapter<FlightModel,FlightAdapter.ViewHolder> firebaseRecyclerAdapter;
+FirebaseRecyclerAdapter<FlightModel,FlightAdapter> firebaseRecyclerAdapter;
 FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Integer[] flight_Img = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background};
-
+    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference=firebaseDatabase.getReference("update");
 //    String[] airIndia_Txt = {"Air India","Etihad Airways","Emirates"};
 //    String[] number_Txt = {"A6 323","E5 431","M4 754"};
 //    String[] rupees_Txt = {"₹1120","₹2120","₹3120"};
@@ -61,8 +66,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onewaybooking);
         Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference=firebaseDatabase.getReference("login");
+
 
         filterLinear = findViewById(R.id.filterLinear);
         filterLinear.setOnClickListener(new View.OnClickListener() {
@@ -99,20 +103,31 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 
 
         /*----------Recycler view code------------*/
+
         recyclerView = findViewById(R.id.flight_RecyclerView);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(onewaybooking.this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(onewaybooking.this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        flightModels = new ArrayList<>();
-
-        for (int i = 0; i < flight_Img.length; i++) {
-            FlightModel flightModel = new FlightModel(flight_Img[i], airIndia_Txt[i],
-                    number_Txt[i],rupees_Txt[i],arrival_Txt[i],hour_txt[i],stop_txt[i],depart_txt[i]);
-            flightModels.add(flightModel);
-        }
-        flightAdapter = new FlightAdapter(onewaybooking.this, flightModels);
-        recyclerView.setAdapter(flightAdapter);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        FlightModel flightModel=new FlightModel(
+//                "arrival_Txt" ,
+//                "depart_txt" ,
+//                "airIndia_Txt" ,
+//                "number_Txt" ,
+//                "rupees_Txt" ,
+//                "hour_txt" ,
+//                "stop_txt" );
+//        databaseReference.push().setValue(flightModel);
+//        firebaseRecyclerAdapter.notifyDataSetChanged();
+        update();
+//        flightModels = new ArrayList<>();
+//
+//        for (int i = 0; i < flight_Img.length; i++) {
+//            FlightModel flightModel = new FlightModel(flight_Img[i], airIndia_Txt[i],
+//                    number_Txt[i],rupees_Txt[i],arrival_Txt[i],hour_txt[i],stop_txt[i],depart_txt[i]);
+//            flightModels.add(flightModel);
+//        }
+//        flightAdapter = new FlightAdapter(onewaybooking.this, flightModels);
+//        recyclerView.setAdapter(flightAdapter);
 
         view1 = findViewById(R.id.view1);
         view2 = findViewById(R.id.view2);
@@ -136,7 +151,6 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         sort_linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 slideDialog = new Dialog(onewaybooking.this, R.style.CustomDialogAnimation);
                 slideDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 // Setting dialogview
@@ -163,6 +177,47 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 slideDialog.show();
             }
         });
+    }
+    void update(){
+        itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightModel>().setQuery(databaseReference,FlightModel.class).build();
+        firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightModel, FlightAdapter>(itemFirebaseRecyclerOptions) {
+            @Override
+            public void onBindViewHolder(@NonNull final FlightAdapter holder, final int position,FlightModel model) {
+
+//                FlightModel model = models.get(position);
+
+
+//                holder.flight_Img.setImageResource(model.getFlight_Img());
+                holder.airIndia_Txt.setText(model.getAirIndia_Txt());
+                holder.number_Txt.setText(model.getNumber_Txt());
+                holder.rupees_Txt.setText(model.getRupees_Txt());
+                holder.arrival_Txt.setText(model.getArrival_Txt());
+                holder.hour_txt.setText(model.getHour_txt());
+                holder.stop_txt.setText(model.getStop_txt());
+                holder.depart_txt.setText(model.getDepart_txt());
+
+                holder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onclick(View view, int positon) {
+                        FlightModel clickmodel=model;
+                        clickeditem=getSnapshots().getSnapshot(positon).getKey();
+                        Toast.makeText(onewaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public FlightAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_flight, parent, false);
+                FlightAdapter viewHolder=new FlightAdapter(view);
+                return viewHolder;
+            }
+        };
+
+firebaseRecyclerAdapter.startListening();
+recyclerView.setAdapter(firebaseRecyclerAdapter);
+
     }
 
     @Override

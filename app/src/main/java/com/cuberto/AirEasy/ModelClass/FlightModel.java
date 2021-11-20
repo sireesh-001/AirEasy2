@@ -1,11 +1,12 @@
 package com.cuberto.AirEasy.ModelClass;
 
 public class FlightModel {
-    Integer flight_Img;
+//    Integer flight_Img;
     String airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+   public FlightModel(){}
 
-    public FlightModel(Integer flight_Img, String airIndia_Txt, String number_Txt, String rupees_Txt, String arrival_Txt, String hour_txt, String stop_txt, String depart_txt) {
-        this.flight_Img = flight_Img;
+    public FlightModel( String airIndia_Txt, String number_Txt, String rupees_Txt, String arrival_Txt, String hour_txt, String stop_txt, String depart_txt) {
+//        this.flight_Img = flight_Img;
         this.airIndia_Txt = airIndia_Txt;
         this.number_Txt = number_Txt;
         this.rupees_Txt = rupees_Txt;
@@ -15,13 +16,13 @@ public class FlightModel {
         this.depart_txt = depart_txt;
     }
 
-    public Integer getFlight_Img() {
-        return flight_Img;
-    }
+//    public Integer getFlight_Img() {
+//        return flight_Img;
+//    }
 
-    public void setFlight_Img(Integer flight_Img) {
-        this.flight_Img = flight_Img;
-    }
+//    public void setFlight_Img(Integer flight_Img) {
+//        this.flight_Img = flight_Img;
+//    }
 
     public String getAirIndia_Txt() {
         return airIndia_Txt;
