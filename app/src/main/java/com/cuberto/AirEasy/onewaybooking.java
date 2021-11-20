@@ -42,7 +42,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Integer[] flight_Img = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background};
     FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference=firebaseDatabase.getReference("update");
+    DatabaseReference databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
 //    String[] airIndia_Txt = {"Air India","Etihad Airways","Emirates"};
 //    String[] number_Txt = {"A6 323","E5 431","M4 754"};
 //    String[] rupees_Txt = {"₹1120","₹2120","₹3120"};
