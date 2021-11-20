@@ -269,10 +269,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16.7dp"
             android:overScrollMode="never"
-            android:paddingLeft="16.7dp"
-            android:paddingRight="16.7dp"
-            android:paddingBottom="50dp"
-            android:clipToPadding="false"/>
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+<!--            android:paddingLeft="16.7dp"-->
+<!--            android:paddingRight="16.7dp"-->
+<!--            android:paddingBottom="50dp"-->
+<!--            android:clipToPadding="false"-->
+            />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView

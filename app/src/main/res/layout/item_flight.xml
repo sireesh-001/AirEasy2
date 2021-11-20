@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     android:layout_marginBottom="20.3dp"
-    android:background="@color/white"
+    android:background="@drawable/background_colour"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
 
         android:background="@drawable/item_round"
         android:orientation="horizontal">
@@ -92,7 +92,7 @@
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="12:00"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Delhi"
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -118,7 +118,7 @@
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="2 hr"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -134,7 +134,7 @@
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Non Stop"
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -151,17 +151,17 @@
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="14:00"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="17dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Mumbai"
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

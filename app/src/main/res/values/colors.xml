@@ -25,5 +25,6 @@
     <color name="viewline">#CBCBCB</color>
     <color name="active">#ffc317</color>
     <color name="transperent">#00000000</color>
+    <color name="lightorange">#F3C19B</color>
     <color name="grey">#adadad</color>
 </resources>

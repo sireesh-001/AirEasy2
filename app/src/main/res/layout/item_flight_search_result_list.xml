@@ -65,7 +65,7 @@
                 android:fontFamily="@font/sf_pro_text_light"
                 android:text="₹1120"
                 android:textColor="@color/white"
-                android:textSize="21sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,7 +87,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="12:00"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Delhi"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -113,7 +113,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="2 hr"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="13sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -129,7 +129,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Non Stop"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,7 +146,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="15:00"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Mumbai"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
