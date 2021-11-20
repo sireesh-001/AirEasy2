@@ -25,11 +25,13 @@
         <activity android:name=".onewaybooking" />
         <activity android:name=".mobile_veri" />
         <activity android:name=".booking_details" />
+        <activity android:name=".FlightFilter_mpActivity"/>
         <activity android:name=".flight_traveller" />
         <activity android:name=".SignUp" />
         <activity android:name=".fare_rules" />
         <activity android:name=".successful" />
         <activity android:name=".flight_review" />
+        <activity android:name=".FlightChooseDateActivity"/>
         <activity android:name=".payment" />
         <activity android:name=".flight_details" />
 

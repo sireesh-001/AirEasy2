@@ -203,7 +203,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     Spinner spinner_travellers, spinner_class;
     LinearLayout depart_linear, return_linear,city1,city2;
     private int mMonth, mYear, mDay;
-    String f_date,d_date;
+    String f_date="",d_date="";
     Button searchBtn;
     TextView textView1,textView2,textView3,textView4;
     Userdetails user;
@@ -228,34 +228,46 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
         searchBtn = findViewById(R.id.searchBtn);
         textView1=findViewById(R.id.oneWay_Txt);
         textView2=findViewById(R.id.trip_Txt);
-//        textView2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                return_linear.setVisibility(View.VISIBLE);
-//            }
-//        });
-//        textView2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                return_linear.setVisibility(View.VISIBLE);
-//            }
-//        });
+
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String number=spinner_travellers.getTransitionName();
                 String classes=spinner_class.getTransitionName();
                 String type="stop";
+                String way;
+                String form1=textView4.getText().toString();
+                String dest=textView3.getText().toString();
                 if(checkBox.isChecked()){
-                    type="nonstop";
+                    type="Non stop";
                 }
 
                 if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                    way="oneway";
+                    user.from1=form1;
+                    user.dest=dest;
+                    user.f_date=f_date;
+                    user.d_date=d_date;
+                    user.way=way;
+                    user.classes=classes;
+                    user.Number=number;
+                    user.type=type;
                     Intent intent = new Intent(one_round.this,onewaybooking.class);
+                    intent.putExtra("details",user);
                     startActivity(intent);
                 }
                 else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                    way="twoway";
+                    user.from1=form1;
+                    user.dest=dest;
+                    user.f_date=f_date;
+                    user.d_date=d_date;
+                    user.way=way;
+                    user.classes=classes;
+                    user.Number=number;
+                    user.type=type;
                 Intent intent = new Intent(one_round.this,twowaybooking.class);
+                intent.putExtra("details",user);
                 startActivity(intent);
                 }
             }

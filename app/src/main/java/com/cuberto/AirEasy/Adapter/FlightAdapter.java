@@ -39,6 +39,7 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.ViewHolder
 
         FlightModel model = models.get(position);
 
+
         holder.flight_Img.setImageResource(model.getFlight_Img());
         holder.airIndia_Txt.setText(model.getAirIndia_Txt());
         holder.number_Txt.setText(model.getNumber_Txt());
@@ -58,6 +59,8 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.ViewHolder
 
         ImageView flight_Img;
         TextView airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);

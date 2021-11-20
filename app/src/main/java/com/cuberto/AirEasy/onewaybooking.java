@@ -23,23 +23,28 @@ import java.util.ArrayList;
 
 import com.cuberto.AirEasy.Adapter.FlightAdapter;
 import com.cuberto.AirEasy.ModelClass.FlightModel;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class onewaybooking extends AppCompatActivity implements View.OnClickListener{
 
     TextView txtmobepay,tvSubtitle;
     ImageView imageView;
 
-
+FirebaseRecyclerAdapter<FlightModel,FlightAdapter.ViewHolder> firebaseRecyclerAdapter;
+FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Integer[] flight_Img = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background};
 
-    String[] airIndia_Txt = {"Air India","Etihad Airways","Emirates"};
-    String[] number_Txt = {"A6 323","E5 431","M4 754"};
-    String[] rupees_Txt = {"₹1120","₹2120","₹3120"};
-    String[] arrival_Txt = {"12:00","13:00","14:00"};
-    String[] hour_txt = {"2 hr","1.5 hr","2 hr"};
-    String[] stop_txt = {"Non Stop","One Stop","Non Stop"};
-    String[] depart_txt = {"15:00","16:00","18:00"};
+//    String[] airIndia_Txt = {"Air India","Etihad Airways","Emirates"};
+//    String[] number_Txt = {"A6 323","E5 431","M4 754"};
+//    String[] rupees_Txt = {"₹1120","₹2120","₹3120"};
+//    String[] arrival_Txt = {"12:00","13:00","14:00"};
+//    String[] hour_txt = {"2 hr","1.5 hr","2 hr"};
+//    String[] stop_txt = {"Non Stop","One Stop","Non Stop"};
+//    String[] depart_txt = {"15:00","16:00","18:00"};
 
     private RecyclerView recyclerView;
     private FlightAdapter flightAdapter;
@@ -55,6 +60,9 @@ public class onewaybooking extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onewaybooking);
+        Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference=firebaseDatabase.getReference("login");
 
         filterLinear = findViewById(R.id.filterLinear);
         filterLinear.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +94,8 @@ public class onewaybooking extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        txtmobepay.setText("Delhi To Mumbai");
-        tvSubtitle.setText("5 sept | 1 Adult | Business class");
+        txtmobepay.setText(user.from1+"To"+user.dest);
+        tvSubtitle.setText(user.d_date+" sept | "+user.Number+" Adult | "+user.classes+" class");
 
 
         /*----------Recycler view code------------*/
