@@ -37,10 +37,12 @@ public class FlightSearchResultRecyAdapter extends RecyclerView.ViewHolder {
         TextView tvTitle,tvPrice;
         LinearLayout llBg;
     ItemClickListener itemClickListener;
-    public TextView airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+    public TextView arrival_city,depart_city,airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
         public FlightSearchResultRecyAdapter(View view){
 
             super(view);
+            arrival_city=itemView.findViewById(R.id.arrival_city);
+            depart_city=itemView.findViewById(R.id.depart_city);
             airIndia_Txt = itemView.findViewById(R.id.tvTitle);
             number_Txt = itemView.findViewById(R.id.number_Txt);
             rupees_Txt = itemView.findViewById(R.id.tvPrice);

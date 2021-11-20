@@ -32,7 +32,7 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
     FirebaseRecyclerAdapter<FlightSearchResultModelClass, FlightSearchResultRecyAdapter> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<FlightSearchResultModelClass> itemFirebaseRecyclerOptions;
     FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference=firebaseDatabase.getReference("update");
+    DatabaseReference databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
     TextView txtmobepay, tvSubtitle;
     ImageView imageView;
     String clickeditem;
@@ -119,6 +119,8 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
 ////
 ////            holder.llBg.setBackgroundColor(Color.parseColor("#e3f5ff"));
 ////        }
+                holder.arrival_city.setText(model.getarrival_city());
+                holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
                 holder.number_Txt.setText(model.getNumber_Txt());
                 holder.rupees_Txt.setText(model.getRupees_Txt());
