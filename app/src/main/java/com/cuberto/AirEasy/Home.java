@@ -67,7 +67,9 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this,one_round.class);
+                Userdetails user=new Userdetails();
                 intent.putExtra("logged",number);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });

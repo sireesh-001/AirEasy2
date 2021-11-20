@@ -1,7 +1,10 @@
 package com.cuberto.AirEasy;
 
 import android.app.DatePickerDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,14 +12,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -189,26 +197,59 @@ import java.util.List;
 //    }
 //}
 public class one_round extends AppCompatActivity implements View.OnClickListener{
-
+    static public int h=1;
     ImageView imageView;
     TextView oneWay_Txt, trip_Txt, today1, today2,textView;
     Spinner spinner_travellers, spinner_class;
     LinearLayout depart_linear, return_linear,city1,city2;
     private int mMonth, mYear, mDay;
+    String f_date,d_date;
     Button searchBtn;
-    TextView textView1,textView2;
+    TextView textView1,textView2,textView3,textView4;
+    Userdetails user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_one_round);
-
+        user=(Userdetails)getIntent().getSerializableExtra("user");
+         textView4=findViewById(R.id.value);
+         textView3=findViewById(R.id.value2);
+//        String value=getIntent().getStringExtra("value");
+//        TextView textView=findViewById(R.id.value);
+//        textView.setText(""+value);
+        String logged=getIntent().getStringExtra("logged");
+        depart_linear = findViewById(R.id.depart_linear);
+        return_linear = findViewById(R.id.return_linear);
+        spinner_travellers = findViewById(R.id.spinner_travellers);
+        spinner_class = findViewById(R.id.spinner_class);
+        return_linear.setVisibility(View.INVISIBLE);
+        CheckBox checkBox=findViewById(R.id.flight_Txt);
         searchBtn = findViewById(R.id.searchBtn);
         textView1=findViewById(R.id.oneWay_Txt);
         textView2=findViewById(R.id.trip_Txt);
+//        textView2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                return_linear.setVisibility(View.VISIBLE);
+//            }
+//        });
+//        textView2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                return_linear.setVisibility(View.VISIBLE);
+//            }
+//        });
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String number=spinner_travellers.getTransitionName();
+                String classes=spinner_class.getTransitionName();
+                String type="stop";
+                if(checkBox.isChecked()){
+                    type="nonstop";
+                }
+
                 if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
                     Intent intent = new Intent(one_round.this,onewaybooking.class);
                     startActivity(intent);
@@ -252,31 +293,25 @@ city1.setOnClickListener(new View.OnClickListener() {
         oneWay_Txt.setOnClickListener(this);
         trip_Txt.setOnClickListener(this);
 
-        /*spinner code*/
-        spinner_travellers = findViewById(R.id.spinner_travellers);
-        spinner_class = findViewById(R.id.spinner_class);
-
         List<String> list = new ArrayList<String>();
         list.add("1 Traveller");
         list.add("2 Traveller");
         list.add("3 Traveller");
         list.add("4 Traveller");
+        list.add("5 Traveller");
+        list.add("6 Traveller");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(one_round.this, R.layout.item_spinnerdatatravellum,
                 R.id.spinner_text1, list);
         spinner_travellers.setAdapter(dataAdapter);
-
         List<String> list1 = new ArrayList<String>();
         list1.add("Business");
-        list1.add("Worker");
-        list1.add("Business");
-        list1.add("Worker");
+        list1.add("General");
+
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(one_round
                 .this, R.layout.item_spinnerdatatravellum,
                 R.id.spinner_text1, list1);
         spinner_class.setAdapter(dataAdapter1);
 
-        depart_linear = findViewById(R.id.depart_linear);
-        return_linear = findViewById(R.id.return_linear);
 
         today1 = findViewById(R.id.today1);
         today2 = findViewById(R.id.today2);
@@ -302,6 +337,7 @@ city1.setOnClickListener(new View.OnClickListener() {
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
+                    f_date=""+mDay;
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
@@ -327,16 +363,39 @@ city1.setOnClickListener(new View.OnClickListener() {
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
+                    d_date=""+mDay;
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
         });
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter("custom-message"));
     }
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            String qty = intent.getStringExtra("city");
+            if(h==1){
+                textView4.setText(""+qty);
+                h=2;
+            }
+            else if(h==2){
+                textView3.setText(""+qty);
+                h=1;
+            }
 
+            Toast.makeText(one_round.this, " "+qty ,Toast.LENGTH_SHORT).show();
+//            Intent intent1=new Intent(to_city.this,one_round.class);
+//            intent1.putExtra("value",qty);
+//            startActivity(intent1);
+        }
+    };
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.oneWay_Txt:
+                depart_linear.setVisibility(View.VISIBLE);
                 oneWay_Txt.setTextColor(Color.parseColor("#ffffff"));
                 trip_Txt.setTextColor(Color.parseColor("#adadad"));
                 oneWay_Txt.setBackgroundResource(R.drawable.rectangle_blue_leftcure);

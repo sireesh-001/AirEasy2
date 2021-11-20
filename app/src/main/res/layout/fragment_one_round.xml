@@ -101,6 +101,7 @@
                         android:textSize="26sp" />
 
                     <TextView
+                        android:id="@+id/value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -149,6 +150,7 @@
                         android:textSize="26sp" />
 
                     <TextView
+                        android:id="@+id/value2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -223,6 +225,7 @@
                     android:layout_marginLeft="8dp"
                     android:id="@+id/return_linear"
                     android:layout_weight="1"
+                    android:visibility="visible"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"

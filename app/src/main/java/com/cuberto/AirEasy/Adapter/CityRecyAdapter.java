@@ -1,16 +1,20 @@
 package com.cuberto.AirEasy.Adapter;//package com.cuberto.liquidswipetest.Adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cuberto.AirEasy.ModelClass.CityModel;
 import com.cuberto.AirEasy.R;
+import com.cuberto.AirEasy.one_round;
+import com.cuberto.AirEasy.to_city;
 
 import java.util.ArrayList;
 
@@ -61,10 +65,12 @@ public class CityRecyAdapter extends RecyclerView.Adapter<CityRecyAdapter.MyView
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent();
-//                intent.putExtra("city", holder.txtcity.getText());
-//                context.setResult(Activity.RESULT_OK, intent);
-//                context.finish();
+                Intent intent = new Intent("custom-message");
+                intent.putExtra("city", holder.txtcity.getText().toString());
+                LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+                context.setResult(Activity.RESULT_OK, intent);
+                context.finish();
+
 
             }
         });
