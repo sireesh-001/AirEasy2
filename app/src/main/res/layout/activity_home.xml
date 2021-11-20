@@ -42,49 +42,58 @@
             >
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount0"
                 />
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount99"
                 android:layout_marginLeft="15dp" />
 
-            <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="15dp" />
+<!--            <ImageButton-->
+<!--                android:layout_width="340dp"-->
+<!--                android:layout_height="190dp"-->
+<!--                android:src="@drawable/discount1"-->
+<!--                android:layout_marginLeft="15dp" />-->
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount22"
                 android:layout_marginLeft="15dp" />
 
             <ImageButton
                 android:id="@+id/image6"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount33"
                 android:layout_marginLeft="15dp" />
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount44"
                 android:layout_marginLeft="15dp" />
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount66"
                 android:layout_marginLeft="15dp" />
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount77"
                 android:layout_marginLeft="15dp" />
 
             <ImageButton
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="340dp"
+                android:layout_height="190dp"
+                android:src="@drawable/discount88"
                 android:layout_marginLeft="15dp" />
         </LinearLayout>
 
