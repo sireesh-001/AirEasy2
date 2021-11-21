@@ -250,6 +250,7 @@
                 android:background="#cccccc" />
 
             <ImageView
+                android:id="@+id/ivCalaender"
                 android:paddingRight="25dp"
                 android:paddingLeft="25dp"
                 android:layout_width="wrap_content"

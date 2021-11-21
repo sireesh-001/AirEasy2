@@ -40,7 +40,7 @@ public class onewaybooking extends AppCompatActivity implements View.OnClickList
 String clickeditem;
     TextView txtmobepay,tvSubtitle;
     ImageView imageView;
-
+    String number,classes,f_date="",d_date="",form1,dest,way,type;
 FirebaseRecyclerAdapter<FlightModel,FlightAdapter> firebaseRecyclerAdapter;
 FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Integer[] flight_Img = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
@@ -71,8 +71,14 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onewaybooking);
         Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
-
-
+        form1=user.from1;
+        dest=user.dest;
+        f_date=user.f_date;
+        d_date=user.d_date;
+        way=user.way;
+        classes=user.classes;
+        number= user.Number;
+        type=user.type;
         filterLinear = findViewById(R.id.filterLinear);
         filterLinear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,7 +217,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     void update(){
         Query query=databaseReference;
         if(sort==1){
-            query = databaseReference.orderByChild("rupees_Txt");}
+            query = databaseReference.orderByChild("depart_city").equalTo(form1);}
         else if (sort==2) {
             query = databaseReference.orderByChild("hour_txt");
         }
@@ -235,7 +241,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
                 holder.number_Txt.setText(model.getNumber_Txt());
-                holder.rupees_Txt.setText(model.getRupees_Txt());
+                holder.rupees_Txt.setText("₹"+model.getRupees_Txt());
                 holder.arrival_Txt.setText(model.getArrival_Txt());
                 holder.hour_txt.setText(model.getHour_txt());
                 holder.stop_txt.setText(model.getStop_txt());
@@ -248,6 +254,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                         clickeditem=getSnapshots().getSnapshot(positon).getKey();
                         Toast.makeText(onewaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(onewaybooking.this,flight_review.class);
+                        intent.putExtra("flight",clickeditem);
                         startActivity(intent);
                     }
                 });
