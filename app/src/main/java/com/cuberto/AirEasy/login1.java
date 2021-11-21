@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,7 +30,7 @@ public class login1 extends AppCompatActivity {
         EditText view2=(EditText)findViewById(R.id.lpass);
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         DatabaseReference databaseReference=firebaseDatabase.getReference("login");
-        Button button1=(Button)findViewById(R.id.log);
+        ImageView button1=(ImageView) findViewById(R.id.log);
         Button button=findViewById(R.id.signuplb);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.ContentValues.*;
 import android.widget.Toast;
@@ -81,7 +82,7 @@ public class Login extends Fragment {
         EditText view2=(EditText)view.findViewById(R.id.lpass);
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         DatabaseReference databaseReference=firebaseDatabase.getReference("login");
-        Button button1=(Button)view.findViewById(R.id.log);
+        ImageView button1=(ImageView) view.findViewById(R.id.log);
         Button button=view.findViewById(R.id.signuplb);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

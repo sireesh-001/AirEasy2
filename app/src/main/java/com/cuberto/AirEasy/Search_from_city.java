@@ -22,8 +22,8 @@ public class Search_from_city extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CityRecyAdapter cityRecyAdapter;
 
-    private String txtcity[] = {"Chennai","Delhi", "Goa","Indore",
-            "Chennai","Delhi", "Goa","Indore" };
+    private String txtcity[] = {"Hyderabad","Mumbai", "Chennai","Jaipur",
+            "Goa","Bangalore", "Kolkata","Vizag" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

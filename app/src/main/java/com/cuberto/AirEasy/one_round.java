@@ -1,5 +1,6 @@
 package com.cuberto.AirEasy;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -205,9 +207,9 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     private int mMonth, mYear, mDay;
     String f_date="",d_date="";
     Button searchBtn;
-    TextView textView1,textView2,textView3,textView4;
+    TextView textView1,textView2,textView3,textView4,textView5,textView6;
     Userdetails user;
-
+    String number,classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -223,17 +225,19 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
         return_linear = findViewById(R.id.return_linear);
         spinner_travellers = findViewById(R.id.spinner_travellers);
         spinner_class = findViewById(R.id.spinner_class);
-        return_linear.setVisibility(View.INVISIBLE);
+//        return_linear.setVisibility(View.INVISIBLE);
         CheckBox checkBox=findViewById(R.id.flight_Txt);
         searchBtn = findViewById(R.id.searchBtn);
         textView1=findViewById(R.id.oneWay_Txt);
         textView2=findViewById(R.id.trip_Txt);
+        textView5=findViewById(R.id.shortf);
+        textView6=findViewById(R.id.shortd);
 
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String number=spinner_travellers.getTransitionName();
-                String classes=spinner_class.getTransitionName();
+//                String number=spinner_travellers.getTransitionName();
+//                String classes=spinner_class.getTransitionName();
                 String type="stop";
                 String way;
                 String form1=textView4.getText().toString();
@@ -315,6 +319,13 @@ city1.setOnClickListener(new View.OnClickListener() {
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(one_round.this, R.layout.item_spinnerdatatravellum,
                 R.id.spinner_text1, list);
         spinner_travellers.setAdapter(dataAdapter);
+//        spinner_travellers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                number = list.get(position);
+//            }
+//        });
+        number=spinner_travellers.getSelectedItem().toString();
         List<String> list1 = new ArrayList<String>();
         list1.add("Business");
         list1.add("General");
@@ -323,7 +334,13 @@ city1.setOnClickListener(new View.OnClickListener() {
                 .this, R.layout.item_spinnerdatatravellum,
                 R.id.spinner_text1, list1);
         spinner_class.setAdapter(dataAdapter1);
-
+//        spinner_class.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                number = list1.get(position);
+//            }
+//        });
+        classes=spinner_class.getSelectedItem().toString();
 
         today1 = findViewById(R.id.today1);
         today2 = findViewById(R.id.today2);
@@ -343,13 +360,13 @@ city1.setOnClickListener(new View.OnClickListener() {
                     myCalendar.set(Calendar.YEAR, selectedyear);
                     myCalendar.set(Calendar.MONTH, selectedmonth);
                     myCalendar.set(Calendar.DAY_OF_MONTH, selectedday);
-                    SimpleDateFormat formatter = new SimpleDateFormat("d MMM,yyyy");
+                    @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("d MMM,yyyy");
 
                     today1.setText(formatter.format(myCalendar.getTime()));
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
-                    f_date=""+mDay;
+                    f_date=""+formatter.format(myCalendar.getTime().getDate());
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
@@ -375,7 +392,7 @@ city1.setOnClickListener(new View.OnClickListener() {
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
-                    d_date=""+mDay;
+                    d_date=""+formatter.format(myCalendar.getTime().getDate());
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
@@ -390,10 +407,12 @@ city1.setOnClickListener(new View.OnClickListener() {
             String qty = intent.getStringExtra("city");
             if(h==1){
                 textView4.setText(""+qty);
+                textView5.setText(""+qty.substring(0,3).toUpperCase());
                 h=2;
             }
             else if(h==2){
                 textView3.setText(""+qty);
+                textView6.setText(""+qty.substring(0,3).toUpperCase());
                 h=1;
             }
 
@@ -407,13 +426,24 @@ city1.setOnClickListener(new View.OnClickListener() {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.oneWay_Txt:
-                depart_linear.setVisibility(View.VISIBLE);
+
+                if(return_linear.getVisibility()==View.VISIBLE)
+                {
+                    return_linear.setVisibility(View.INVISIBLE);
+
+                }
+//                depart_linear.setVisibility(View.VISIBLE);
                 oneWay_Txt.setTextColor(Color.parseColor("#ffffff"));
                 trip_Txt.setTextColor(Color.parseColor("#adadad"));
                 oneWay_Txt.setBackgroundResource(R.drawable.rectangle_blue_leftcure);
                 trip_Txt.setBackgroundResource(R.drawable.rectangle_graywhite_rightcure);
                 break;
             case R.id.trip_Txt:
+                if(return_linear.getVisibility()==View.INVISIBLE)
+                {
+                    return_linear.setVisibility(View.VISIBLE);
+
+                }
                 oneWay_Txt.setTextColor(Color.parseColor("#adadad"));
                 trip_Txt.setTextColor(Color.parseColor("#ffffff"));
                 oneWay_Txt.setBackgroundResource(R.drawable.rectangle_graywhite_leftcure);
