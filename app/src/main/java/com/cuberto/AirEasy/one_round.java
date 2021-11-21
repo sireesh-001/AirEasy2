@@ -260,6 +260,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                     user.type=type;
                     Intent intent = new Intent(one_round.this,onewaybooking.class);
                     intent.putExtra("details",user);
+                    intent.putExtra("logged",logged);
                     startActivity(intent);
                 }
                 else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
@@ -274,6 +275,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                     user.type=type;
                 Intent intent = new Intent(one_round.this,twowaybooking.class);
                 intent.putExtra("details",user);
+                intent.putExtra("logged",logged);
                 startActivity(intent);
                 }
             }

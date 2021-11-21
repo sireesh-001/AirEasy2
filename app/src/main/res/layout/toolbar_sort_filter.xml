@@ -8,9 +8,10 @@
 
 
     <ImageView
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/cross_white"/>
+        android:src="@drawable/cross_white" />
 
 
     <TextView

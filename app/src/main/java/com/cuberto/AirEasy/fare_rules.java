@@ -3,6 +3,7 @@ package com.cuberto.AirEasy;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,21 @@ public class fare_rules extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fare_rules);
 
+String price=getIntent().getStringExtra("price");
+String classes=getIntent().getStringExtra("class");
 
+TextView textView=findViewById(R.id.price);
+TextView textView1=findViewById(R.id.classes);
+textView.setText("₹"+price);
+textView1.setText(""+classes);
+
+ImageView imageView=findViewById(R.id.back);
+imageView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        onBackPressed();
+    }
+});
         tvReset = findViewById(R.id.tvReset);
         tvTitle = findViewById(R.id.tvTitle);
 

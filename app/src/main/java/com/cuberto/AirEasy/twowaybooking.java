@@ -53,12 +53,13 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
     public int sort=1;
 //    private String title[] ={"Air India","Emirates","Etihad","Air India","Emirates","Etihad"};
 //    private String price[] = {"₹1120","₹3420","₹2320","₹1120","₹3420","₹2320"};
-
+String logged;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twowaybooking);
         Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
+        logged=getIntent().getStringExtra("logged");
 
 
         recyclerView =findViewById(R.id.rvlflightSearchResult);
@@ -217,6 +218,8 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
                         clickeditem=getSnapshots().getSnapshot(positon).getKey();
                         Toast.makeText(twowaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(twowaybooking.this,flight_review.class);
+                        intent.putExtra("flight",clickeditem);
+                        intent.putExtra("logged",logged);
                         startActivity(intent);
                     }
                 });

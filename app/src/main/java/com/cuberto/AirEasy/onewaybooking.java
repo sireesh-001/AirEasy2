@@ -65,12 +65,15 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 
     ImageView ivCalaender;
     public int sort=1;
-
+    String date="01";
+    String logged;
+    Userdetails user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onewaybooking);
-        Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
+        user=(Userdetails) getIntent().getSerializableExtra("details");
+        logged=getIntent().getStringExtra("logged");
         form1=user.from1;
         dest=user.dest;
         f_date=user.f_date;
@@ -217,7 +220,8 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     void update(){
         Query query=databaseReference;
         if(sort==1){
-            query = databaseReference.orderByChild("depart_city").equalTo(form1);}
+//            query = databaseReference.orderByChild("depart_city").equalTo(form1);
+            }
         else if (sort==2) {
             query = databaseReference.orderByChild("hour_txt");
         }
@@ -255,6 +259,9 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                         Toast.makeText(onewaybooking.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(onewaybooking.this,flight_review.class);
                         intent.putExtra("flight",clickeditem);
+                        intent.putExtra("logged",logged);
+                        intent.putExtra("date",date);
+                        intent.putExtra("user",user);
                         startActivity(intent);
                     }
                 });
@@ -279,6 +286,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
         switch (view.getId()){
             case R.id.linear1:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
+                date="01";
                 update();
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.GONE);
@@ -288,6 +296,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
                 break;
             case R.id.linear2:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("02");
+                date="02";
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.VISIBLE);
@@ -297,6 +306,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
                 break;
             case R.id.linear3:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("03");
+                date="03";
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.GONE);
