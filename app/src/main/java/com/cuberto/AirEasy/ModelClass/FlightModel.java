@@ -1,5 +1,7 @@
 package com.cuberto.AirEasy.ModelClass;
 
+import java.util.Comparator;
+
 public class FlightModel {
 //    Integer flight_Img;
     String arrival_city,depart_city,airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;

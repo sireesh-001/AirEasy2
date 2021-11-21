@@ -2,6 +2,7 @@ package com.cuberto.AirEasy;
 
 import android.app.Dialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.cuberto.AirEasy.Adapter.FlightAdapter;
 import com.cuberto.AirEasy.ModelClass.FlightModel;
@@ -31,6 +34,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class onewaybooking extends AppCompatActivity implements View.OnClickListener{
 String clickeditem;
@@ -60,6 +64,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Dialog slideDialog;
 
     ImageView ivCalaender;
+    public int sort=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +103,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
             }
         });
 
-        txtmobepay.setText(user.from1+"To"+user.dest);
+        txtmobepay.setText(user.from1+" To "+user.dest);
         tvSubtitle.setText(user.d_date+" sept | "+user.Number+" Adult | "+user.classes+" class");
 
 
@@ -163,7 +168,18 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
                 slideDialog.getWindow().getAttributes().windowAnimations = R.style.CustomDialogAnimation;
                 layoutParams.copyFrom(slideDialog.getWindow().getAttributes());
-
+                if(slideDialog.findViewById(R.id.rd1).isSelected()){
+                    sort=1;
+                }
+                else if(slideDialog.findViewById(R.id.rd2).isSelected()){
+                    sort=2;
+                }
+                else if(slideDialog.findViewById(R.id.rd3).isSelected()){
+                    sort=3;
+                }
+                else if(slideDialog.findViewById(R.id.rd4).isSelected()){
+                    sort=4;
+                }
                 //int width = (int) (getResources().getDisplayMetrics().widthPixels * 0.90);
                 int height = (int) (getResources().getDisplayMetrics().heightPixels * 0.625);
 
@@ -171,19 +187,46 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 layoutParams.height = height;
                 layoutParams.gravity = Gravity.BOTTOM;
 
+
                 slideDialog.getWindow().setAttributes(layoutParams);
+
                 slideDialog.setCancelable(true);
                 slideDialog.setCanceledOnTouchOutside(true);
                 slideDialog.show();
+                slideDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+
+                        update();
+                    }
+                });
+
+                update();
             }
         });
+
+
+
     }
     void update(){
-        itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightModel>().setQuery(databaseReference,FlightModel.class).build();
+        Query query=databaseReference;
+        if(sort==1){
+            query = databaseReference.orderByChild("rupees_Txt");}
+        else if (sort==2) {
+            query = databaseReference.orderByChild("hour_txt");
+        }
+        else if (sort==3) {
+            query = databaseReference.orderByChild("depart_txt");
+        }
+        else if (sort==4) {
+            query = databaseReference.orderByChild("depart_txt").limitToLast(50);
+
+        }
+        itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightModel>().setQuery(query,FlightModel.class).build();
         firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightModel, FlightAdapter>(itemFirebaseRecyclerOptions) {
             @Override
             public void onBindViewHolder(@NonNull final FlightAdapter holder, final int position,FlightModel model) {
-
+//                Collections.sort();
 //                FlightModel model = models.get(position);
 
 
@@ -228,6 +271,8 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.linear1:
+                databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
+                update();
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.GONE);
                 view3.setVisibility(View.GONE);
@@ -235,6 +280,8 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
                 view5.setVisibility(View.GONE);
                 break;
             case R.id.linear2:
+                databaseReference=firebaseDatabase.getReference("login").child("flights").child("02");
+                update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.VISIBLE);
                 view3.setVisibility(View.GONE);
@@ -242,6 +289,8 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
                 view5.setVisibility(View.GONE);
                 break;
             case R.id.linear3:
+                databaseReference=firebaseDatabase.getReference("login").child("flights").child("03");
+                update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.GONE);
                 view3.setVisibility(View.VISIBLE);

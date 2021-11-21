@@ -238,6 +238,8 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
             public void onClick(View v) {
 //                String number=spinner_travellers.getTransitionName();
 //                String classes=spinner_class.getTransitionName();
+                number=spinner_travellers.getSelectedItem().toString();
+                classes=spinner_class.getSelectedItem().toString();
                 String type="stop";
                 String way;
                 String form1=textView4.getText().toString();
@@ -325,7 +327,6 @@ city1.setOnClickListener(new View.OnClickListener() {
 //                number = list.get(position);
 //            }
 //        });
-        number=spinner_travellers.getSelectedItem().toString();
         List<String> list1 = new ArrayList<String>();
         list1.add("Business");
         list1.add("General");

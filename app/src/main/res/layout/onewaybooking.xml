@@ -54,7 +54,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/sf_pro_text_light"
-                            android:text="₹1120"
+                            android:text="₹2120"
                             android:textColor="#24ae5f"
                             android:textSize="13.3sp" />
 
@@ -96,7 +96,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/sf_pro_text_light"
-                            android:text="₹3220"
+                            android:text="₹2060"
                             android:textColor="#ff8872"
                             android:textSize="13.3sp" />
 
@@ -139,7 +139,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/sf_pro_text_light"
-                            android:text="₹1520"
+                            android:text="₹2140"
                             android:textColor="#fdbb51"
                             android:textSize="13.3sp" />
 

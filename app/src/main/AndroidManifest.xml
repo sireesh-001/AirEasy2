@@ -2,38 +2,41 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cuberto.AirEasy" >
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.screen.portrait" />
     <application
+        android:screenOrientation="portrait"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/circlelogo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Search_from_city" />
-        <activity android:name=".to_city" />
-        <activity android:name=".MainActivity1" />
-        <activity android:name=".Home" />
-        <activity android:name=".login1"/>
-        <activity android:name=".one_round"/>
-        <activity android:name=".twowaybooking" />
-        <activity android:name=".onewaybooking" />
-        <activity android:name=".mobile_veri" />
-        <activity android:name=".booking_details" />
-        <activity android:name=".FlightFilter_mpActivity"/>
-        <activity android:name=".flight_traveller" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".fare_rules" />
-        <activity android:name=".successful" />
-        <activity android:name=".flight_review" />
-        <activity android:name=".FlightChooseDateActivity"/>
-        <activity android:name=".payment" />
-        <activity android:name=".flight_details" />
+        <activity android:name=".Search_from_city" android:screenOrientation="portrait"/>
+        <activity android:name=".to_city" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity1" android:screenOrientation="portrait"/>
+        <activity android:name=".Home" android:screenOrientation="portrait" />
+        <activity android:name=".login1" android:screenOrientation="portrait"/>
+        <activity android:name=".one_round" android:screenOrientation="portrait"/>
+        <activity android:name=".twowaybooking" android:screenOrientation="portrait"/>
+        <activity android:name=".onewaybooking" android:screenOrientation="portrait"/>
+        <activity android:name=".mobile_veri" android:screenOrientation="portrait"/>
+        <activity android:name=".booking_details" android:screenOrientation="portrait"/>
+        <activity android:name=".FlightFilter_mpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".flight_traveller" android:screenOrientation="portrait"/>
+        <activity android:name=".SignUp" android:screenOrientation="portrait"/>
+        <activity android:name=".fare_rules" android:screenOrientation="portrait"/>
+        <activity android:name=".successful" android:screenOrientation="portrait"/>
+        <activity android:name=".flight_review" android:screenOrientation="portrait"/>
+        <activity android:name=".FlightChooseDateActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".payment" android:screenOrientation="portrait"/>
+        <activity android:name=".flight_details" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
