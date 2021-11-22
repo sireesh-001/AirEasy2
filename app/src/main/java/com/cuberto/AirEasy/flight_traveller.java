@@ -1,6 +1,7 @@
 package com.cuberto.AirEasy;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class flight_traveller extends AppCompatActivity {
 
@@ -139,13 +142,14 @@ public class flight_traveller extends AppCompatActivity {
 
         TextView textView6=findViewById(R.id.addT);
         textView6.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
 if(name.getText().toString().equals("")||email.getText().toString().equals("")||gender.getText().toString().equals("")||age.getText().toString().equals("")){
     Toast.makeText(flight_traveller.this, "Please Enter all the values",Toast.LENGTH_SHORT).show();
 }
 else{
-    TravelModel model=new TravelModel(gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
+    TravelModel model=new TravelModel(givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect(),gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
     databaseReference1.push().setValue(model);
     firebaseRecyclerAdapter.notifyDataSetChanged();
 }
@@ -154,13 +158,14 @@ else{
 
         TextView textView7=findViewById(R.id.addT1);
         textView7.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 if(name.getText().toString().equals("")||email.getText().toString().equals("")||gender.getText().toString().equals("")||age.getText().toString().equals("")){
                     Toast.makeText(flight_traveller.this, "Please Enter all the values",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    TravelModel model=new TravelModel(gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
+                    TravelModel model=new TravelModel(givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect(),gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
                     databaseReference2.push().setValue(model);
 
                     firebaseRecyclerAdapter.notifyDataSetChanged();
@@ -363,6 +368,21 @@ else{
         recyclerView1.setAdapter(firebaseRecyclerAdapter);
 
 }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public String givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect() {
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 6;
+        Random random = new Random();
+
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+
+        return generatedString;
+    }
 //void upgrade()
 //{
 //    databaseReference.addValueEventListener(new ValueEventListener() {

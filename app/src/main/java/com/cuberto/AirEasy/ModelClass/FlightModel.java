@@ -6,10 +6,12 @@ import java.util.Comparator;
 public class FlightModel implements Serializable {
 //    Integer flight_Img;
     String arrival_city,depart_city,airIndia_Txt,number_Txt,rupees_Txt,arrival_Txt,hour_txt,stop_txt,depart_txt;
+    public String d_a_s;
    public FlightModel(){}
 
-    public FlightModel( String airIndia_Txt,String depart_city,String arrival_city, String number_Txt, String rupees_Txt, String arrival_Txt, String hour_txt, String stop_txt, String depart_txt) {
+    public FlightModel( String d_a_s,String airIndia_Txt,String depart_city,String arrival_city, String number_Txt, String rupees_Txt, String arrival_Txt, String hour_txt, String stop_txt, String depart_txt) {
 //        this.flight_Img = flight_Img;
+        this.d_a_s=d_a_s;
         this.arrival_city=arrival_city;
         this.depart_city=depart_city;
         this.airIndia_Txt = airIndia_Txt;

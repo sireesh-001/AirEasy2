@@ -129,6 +129,7 @@ public class flight_review extends AppCompatActivity {
                 }
             }
         });
+        TextView textView8=findViewById(R.id.applied);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +137,10 @@ public class flight_review extends AppCompatActivity {
                 {
                     price=price-(0.1*price);
                     info10.setText("₹ "+price);
+                    if(textView8.getVisibility()==View.GONE)
+                    {
+                        textView8.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -229,6 +234,7 @@ public class flight_review extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         llDetail.setOnClickListener(new View.OnClickListener() {

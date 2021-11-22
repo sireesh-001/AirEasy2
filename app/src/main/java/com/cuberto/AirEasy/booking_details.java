@@ -13,7 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.cuberto.AirEasy.Adapter.SuccessAdapter;
 import com.cuberto.AirEasy.AirEasy.FlightFragment;
+import com.cuberto.AirEasy.ModelClass.TravelModel;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 
 public class booking_details extends AppCompatActivity implements View.OnClickListener {
@@ -24,6 +28,8 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
     LinearLayout llFlight;
 
     Fragment fragment;
+    FirebaseRecyclerAdapter<TravelModel, SuccessAdapter> firebaseRecyclerAdapter;
+    FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

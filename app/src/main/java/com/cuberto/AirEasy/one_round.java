@@ -209,6 +209,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     Button searchBtn;
     TextView textView1,textView2,textView3,textView4,textView5,textView6;
     Userdetails user;
+    String flight;
     String number,classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -247,6 +248,13 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                 if(checkBox.isChecked()){
                     type="Non stop";
                 }
+                if(type.equals("stop"))
+                {
+                    flight=form1+"_"+dest+"_s";
+                }
+                else{
+                    flight=form1+"_"+dest+"_ns";
+                }
 
                 if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
                     way="oneway";
@@ -261,6 +269,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                     Intent intent = new Intent(one_round.this,onewaybooking.class);
                     intent.putExtra("details",user);
                     intent.putExtra("logged",logged);
+                    intent.putExtra("flight",flight);
                     startActivity(intent);
                 }
                 else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
@@ -276,6 +285,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
                 Intent intent = new Intent(one_round.this,twowaybooking.class);
                 intent.putExtra("details",user);
                 intent.putExtra("logged",logged);
+                intent.putExtra("flight",flight);
                 startActivity(intent);
                 }
             }

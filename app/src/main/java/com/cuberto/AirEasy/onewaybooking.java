@@ -67,6 +67,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     public int sort=1;
     String date="01";
     String logged;
+    public static String flight;
     Userdetails user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         setContentView(R.layout.onewaybooking);
         user=(Userdetails) getIntent().getSerializableExtra("details");
         logged=getIntent().getStringExtra("logged");
+        flight=getIntent().getStringExtra("flight");
         form1=user.from1;
         dest=user.dest;
         f_date=user.f_date;
@@ -99,7 +101,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 startActivity(intent);
             }
         });
-
+        Toast.makeText(onewaybooking.this, " "+flight ,Toast.LENGTH_SHORT).show();
 
         txtmobepay = findViewById(R.id.txtmobepay);
         tvSubtitle = findViewById(R.id.tvSubtitle);
@@ -107,7 +109,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+        flight="";
                 onBackPressed();
             }
         });
@@ -215,12 +217,11 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         });
 
 
-
     }
     void update(){
-        Query query=databaseReference;
+        Query query=databaseReference.orderByChild("d_a_s").equalTo(flight);
         if(sort==1){
-//            query = databaseReference.orderByChild("depart_city").equalTo(form1);
+//            query = databaseReference.equalTo(flight);
             }
         else if (sort==2) {
             query = databaseReference.orderByChild("hour_txt");
@@ -236,11 +237,10 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightModel, FlightAdapter>(itemFirebaseRecyclerOptions) {
             @Override
             public void onBindViewHolder(@NonNull final FlightAdapter holder, final int position,FlightModel model) {
-//                Collections.sort();
-//                FlightModel model = models.get(position);
 
 
 //                holder.flight_Img.setImageResource(model.getFlight_Img());
+
                 holder.arrival_city.setText(model.getarrival_city());
                 holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
@@ -264,8 +264,8 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                         intent.putExtra("user",user);
                         startActivity(intent);
                     }
-                });
-            }
+                });}
+
 
             @NonNull
             @Override

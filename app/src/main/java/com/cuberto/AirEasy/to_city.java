@@ -36,7 +36,7 @@ public class to_city extends AppCompatActivity {
     private CityRecyAdapter cityRecyAdapter;
 
     private String txtcity[] = {"Hyderabad","Mumbai", "Chennai","Jaipur",
-            "Goa","Bangalore", "Kolkata","Vizag" };
+            "Goa","Delhi", "Kolkata","Vizag" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

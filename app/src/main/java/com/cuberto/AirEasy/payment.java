@@ -66,10 +66,9 @@ textView5.setText("₹ "+price);
 
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                CusomterModel cusomterModel=new CusomterModel(model,price,user.classes,givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect(),object);
+                CusomterModel cusomterModel=new CusomterModel(model,price,user.classes,object);
                 databaseReference1.push().setValue(cusomterModel);
 
                 Intent intent = new Intent(payment.this,successful.class);
@@ -180,19 +179,5 @@ textView5.setText("₹ "+price);
         }
 
     }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public String givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect() {
-        int leftLimit = 48; // numeral '0'
-        int rightLimit = 122; // letter 'z'
-        int targetStringLength = 6;
-        Random random = new Random();
-
-        String generatedString = random.ints(leftLimit, rightLimit + 1)
-                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
-                .limit(targetStringLength)
-                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .toString();
-
-        return generatedString;
     }
-}
+

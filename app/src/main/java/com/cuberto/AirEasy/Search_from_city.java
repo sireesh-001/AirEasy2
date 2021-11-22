@@ -23,7 +23,7 @@ public class Search_from_city extends AppCompatActivity {
     private CityRecyAdapter cityRecyAdapter;
 
     private String txtcity[] = {"Hyderabad","Mumbai", "Chennai","Jaipur",
-            "Goa","Bangalore", "Kolkata","Vizag" };
+            "Delhi","Bangalore", "Kolkata","Vizag" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
