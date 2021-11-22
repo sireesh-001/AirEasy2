@@ -14,18 +14,25 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="-1dp"
         android:layout_marginTop="-52dp"
-        android:background="#4180c8" />
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/dis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/home_picture"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="20dp"
         android:text="Offers"
         android:textColor="#ff8325"
         android:textSize="20dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="434dp"
+        android:src="@drawable/discount" />
 
     <HorizontalScrollView
         android:id="@+id/hv"
@@ -170,14 +177,6 @@
         <!--            android:layout_toRightOf="@id/imageView2"-->
         <!--            app:srcCompat="@drawable/img12" />-->
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@drawable/img_4" />
-
         <!--        <TextView-->
         <!--            android:id="@+id/textView"-->
         <!--            android:layout_width="wrap_content"-->
@@ -191,6 +190,15 @@
         <!--            android:text="Check-in"-->
         <!--            android:textColor="#000000"-->
         <!--            android:textSize="12sp" />-->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="15dp"
+
+            app:srcCompat="@drawable/img_4" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -224,8 +232,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView2"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="9dp"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
             android:text="Flights"
@@ -237,7 +245,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView4"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="65dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textView3"
@@ -267,7 +275,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView6"
-            android:layout_marginStart="54dp"
+            android:layout_marginStart="62dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/textView5"

@@ -29,7 +29,7 @@ public class login1 extends AppCompatActivity {
         setContentView(R.layout.fragment_login);
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.blue));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.topcolor));
         }
         EditText view1=(EditText)findViewById(R.id.lgmail);
         EditText view2=(EditText)findViewById(R.id.lpass);

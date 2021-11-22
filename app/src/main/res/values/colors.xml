@@ -27,6 +27,7 @@
     <color name="transperent">#00000000</color>
     <color name="lightorange">#F3C19B</color>
     <color name="chosenorange">#FF8325</color>
+    <color name="topcolor">#4c94e5</color>
     <color name="badgreen">#5fe558</color>
     <color name="grey">#adadad</color>
 </resources>
