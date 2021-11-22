@@ -694,6 +694,7 @@
                     android:textColor="@color/txt_color"
                     android:textSize="15sp" />
 
+
                 <TextView
                     android:id="@+id/apply"
                     android:layout_width="120dp"
@@ -706,7 +707,22 @@
                     android:textAlignment="center"
                     android:textColor="@color/blue"
                     android:textSize="15sp" />
+
+
+
             </LinearLayout>
+            <TextView
+                android:id="@+id/applied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Applied"
+                android:textColor="#52c540"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:visibility="gone"
+
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"

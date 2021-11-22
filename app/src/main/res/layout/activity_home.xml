@@ -22,10 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/home_picture"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Offers"
         android:textColor="#ff8325"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
     <HorizontalScrollView
         android:id="@+id/hv"
@@ -130,18 +130,18 @@
 
     <EditText
         android:id="@+id/rectangle_4"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_width="345dp"
+        android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="49dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="261dp"
         android:background="@drawable/rectangle_4"
         android:editable="false"
+        android:paddingLeft="60dp"
         android:text="Find a flight"
         android:textColor="#ffffff"
-        android:textSize="25sp"
-        android:paddingLeft="60dp" />
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -149,7 +149,7 @@
         android:layout_height="28dp"
         android:layout_below="@id/textView2"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="65dp"
         app:srcCompat="@drawable/img_3" />
 
     <RelativeLayout
@@ -159,30 +159,44 @@
         android:layout_below="@id/hv"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="45dp">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView3"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="30dp"-->
+        <!--            android:layout_marginLeft="25dp"-->
+        <!--            android:layout_marginTop="15dp"-->
+        <!--            android:layout_toRightOf="@id/imageView2"-->
+        <!--            app:srcCompat="@drawable/img12" />-->
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="15dp"
             app:srcCompat="@drawable/img_4" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView3"-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:layout_marginLeft="25dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_toRightOf="@id/imageView2"-->
-<!--            app:srcCompat="@drawable/img12" />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/imageView3"-->
+        <!--            android:layout_marginLeft="32dp"-->
+        <!--            android:layout_marginTop="6dp"-->
+        <!--            android:layout_toRightOf="@id/textView3"-->
+        <!--            android:fontFamily="@font/roboto_medium"-->
+        <!--            android:letterSpacing="0.01"-->
+        <!--            android:text="Check-in"-->
+        <!--            android:textColor="#000000"-->
+        <!--            android:textSize="12sp" />-->
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="28dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/imageView2"
             app:srcCompat="@drawable/img13" />
@@ -191,7 +205,7 @@
             android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="52dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/imageView4"
             app:srcCompat="@drawable/img14" />
@@ -200,31 +214,17 @@
             android:id="@+id/imageView6"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="23dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/imageView5"
             app:srcCompat="@drawable/img_5" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/imageView3"-->
-<!--            android:layout_marginLeft="32dp"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            android:layout_toRightOf="@id/textView3"-->
-<!--            android:fontFamily="@font/roboto_medium"-->
-<!--            android:letterSpacing="0.01"-->
-<!--            android:text="Check-in"-->
-<!--            android:textColor="#000000"-->
-<!--            android:textSize="12sp" />-->
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView2"
-            android:layout_marginLeft="33dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
@@ -237,9 +237,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView4"
-            android:layout_marginStart="34dp"
+            android:layout_marginStart="66dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textView3"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
@@ -252,9 +252,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView5"
-            android:layout_marginStart="38dp"
+            android:layout_marginStart="62dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textView4"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
@@ -267,9 +267,9 @@
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:layout_below="@+id/imageView6"
-            android:layout_marginStart="34dp"
+            android:layout_marginStart="60dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/textView5"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
