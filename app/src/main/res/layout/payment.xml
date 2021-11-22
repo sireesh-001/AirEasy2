@@ -213,12 +213,13 @@
                             android:text="Reward Bonus Balance"
                             android:textColor="@color/txt_color"
                             android:textSize="15sp"/>
+
                         <TextView
                             android:id="@+id/price_Txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="₹ 0"
+                            android:text="₹ 20000"
                             android:textColor="@color/txt_color"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -248,12 +249,13 @@
                             android:text="Referral Balance"
                             android:textSize="15sp"
                             android:textColor="@color/hint_txt_color"/>
+
                         <TextView
                             android:id="@+id/price1_Txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="₹ 0"
+                            android:text="₹ 100"
                             android:textColor="@color/hint_txt_color"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -283,12 +285,13 @@
                             android:text="Sales Commission Balance"
                             android:textSize="15sp"
                             android:textColor="@color/hint_txt_color"/>
+
                         <TextView
                             android:id="@+id/price2_Txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="₹ 50"
+                            android:text="₹ 500"
                             android:textColor="@color/hint_txt_color"
                             android:textSize="15sp" />
 
@@ -324,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="Base Fare"
+                        android:text="Base Fare with discounts"
                         android:textColor="@color/hint_txt_color"
                         android:textSize="14sp" />
 
@@ -335,6 +338,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/price1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -412,6 +416,7 @@
                                 android:textSize="13.3sp" />
 
                             <TextView
+                                android:id="@+id/regional"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sf_pro_text_regular"
@@ -455,6 +460,7 @@
                                 android:textSize="13.3sp" />
 
                             <TextView
+                                android:id="@+id/goods"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sf_pro_text_regular"
@@ -498,64 +504,11 @@
                                 android:textSize="13.3sp" />
 
                             <TextView
+                                android:id="@+id/passenger"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sf_pro_text_regular"
-                                android:text="200"
-                                android:textColor="@color/txt_color"
-                                android:textSize="15sp" />
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="Others "
-                        android:textColor="@color/hint_txt_color"
-                        android:textSize="14sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="11.7dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="Meal ( 2 x ₹100)"
-                            android:textColor="@color/txt_color"
-                            android:textSize="16.7sp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sf_pro_text_light"
-                                android:text="₹"
-                                android:textColor="@color/txt_color"
-                                android:textSize="13.3sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sf_pro_text_regular"
-                                android:text="200"
+                                android:text="100"
                                 android:textColor="@color/txt_color"
                                 android:textSize="15sp" />
 
@@ -572,41 +525,12 @@
                         android:layout_marginTop="11.7dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_text_regular"
-                            android:text="Discount Applied (15% off)"
-                            android:textColor="@color/green"
-                            android:layout_weight="1"
-                            android:textSize="15sp" />
-
-
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sf_pro_text_light"
-                                android:text="- ₹"
-                                android:textColor="@color/green"
-                                android:textSize="13.3sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sf_pro_text_medium"
-                                android:text="150"
-                                android:textColor="@color/green"
-                                android:textSize="16.7sp" />
-
-
-                        </LinearLayout>
+                            android:orientation="horizontal"/>
 
 
                     </LinearLayout>
@@ -667,6 +591,7 @@
                             android:textSize="15sp" />
 
                         <TextView
+                            android:id="@+id/tprice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_pro_text_semibold"
@@ -706,6 +631,7 @@
                 android:paddingBottom="17.3dp">
 
                 <TextView
+                    android:id="@+id/classes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16.7dp"
@@ -715,6 +641,7 @@
                     android:textSize="11.7sp" />
 
                 <TextView
+                    android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16.7dp"

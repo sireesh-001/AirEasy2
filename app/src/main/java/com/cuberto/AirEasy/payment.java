@@ -2,6 +2,7 @@ package com.cuberto.AirEasy;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +11,19 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class payment extends AppCompatActivity implements View.OnClickListener{
+import com.cuberto.AirEasy.ModelClass.CusomterModel;
+import com.cuberto.AirEasy.ModelClass.FlightModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+public class payment extends AppCompatActivity implements View.OnClickListener{
+    Double price=0.0;
     ImageView imageView;
     TextView textView;
     /*Linear Layout*/
@@ -30,13 +40,46 @@ public class payment extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment);
+        String logged=getIntent().getStringExtra("logged");
+        String flight=getIntent().getStringExtra("flight");
+        String date=getIntent().getStringExtra("date");
+        Userdetails user=(Userdetails) getIntent().getSerializableExtra("user");
+        int number=getIntent().getIntExtra("number",0);
+        FlightModel model=(FlightModel) getIntent().getSerializableExtra("fmodel");
+        Bundle args = getIntent().getBundleExtra("list");
+        ArrayList<String> object = (ArrayList<String>) args.getSerializable("ARRAYLIST");
+        price=getIntent().getDoubleExtra("price",0.0);
+        TextView textVie2=findViewById(R.id.price1);
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference1=firebaseDatabase.getReference("login").child("users").child(logged).child("flight_details");
+
+        textVie2.setText("Travellers "+number+" x ₹"+model.getRupees_Txt()+" + Discounts");
+TextView textView1=findViewById(R.id.txtamount);
+textView1.setText(""+price);
+        price=price+500+100+100;
+TextView textView3=findViewById(R.id.tprice);
+textView3.setText(""+price);
+TextView classes=findViewById(R.id.classes);
+classes.setText("For "+number+" Travellers");
+TextView textView5=findViewById(R.id.price);
+textView5.setText("₹ "+price);
 
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                CusomterModel cusomterModel=new CusomterModel(model,price,user.classes,givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect(),object);
+                databaseReference1.push().setValue(cusomterModel);
 
                 Intent intent = new Intent(payment.this,successful.class);
+                intent.putExtra("number",number);
+                intent.putExtra("fmodel",model);
+                intent.putExtra("logged",logged);
+                intent.putExtra("flight",flight);
+                intent.putExtra("date",date);
+                intent.putExtra("user",user);
+                intent.putExtra("price",price);
                 startActivity(intent);
             }
         });
@@ -48,6 +91,7 @@ public class payment extends AppCompatActivity implements View.OnClickListener{
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                price=0.0;
                 onBackPressed();
             }
         });
@@ -135,5 +179,20 @@ public class payment extends AppCompatActivity implements View.OnClickListener{
                 break;
         }
 
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public String givenUsingJava8_whenGeneratingRandomAlphanumericString_thenCorrect() {
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 6;
+        Random random = new Random();
+
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+
+        return generatedString;
     }
 }

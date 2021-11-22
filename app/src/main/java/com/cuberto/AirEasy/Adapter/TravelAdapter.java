@@ -4,6 +4,7 @@ package com.cuberto.AirEasy.Adapter;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.CheckBox;
         import android.widget.ImageView;
         import android.widget.TextView;
 
@@ -24,11 +25,15 @@ package com.cuberto.AirEasy.Adapter;
 public class TravelAdapter extends RecyclerView.ViewHolder {
     Context context;
     ArrayList<FlightModel> models;
-    public ImageView flight_Img;
     public TextView name,gender;
-    ItemClickListener itemClickListener;
+    public CheckBox button1;
+    public int n=0;
+    ItemClickListener itemClickListener,itemClickListener1;
     public void setItemClickListener(ItemClickListener itemClickListener){
         this.itemClickListener=itemClickListener;
+    }
+    public void setItemClickListener1(ItemClickListener itemClickListener1){
+        this.itemClickListener1=itemClickListener1;
     }
     public TravelAdapter(View itemView) {
         super(itemView);
@@ -39,6 +44,14 @@ public class TravelAdapter extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 itemClickListener.onclick(button,getBindingAdapterPosition());
+            }
+        });
+        button1=itemView.findViewById(R.id.check_join);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                n=1;
+                itemClickListener1.onclick(button1,getBindingAdapterPosition());
             }
         });
     }

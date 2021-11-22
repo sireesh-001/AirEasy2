@@ -1,7 +1,9 @@
 package com.cuberto.AirEasy.ModelClass;
 
 
-public class TravelModel {
+import java.io.Serializable;
+
+public class TravelModel implements Serializable {
     //    Integer flight_Img;
     public String name, email, gender, age, company, rn;
 

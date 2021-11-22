@@ -2,6 +2,7 @@ package com.cuberto.AirEasy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cuberto.AirEasy.Adapter.TravelAdapter;
+import com.cuberto.AirEasy.ModelClass.CityModel;
 import com.cuberto.AirEasy.ModelClass.FlightModel;
 import com.cuberto.AirEasy.ModelClass.TravelModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -31,6 +33,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class flight_traveller extends AppCompatActivity {
 
     ImageView imageView;
@@ -39,7 +45,7 @@ public class flight_traveller extends AppCompatActivity {
     Userdetails user;
     int number=1;
     String number1="";
-    String clickeditem;
+    String clickeditem,clickeditem1;
     Double price=0.0;
     EditText name;
     EditText email;
@@ -48,10 +54,12 @@ public class flight_traveller extends AppCompatActivity {
     EditText company;
     int n=1;
     EditText RN;
+    FlightModel mode1;
+    List<String> list = new ArrayList<String>();
     FirebaseRecyclerAdapter<TravelModel, TravelAdapter> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
     private RecyclerView recyclerView,recyclerView1;
-    DatabaseReference databaseReference,databaseReference1,databaseReference2;
+    DatabaseReference databaseReference,databaseReference1,databaseReference2,databaseReference3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +76,7 @@ public class flight_traveller extends AppCompatActivity {
         databaseReference=firebaseDatabase.getReference("login").child("flights").child(date);
         databaseReference1=firebaseDatabase.getReference("login").child("users").child(logged).child("travel_names").child("adult");
         databaseReference2=firebaseDatabase.getReference("login").child("users").child(logged).child("travel_names").child("child");
+        databaseReference3=firebaseDatabase.getReference("login").child("users").child(logged).child("flight_details");
         TextView info=findViewById(R.id.info);
         TextView info2=findViewById(R.id.info2);
         TextView info3=findViewById(R.id.info3);
@@ -82,7 +91,7 @@ public class flight_traveller extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
-
+                   mode1=model;
 
 
                 info.setText(""+model.getdepart_city().substring(0,3).toUpperCase()+" - "+""+model.getarrival_city().substring(0,3).toUpperCase());
@@ -138,7 +147,6 @@ if(name.getText().toString().equals("")||email.getText().toString().equals("")||
 else{
     TravelModel model=new TravelModel(gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
     databaseReference1.push().setValue(model);
-    n=1;
     firebaseRecyclerAdapter.notifyDataSetChanged();
 }
             }
@@ -154,7 +162,7 @@ else{
                 else{
                     TravelModel model=new TravelModel(gender.getText().toString(),email.getText().toString(),name.getText().toString(),age.getText().toString(),company.getText().toString(),RN.getText().toString());
                     databaseReference2.push().setValue(model);
-                    n=2;
+
                     firebaseRecyclerAdapter.notifyDataSetChanged();
                 }
             }
@@ -205,7 +213,21 @@ else{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(flight_traveller.this, payment.class);
-                startActivity(intent);
+                if(list.size()==number){
+                    Bundle args = new Bundle();
+                    args.putSerializable("ARRAYLIST",(Serializable)list);
+                intent.putExtra("list", args);
+                intent.putExtra("number",number);
+                intent.putExtra("fmodel",mode1);
+                intent.putExtra("logged",logged);
+                intent.putExtra("flight",flight);
+                intent.putExtra("date",date);
+                intent.putExtra("user",user);
+                intent.putExtra("price",price);
+                startActivity(intent);}
+                else{
+                    Toast.makeText(flight_traveller.this, "please select the Correct number of travellers" + list.size() ,Toast.LENGTH_SHORT).show();
+                }
             }
         });
         textView.setText("Traveller Detail");
@@ -225,9 +247,32 @@ else{
         firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<TravelModel, TravelAdapter>(itemFirebaseRecyclerOptions) {
             @Override
             public void onBindViewHolder(@NonNull final TravelAdapter holder, final int position, TravelModel model) {
+                String name1=model.getname();
+                String age1=model.getAge();
+                String email1=model.getemail();
+                String gender1=model.getGender();
+                String company1=model.getCompany();
+                String rn1=model.getRn();
+
                 holder.name.setText(""+model.getname());
                 holder.gender.setText(""+model.getGender());
 
+                holder.setItemClickListener1(new ItemClickListener() {
+                    @Override
+                    public void onclick(View view, int positon) {
+                        clickeditem1=getSnapshots().getSnapshot(positon).getKey();
+                        if (list.contains(clickeditem1)) {
+                            for (int i = 0; i < list.size(); i++) {
+                                if(list.get(i)==clickeditem1){
+                                    list.remove(i);
+                                    Toast.makeText(flight_traveller.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        } else {
+                            list.add(clickeditem1);
+                        }
+                    }
+                });
 
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override
@@ -235,12 +280,12 @@ else{
                         TravelModel clickmodel=model;
                         clickeditem=getSnapshots().getSnapshot(positon).getKey();
                         Toast.makeText(flight_traveller.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
-//                        Intent intent=new Intent(flight_traveller.this,flight_review.class);
-//                        intent.putExtra("flight",clickeditem);
-//                        intent.putExtra("logged",logged);
-//                        intent.putExtra("date",date);
-//                        intent.putExtra("user",user);
-//                        startActivity(intent);
+                       name.setText(""+name1);
+                    age.setText(""+age1);
+                    email.setText(""+email1);
+                gender.setText(""+gender1);
+                company.setText(""+company1);
+                    RN.setText(""+rn1);
                     }
                 });
             }
@@ -257,14 +302,37 @@ else{
         firebaseRecyclerAdapter.startListening();
         recyclerView.setAdapter(firebaseRecyclerAdapter);
 
-    query = databaseReference1;
+    query = databaseReference2;
     itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<TravelModel>().setQuery(query,TravelModel.class).build();
     firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<TravelModel, TravelAdapter>(itemFirebaseRecyclerOptions) {
         @Override
         public void onBindViewHolder(@NonNull final TravelAdapter holder, final int position, TravelModel model) {
-            holder.name.setText(""+model.getname());
-            holder.gender.setText(""+model.getGender());
 
+            String name1=model.getname();
+            String age1=model.getAge();
+            String email1=model.getemail();
+            String gender1=model.getGender();
+            String company1=model.getCompany();
+            String rn1=model.getRn();
+
+
+
+            holder.name.setText(""+name1);
+            holder.gender.setText(""+gender1);
+            holder.setItemClickListener1(new ItemClickListener() {
+                @Override
+                public void onclick(View view, int positon) {
+                    clickeditem1=getSnapshots().getSnapshot(positon).getKey();
+                    if (list.contains(clickeditem1)) {
+                        for (int i = 0; i < list.size(); i++) {
+                            if(list.get(i)==clickeditem1){
+                            list.remove(i);}
+                        }
+                    } else {
+                            list.add(clickeditem1);
+                    }
+                }
+            });
 
             holder.setItemClickListener(new ItemClickListener() {
                 @Override
@@ -272,13 +340,12 @@ else{
                     TravelModel clickmodel=model;
                     clickeditem=getSnapshots().getSnapshot(positon).getKey();
                     Toast.makeText(flight_traveller.this, " "+clickeditem ,Toast.LENGTH_SHORT).show();
-//                        Intent intent=new Intent(flight_traveller.this,flight_review.class);
-//                        intent.putExtra("flight",clickeditem);
-//                        intent.putExtra("logged",logged);
-//                        intent.putExtra("date",date);
-//                        intent.putExtra("user",user);
-//                        startActivity(intent);
-                    upgrade();
+                       name.setText(""+name1);
+                    age.setText(""+age1);
+                    email.setText(""+email1);
+                gender.setText(""+gender1);
+                company.setText(""+company1);
+                    RN.setText(""+rn1);
                 }
             });
         }
@@ -296,22 +363,23 @@ else{
         recyclerView1.setAdapter(firebaseRecyclerAdapter);
 
 }
-void upgrade()
-{
-    databaseReference.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            TravelModel model = dataSnapshot.child(clickeditem).getValue(TravelModel.class);
-            name.setText(""+model.name);
-            age.setText(""+model.age);
-            email.setText(""+model.email);
-            gender.setText(""+model.gender);
-            company.setText(""+model.company);
-            RN.setText(""+model.rn);
-        }
-        @Override
-        public void onCancelled(DatabaseError error) {
-            Log.i("DAta","Failed to read value." + error.toException());
-        }
-    });
-}}
+//void upgrade()
+//{
+//    databaseReference.addValueEventListener(new ValueEventListener() {
+//        @Override
+//        public void onDataChange(DataSnapshot dataSnapshot) {
+//            TravelModel model = dataSnapshot.child(clickeditem).getValue(TravelModel.class);
+//            name.setText(""+model.name);
+//            age.setText(""+model.age);
+//            email.setText(""+model.email);
+//            gender.setText(""+model.gender);
+//            company.setText(""+model.company);
+//            RN.setText(""+model.rn);
+//        }
+//        @Override
+//        public void onCancelled(DatabaseError error) {
+//            Log.i("DAta","Failed to read value." + error.toException());
+//        }
+//    });
+//}
+}
