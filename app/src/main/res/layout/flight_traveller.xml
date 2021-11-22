@@ -164,52 +164,103 @@
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
+
                 android:id="@+id/city_linear"
-                android:layout_width="match_parent"
+                android:layout_width="367dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="23.3dp"
-                android:layout_marginRight="6.7dp"
+                android:layout_marginRight="60dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="23.3dp"
+                    android:layout_marginRight="16.7dp"
+                    android:orientation="horizontal">
 
-                    <TextView
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_medium"
+                            android:text="HYD - BOM"
+                            android:textColor="@color/txt_color"
+                            android:textSize="21.7sp" />
+
+                        <TextView
+                            android:id="@+id/info2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:text="Non Stop | Business Class"
+                            android:textColor="@color/hint_txt_color"
+                            android:textSize="13.3sp" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:text="HYD - BOM"
-                        android:textColor="@color/txt_color"
-                        android:textSize="21.7sp" />
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="5dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="Non Stop | Business Class"
-                        android:textColor="@color/hint_txt_color"
-                        android:textSize="13.3sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/blue_gredient"
+                            android:orientation="vertical"
+                            android:paddingLeft="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/sf_pro_text_medium"
+                                android:text="Departure"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/d_date"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginTop="1.5dp"-->
+<!--                                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                                android:text="Thu 05 Sept"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="13.3sp" />-->
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/up_arrow"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:rotation="270"
-                    android:src="@drawable/ic_right_arrow"
-                    app:tint="@color/blue" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/up_arrow"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="320dp"
+                android:src="@drawable/show" />
+
             <LinearLayout
+                android:id="@+id/flight_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginLeft="16.7dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="16.7dp"
@@ -234,6 +285,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/info3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_pro_text_regular"
@@ -242,6 +294,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/info4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="6.7dp"
@@ -273,6 +326,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/info6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -289,16 +343,6 @@
                                 android:text="Hyderabad international airport"
                                 android:textColor="@color/hint_txt_color"
                                 android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/sf_pro_text_regular"
-                                android:text="Terminal 1"
-                                android:textColor="@color/hint_txt_color"
-                                android:textSize="14sp" />
-
                         </LinearLayout>
 
                         <LinearLayout
@@ -352,11 +396,12 @@
 
 
                             <TextView
+                                android:id="@+id/info5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/sf_pro_text_regular"
-                                android:text="Thu 08 Sept"
+                                android:text="Thu 05 Sept"
                                 android:textAlignment="viewEnd"
                                 android:textColor="@color/hint_txt_color"
                                 android:textSize="14sp" />
@@ -367,16 +412,6 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/sf_pro_text_regular"
                                 android:text="Mumbai international airport"
-                                android:textAlignment="viewEnd"
-                                android:textColor="@color/hint_txt_color"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/sf_pro_text_regular"
-                                android:text="Terminal 2"
                                 android:textAlignment="viewEnd"
                                 android:textColor="@color/hint_txt_color"
                                 android:textSize="14sp" />
@@ -415,11 +450,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/sf_pro_text_medium"
-                    android:text="Adult (1/1)"
+                    android:text="Adult"
                     android:textColor="@color/txt_color"
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/addT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_medium"
@@ -428,113 +464,17 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/travel_RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="23.3dp"
-                android:layout_marginRight="16.7dp"
-                android:orientation="horizontal">
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="16.7dp"
+                android:layout_marginRight="25dp"
+                android:orientation="vertical"
+                android:overScrollMode="never" />
 
-                <CheckBox
-                    android:id="@+id/check_john"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:text="John Doe"
-                        android:textColor="@color/txt_color"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="Male "
-                        android:textColor="@color/hint_txt_color"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/rectangle_blueborder"
-                    android:fontFamily="@font/sf_pro_text_regular"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="6dp"
-                    android:text="Edit"
-                    android:textColor="@color/blue"
-                    android:textSize="13.3sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="23.3dp"
-                android:layout_marginRight="16.7dp"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/check_erik"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_medium"
-                        android:text="Erik"
-                        android:textColor="@color/txt_color"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="Male "
-                        android:textColor="@color/hint_txt_color"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/rectangle_blueborder"
-                    android:fontFamily="@font/sf_pro_text_regular"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="6dp"
-                    android:text="Edit"
-                    android:textColor="@color/blue"
-                    android:textSize="13.3sp" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -549,11 +489,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/sf_pro_text_medium"
-                    android:text="Children  (0/1)"
+                    android:text="Children"
                     android:textColor="@color/txt_color"
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/addT1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_text_medium"
@@ -562,15 +503,26 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/child_RecyclerView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="23.3dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:text="No Traveller Added "
-                android:textColor="@color/hint_txt_color"
-                android:textSize="15sp" />
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="16.7dp"
+                android:layout_marginRight="25dp"
+                android:orientation="vertical"
+                android:overScrollMode="never" />
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="16.7dp"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_marginTop="23.3dp"-->
+<!--                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                android:text="No Traveller Added "-->
+<!--                android:textColor="@color/hint_txt_color"-->
+<!--                android:textSize="15sp" />-->
 
             <View
                 android:layout_width="match_parent"
@@ -589,6 +541,7 @@
                 android:textSize="16.7sp" />
 
             <EditText
+                android:id="@+id/nameid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16.7dp"
@@ -611,6 +564,7 @@
                 android:background="@color/viewline" />
 
             <EditText
+                android:id="@+id/emailid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16.7dp"
@@ -648,12 +602,13 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/genderid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transperent"
                         android:fontFamily="@font/sf_pro_text_regular"
-                        android:hint="Email"
+                        android:hint="Gender"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/txt_color"
                         android:textColorHint="@color/hint_txt_color"
@@ -673,12 +628,13 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/ageid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transperent"
                         android:fontFamily="@font/sf_pro_text_regular"
-                        android:hint="Email"
+                        android:hint="Age"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/txt_color"
                         android:textColorHint="@color/hint_txt_color"
@@ -701,6 +657,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/gst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -722,57 +679,69 @@
                     android:textSize="13.3sp" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="23.3dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:text="Company Name"
-                android:textColor="@color/txt_color"
-                android:textSize="13.3sp" />
+            <LinearLayout
+                android:id="@+id/gstl"
+                android:layout_width="359dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="16.7dp"
-                android:background="@drawable/rectangle_grayborder"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:hint=""
-                android:paddingLeft="18dp"
-                android:paddingTop="15sp"
-                android:paddingBottom="18dp"
-                android:textColor="@color/txt_color"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="5.3dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="Company Name"
+                    android:textColor="@color/txt_color"
+                    android:textSize="13.3sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="23.3dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:text="Registration Number"
-                android:textColor="@color/txt_color"
-                android:textSize="13.3sp" />
+                <EditText
+                    android:id="@+id/company_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rectangle_grayborder"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginRight="16.7dp"
+                    android:hint=""
+                    android:paddingLeft="18dp"
+                    android:paddingTop="15sp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="16.7dp"
-                android:background="@drawable/rectangle_grayborder"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:hint=""
-                android:inputType="text"
-                android:paddingLeft="18dp"
-                android:paddingTop="15sp"
-                android:paddingBottom="18dp"
-                android:textColor="@color/txt_color"
-                android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="23.3dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="Registration Number"
+                    android:textColor="@color/txt_color"
+                    android:textSize="13.3sp" />
 
+                <EditText
+                    android:id="@+id/Register_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.7dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="16.7dp"
+                    android:background="@drawable/rectangle_grayborder"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:hint=""
+                    android:inputType="text"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="15sp"
+                    android:paddingBottom="18dp"
+                    android:textColor="@color/txt_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -794,6 +763,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/tc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -824,6 +794,7 @@
                 android:paddingBottom="17.3dp">
 
                 <TextView
+                    android:id="@+id/number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16.7dp"
@@ -833,6 +804,7 @@
                     android:textSize="11.7sp" />
 
                 <TextView
+                    android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16.7dp"

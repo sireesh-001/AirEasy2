@@ -88,8 +88,10 @@ public class flight_review extends AppCompatActivity {
                 price=Double.parseDouble(model.getRupees_Txt());
                 number1=user.Number.substring(0,1);
                 number=Integer.parseInt(number1);
+//                Toast.makeText(flight_review.this, " "+number ,Toast.LENGTH_SHORT).show();
                 info10.setText("₹ "+price*number);
                 info11.setText("For "+user.Number);
+                price=price*number;
 
 
 
@@ -112,7 +114,7 @@ public class flight_review extends AppCompatActivity {
             public void onClick(View v) {
                 if(p==0){
                 price=price+300*number;
-                info10.setText(""+price);}
+                info10.setText("₹ "+price);}
                 p=1;
             }
         });
@@ -122,7 +124,7 @@ public class flight_review extends AppCompatActivity {
                 if(p==1)
                 {
                     price=price-300*number;
-                    info10.setText(""+price);
+                    info10.setText("₹ "+price);
                     p=0;
                 }
             }
@@ -133,7 +135,7 @@ public class flight_review extends AppCompatActivity {
                 if(editText.getText().toString().equals("AirEasy"));
                 {
                     price=price-(0.1*price);
-                    info10.setText(""+price);
+                    info10.setText("₹ "+price);
                 }
             }
         });
@@ -159,12 +161,12 @@ public class flight_review extends AppCompatActivity {
             public void onClick(View v) {
                 if(r==1){
                     price=price-(500);
-                    info10.setText(""+price);
+                    info10.setText("₹ "+price);
                     r=0;
                 }
                 else if(r==0){
                     price=price+(500);
-                    info10.setText(""+price);
+                    info10.setText("₹ "+price);
                     r=1;
                 }
             }
@@ -219,6 +221,11 @@ public class flight_review extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(flight_review.this,flight_traveller.class);
+                intent.putExtra("flight",flight);
+                intent.putExtra("logged",logged);
+                intent.putExtra("date",date);
+                intent.putExtra("user",user);
+                intent.putExtra("price",price);
                 startActivity(intent);
             }
         });
@@ -229,6 +236,11 @@ public class flight_review extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(flight_review.this,flight_traveller.class);
+                intent.putExtra("flight",flight);
+                intent.putExtra("logged",logged);
+                intent.putExtra("date",date);
+                intent.putExtra("user",user);
+                intent.putExtra("price",price);
                 startActivity(intent);
             }
         });
@@ -241,6 +253,7 @@ public class flight_review extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                price=0.0;
                 onBackPressed();
             }
         });
