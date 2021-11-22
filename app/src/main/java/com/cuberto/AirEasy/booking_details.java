@@ -3,6 +3,7 @@ package com.cuberto.AirEasy;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,6 +36,10 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking_details);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP)
+        {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.viewline));
+        }
 
         imageView = findViewById(R.id.imgback);
         textView = findViewById(R.id.txtmobepay);

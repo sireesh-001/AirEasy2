@@ -1,5 +1,6 @@
 package com.cuberto.AirEasy;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -43,6 +44,10 @@ public class successful extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.successful);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP)
+        {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.chosenorange));
+        }
         Userdetails user;
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         String logged=getIntent().getStringExtra("logged");

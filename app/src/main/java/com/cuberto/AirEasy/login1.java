@@ -1,6 +1,7 @@
 package com.cuberto.AirEasy;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,10 @@ public class login1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP)
+        {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.blue));
+        }
         EditText view1=(EditText)findViewById(R.id.lgmail);
         EditText view2=(EditText)findViewById(R.id.lpass);
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
