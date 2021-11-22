@@ -1,5 +1,6 @@
 package com.cuberto.AirEasy;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -58,6 +59,10 @@ public class Onboarding3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP)
+        {
+            getActivity().getWindow().setNavigationBarColor(getResources().getColor(R.color.purle));
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_onboarding3, container, false);
     }

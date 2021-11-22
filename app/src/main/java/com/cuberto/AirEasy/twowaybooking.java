@@ -31,6 +31,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class twowaybooking extends AppCompatActivity implements View.OnClickListener {
     FirebaseRecyclerAdapter<FlightSearchResultModelClass, FlightSearchResultRecyAdapter> firebaseRecyclerAdapter;
@@ -47,16 +48,18 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
     private RecyclerView recyclerView;
     private FlightSearchResultRecyAdapter bonusRecyAdapter;
     ImageView ivCalaender;
+    public static String flight;
+    Userdetails user;
+    String date="01";
     public int sort=1;
-//    private String title[] ={"Air India","Emirates","Etihad","Air India","Emirates","Etihad"};
-//    private String price[] = {"₹1120","₹3420","₹2320","₹1120","₹3420","₹2320"};
 String logged;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twowaybooking);
-        Userdetails user=(Userdetails) getIntent().getSerializableExtra("details");
+        user=(Userdetails) getIntent().getSerializableExtra("details");
         logged=getIntent().getStringExtra("logged");
+        flight=getIntent().getStringExtra("flight");
 
 
         recyclerView =findViewById(R.id.rvlflightSearchResult);
@@ -84,7 +87,7 @@ String logged;
                 startActivity(intent);
             }
         });
-
+        Toast.makeText(twowaybooking.this, " "+flight ,Toast.LENGTH_SHORT).show();
         filterLinear = findViewById(R.id.filterLinear);
         filterLinear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +162,7 @@ String logged;
         });
 
         txtmobepay.setText(user.from1+" To "+user.dest);
-        tvSubtitle.setText(user.f_date+" | "+user.Number+" Adult | "+user.classes+" class");
+        tvSubtitle.setText("23 Nov 2021" +" | "+user.Number+" Adult | "+user.classes+" class");
 
         view1 = findViewById(R.id.view1);
         view2 = findViewById(R.id.view2);
@@ -182,22 +185,25 @@ String logged;
 
     }
     void update(){
-        itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightSearchResultModelClass>().setQuery(databaseReference,FlightSearchResultModelClass.class).build();
+        Query query=databaseReference.orderByChild("d_a_s").equalTo(flight);
+        if(sort==1){
+//            query = databaseReference.equalTo(flight);
+        }
+        else if (sort==2) {
+            query = databaseReference.orderByChild("hour_txt");
+        }
+        else if (sort==3) {
+            query = databaseReference.orderByChild("depart_txt");
+        }
+        else if (sort==4) {
+            query = databaseReference.orderByChild("depart_txt").limitToLast(50);
+
+        }
+        itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightSearchResultModelClass>().setQuery(query,FlightSearchResultModelClass.class).build();
         firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightSearchResultModelClass, FlightSearchResultRecyAdapter>(itemFirebaseRecyclerOptions) {
             @Override
             public void onBindViewHolder(@NonNull final FlightSearchResultRecyAdapter holder, final int position, FlightSearchResultModelClass model) {
 
-//                FlightModel model = models.get(position);
-
-
-//                holder.flight_Img.setImageResource(model.getFlight_Img());
-                ////        if(position==2){
-////
-////            holder.llBg.setBackgroundColor(Color.parseColor("#e3f5ff"));
-////        }else if(position==5){
-////
-////            holder.llBg.setBackgroundColor(Color.parseColor("#e3f5ff"));
-////        }
                 holder.arrival_city.setText(model.getarrival_city());
                 holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
@@ -217,6 +223,8 @@ String logged;
                         Intent intent=new Intent(twowaybooking.this,flight_review.class);
                         intent.putExtra("flight",clickeditem);
                         intent.putExtra("logged",logged);
+                        intent.putExtra("date",date);
+                        intent.putExtra("user",user);
                         startActivity(intent);
                     }
                 });
@@ -241,6 +249,7 @@ String logged;
         switch (view.getId()) {
             case R.id.linear1:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
+                date="01";
                 update();
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.GONE);
@@ -250,6 +259,7 @@ String logged;
                 break;
             case R.id.linear2:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("02");
+                date="02";
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.VISIBLE);
@@ -259,6 +269,7 @@ String logged;
                 break;
             case R.id.linear3:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("03");
+                date="03";
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.GONE);

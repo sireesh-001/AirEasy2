@@ -14,10 +14,6 @@ public class MainActivity extends AppCompatActivity {
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP)
-        {
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.blue));
-        }
         new CountDownTimer(5000, 1000){
             public void onTick(long millisUntilFinished){
 //

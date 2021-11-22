@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class successful extends AppCompatActivity {
     FirebaseRecyclerAdapter<TravelModel, SuccessAdapter> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
     private RecyclerView recyclerView;
-    DatabaseReference databaseReference,databaseReference1;
+    DatabaseReference databaseReference,databaseReference1,databaseReference2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,7 @@ public class successful extends AppCompatActivity {
         String date=getIntent().getStringExtra("date");
         user=(Userdetails) getIntent().getSerializableExtra("user");
         price=getIntent().getDoubleExtra("price",0.0);
+        databaseReference2=firebaseDatabase.getReference("login").child("flights").child(date);
         databaseReference=firebaseDatabase.getReference("login").child("users").child(logged).child("travel_names").child("adult");
         databaseReference1=firebaseDatabase.getReference("login").child("users").child(logged).child("travel_names").child("child");
         TextView info=findViewById(R.id.info);
@@ -73,28 +75,48 @@ public class successful extends AppCompatActivity {
         price=price+500+100+100;
         TextView textView5=findViewById(R.id.price);
         textView5.setText("₹ "+price);
-
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
-//                info.setText(""+model.getdepart_city().substring(0,3).toUpperCase()+" - "+""+model.getarrival_city().substring(0,3).toUpperCase());
-//                info2.setText(""+model.getStop_txt()+" | "+user.classes);
-//                info3.setText(""+model.getAirIndia_Txt());
-//                info4.setText(""+model.getNumber_Txt());
-//                info5.setText(""+model.getDepart_txt());
-//                info6.setText(""+model.getHour_txt());
-//                info7.setText(""+model.getStop_txt());
-//                info8.setText(""+user.f_date);
-//                info9.setText(""+user.f_date);
-//                number1=user.Number.substring(0,1);
-//                number=Integer.parseInt(number1);
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                Log.i("DAta","Failed to read value." + error.toException());
-//            }
-//        });
+        ImageView flight_Img = findViewById(R.id.flight_Img);
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
+                if(model.getAirIndia_Txt().equals("Air India"))
+                {
+                    flight_Img.setImageResource(R.drawable.airindialogo);
+                }
+                if(model.getAirIndia_Txt().equals("Vistara"))
+                {
+                    flight_Img.setImageResource(R.drawable.vistaralogo);
+                }
+                if(model.getAirIndia_Txt().equals("GoAir"))
+                {
+                    flight_Img.setImageResource(R.drawable.goairlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Spicejet"))
+                {
+                    flight_Img.setImageResource(R.drawable.spicejetlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Indigo"))
+                {
+                    flight_Img.setImageResource(R.drawable.indigologo);
+                }
+                info.setText(""+model.getdepart_city().substring(0,3).toUpperCase()+" - "+""+model.getarrival_city().substring(0,3).toUpperCase());
+                info2.setText(""+model.getStop_txt()+" | "+user.classes);
+                info3.setText(""+model.getAirIndia_Txt());
+                info4.setText(""+model.getNumber_Txt());
+                info5.setText(""+model.getDepart_txt());
+                info6.setText(""+model.getHour_txt());
+                info7.setText(""+model.getStop_txt());
+                info8.setText(""+user.f_date);
+                info9.setText(""+user.f_date);
+                number1=user.Number.substring(0,1);
+                number=Integer.parseInt(number1);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.i("DAta","Failed to read value." + error.toException());
+            }
+        });
 
 
 

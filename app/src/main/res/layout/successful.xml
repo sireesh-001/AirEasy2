@@ -172,6 +172,7 @@
 
 
                     <ImageView
+                        android:id="@+id/flight_Img"
                         android:layout_width="43.3dp"
                         android:layout_height="43.3dp"
                         android:src="@drawable/ic_launcher_background" />
@@ -644,26 +645,26 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/rect_gray_border"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:paddingLeft="16.7dp"
-                        android:paddingTop="8.7dp"
-                        android:paddingRight="16.7dp"
-                        android:paddingBottom="8.7dp"
-                        android:text="Cancel Booking"
-                        android:textColor="@color/txt_color"
-                        android:textSize="14sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/rect_gray_border"-->
+<!--                        android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                        android:paddingLeft="16.7dp"-->
+<!--                        android:paddingTop="8.7dp"-->
+<!--                        android:paddingRight="16.7dp"-->
+<!--                        android:paddingBottom="8.7dp"-->
+<!--                        android:text="Cancel Booking"-->
+<!--                        android:textColor="@color/txt_color"-->
+<!--                        android:textSize="14sp" />-->
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="33.3dp"
+                        android:layout_marginLeft="25.3dp"
                         android:background="@drawable/rect_green_border"
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:paddingLeft="16.7dp"

@@ -90,12 +90,32 @@ public class flight_traveller extends AppCompatActivity {
         TextView info8=findViewById(R.id.info5);
         TextView info9=findViewById(R.id.info6);
         TextView info11=findViewById(R.id.number);
+        ImageView flight_Img = findViewById(R.id.flight_Img);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
                    mode1=model;
-
+                if(model.getAirIndia_Txt().equals("Air India"))
+                {
+                    flight_Img.setImageResource(R.drawable.airindialogo);
+                }
+                if(model.getAirIndia_Txt().equals("Vistara"))
+                {
+                    flight_Img.setImageResource(R.drawable.vistaralogo);
+                }
+                if(model.getAirIndia_Txt().equals("GoAir"))
+                {
+                    flight_Img.setImageResource(R.drawable.goairlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Spicejet"))
+                {
+                    flight_Img.setImageResource(R.drawable.spicejetlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Indigo"))
+                {
+                    flight_Img.setImageResource(R.drawable.indigologo);
+                }
 
                 info.setText(""+model.getdepart_city().substring(0,3).toUpperCase()+" - "+""+model.getarrival_city().substring(0,3).toUpperCase());
                 info2.setText(""+model.getStop_txt()+" | "+user.classes);
@@ -104,8 +124,8 @@ public class flight_traveller extends AppCompatActivity {
                 info5.setText(""+model.getDepart_txt());
                 info6.setText(""+model.getHour_txt());
                 info7.setText(""+model.getStop_txt());
-                info8.setText(""+user.f_date);
-                info9.setText(""+user.f_date);
+                info8.setText("23 Nov 2021");
+                info9.setText("23 Nov 2021");
                 number1=user.Number.substring(0,1);
                 number=Integer.parseInt(number1);
                 info11.setText("For "+user.Number);
@@ -214,11 +234,12 @@ else{
         });
         textView = findViewById(R.id.txtmobepay);
         next = findViewById(R.id.next);
+        CheckBox checkBox1=findViewById(R.id.check1);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(flight_traveller.this, payment.class);
-                if(list.size()==number){
+                if(list.size()==number && checkBox1.isSelected()){
                     Bundle args = new Bundle();
                     args.putSerializable("ARRAYLIST",(Serializable)list);
                 intent.putExtra("list", args);
@@ -231,7 +252,7 @@ else{
                 intent.putExtra("price",price);
                 startActivity(intent);}
                 else{
-                    Toast.makeText(flight_traveller.this, "please select the Correct number of travellers" + list.size() ,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(flight_traveller.this, "please select the Correct number of travellers and Please Accpect T & C",Toast.LENGTH_SHORT).show();
                 }
             }
         });

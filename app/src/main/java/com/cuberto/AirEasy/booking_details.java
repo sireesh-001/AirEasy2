@@ -49,6 +49,7 @@ String logged;
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(booking_details.this,Home.class);
+                intent.putExtra("logged",logged);
                 startActivity(intent);
             }
         });

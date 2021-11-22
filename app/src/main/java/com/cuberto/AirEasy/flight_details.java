@@ -67,8 +67,9 @@ public class flight_details extends AppCompatActivity {
         TextView info6=findViewById(R.id.hour_txt);
         TextView info7=findViewById(R.id.stop_txt);
         TextView info8=findViewById(R.id.info5);
+        TextView info10=findViewById(R.id.tofrom);
         TextView info9=findViewById(R.id.info6);
-
+        ImageView flight_Img = findViewById(R.id.flight_Img);
         databaseReference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -76,6 +77,26 @@ public class flight_details extends AppCompatActivity {
 
             list=model1.object;
             model=model1.model;
+                if(model.getAirIndia_Txt().equals("Air India"))
+                {
+                    flight_Img.setImageResource(R.drawable.airindialogo);
+                }
+                if(model.getAirIndia_Txt().equals("Vistara"))
+                {
+                    flight_Img.setImageResource(R.drawable.vistaralogo);
+                }
+                if(model.getAirIndia_Txt().equals("GoAir"))
+                {
+                    flight_Img.setImageResource(R.drawable.goairlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Spicejet"))
+                {
+                    flight_Img.setImageResource(R.drawable.spicejetlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Indigo"))
+                {
+                    flight_Img.setImageResource(R.drawable.indigologo);
+                }
             ArrayList<TravelModel> list1=new ArrayList<TravelModel>();
 
                 for (int i = 0; i < list.size(); i++) {
@@ -133,6 +154,7 @@ public class flight_details extends AppCompatActivity {
                 info9.setText("23 Nov 2021");
                 price=Double.parseDouble(model.getRupees_Txt());
                 number1=model1.classes.substring(0,1);
+                info10.setText(""+model.getdepart_city().substring(0,3)+" - "+model.getarrival_city().substring(0,3));
                 number=Integer.parseInt(number1);
 //                Toast.makeText(flight_review.this, " "+number ,Toast.LENGTH_SHORT).show();
 //                info10.setText("₹ "+price*number);

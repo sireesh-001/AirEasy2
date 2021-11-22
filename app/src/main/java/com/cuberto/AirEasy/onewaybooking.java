@@ -43,14 +43,6 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
             R.drawable.ic_launcher_background};
     FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
     DatabaseReference databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
-//    String[] airIndia_Txt = {"Air India","Etihad Airways","Emirates"};
-//    String[] number_Txt = {"A6 323","E5 431","M4 754"};
-//    String[] rupees_Txt = {"₹1120","₹2120","₹3120"};
-//    String[] arrival_Txt = {"12:00","13:00","14:00"};
-//    String[] hour_txt = {"2 hr","1.5 hr","2 hr"};
-//    String[] stop_txt = {"Non Stop","One Stop","Non Stop"};
-//    String[] depart_txt = {"15:00","16:00","18:00"};
-
     private RecyclerView recyclerView;
     private BookFlightPagerAdapter bookFlightPagerAdapter;
     private ArrayList<FlightModel> flightModels;
@@ -111,7 +103,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         });
 
         txtmobepay.setText(user.from1+" To "+user.dest);
-        tvSubtitle.setText(user.d_date+" sept | "+user.Number+" Adult | "+user.classes+" class");
+        tvSubtitle.setText("23 Nov 2021" +" sept | "+user.Number+" Adult | "+user.classes+" class");
 
 
         /*----------Recycler view code------------*/
@@ -234,9 +226,26 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
             @Override
             public void onBindViewHolder(@NonNull final BookFlightPagerAdapter holder, final int position, FlightModel model) {
 
-
-//                holder.flight_Img.setImageResource(model.getFlight_Img());
-
+                if(model.getAirIndia_Txt().equals("Air India"))
+                {
+                    holder.flight_Img.setImageResource(R.drawable.airindialogo);
+                }
+                if(model.getAirIndia_Txt().equals("Vistara"))
+                {
+                    holder.flight_Img.setImageResource(R.drawable.vistaralogo);
+                }
+                if(model.getAirIndia_Txt().equals("GoAir"))
+                {
+                    holder.flight_Img.setImageResource(R.drawable.goairlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Spicejet"))
+                {
+                    holder.flight_Img.setImageResource(R.drawable.spicejetlogo);
+                }
+                if(model.getAirIndia_Txt().equals("Indigo"))
+                {
+                    holder.flight_Img.setImageResource(R.drawable.indigologo);
+                }
                 holder.arrival_city.setText(model.getarrival_city());
                 holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());

@@ -221,6 +221,7 @@
 
 
                     <ImageView
+                        android:id="@+id/flight_Img"
                         android:layout_width="43.3dp"
                         android:layout_height="43.3dp"
                         android:src="@drawable/ic_launcher_background" />

@@ -76,7 +76,7 @@ public void setItemClickListener(ItemClickListener itemClickListener){
         public BookFlightPagerAdapter(View itemView) {
             super(itemView);
 
-//            flight_Img = itemView.findViewById(R.id.flight_Img);
+            flight_Img = itemView.findViewById(R.id.flight_Img);
             arrival_city=itemView.findViewById(R.id.arrival_city);
             depart_city=itemView.findViewById(R.id.depart_city);
             airIndia_Txt = itemView.findViewById(R.id.airIndia_Txt);

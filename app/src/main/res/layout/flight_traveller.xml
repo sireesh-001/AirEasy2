@@ -268,6 +268,7 @@
 
 
                 <ImageView
+                    android:id="@+id/flight_Img"
                     android:layout_width="43.3dp"
                     android:layout_height="43.3dp"
                     android:src="@drawable/ic_launcher_background" />
@@ -751,6 +752,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/check1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
