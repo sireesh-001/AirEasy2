@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/bg_color"
@@ -23,12 +23,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bookid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
+                android:fontFamily="@font/sf_pro_text_medium"
                 android:text="Booking #32131221"
-                android:textSize="15sp"
-                android:fontFamily="@font/sf_pro_text_medium"/>
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -36,21 +37,23 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/airIndia_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Air India"
-                    android:textSize="14sp"
                     android:textColor="@color/txt_color"
-                    android:fontFamily="@font/sf_pro_text_regular"/>
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/number_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
                     android:text="A6 323"
                     android:textColor="@color/grey"
-                    android:textSize="13.3sp"
-                    android:fontFamily="@font/sf_pro_text_regular"
-                    android:layout_marginLeft="7dp"/>
+                    android:textSize="13.3sp" />
             </LinearLayout>
 
 
@@ -67,20 +70,22 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/short1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sf_pro_text_medium"
                         android:text="HYD"
-                        android:fontFamily="@font/sf_pro_text_medium"/>
+                        android:textColor="@color/blue"
+                        android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/depart_city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Hyderabad"
                         android:textColor="@color/txt_color"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/sf_pro_text_regular"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -89,13 +94,14 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/hour_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="13.3sp"
-                        android:textColor="@color/grey"
-                        android:text="2 hr"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/sf_pro_text_regular"/>
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:text="2 hr"
+                        android:textColor="@color/grey"
+                        android:textSize="13.3sp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -105,12 +111,13 @@
                         android:background="@color/viewline"/>
 
                     <TextView
+                        android:id="@+id/stop_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="13.3sp"
-                        android:textColor="@color/grey"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Non Stop"
-                        android:fontFamily="@font/sf_pro_text_regular"/>
+                        android:textColor="@color/grey"
+                        android:textSize="13.3sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,20 +128,22 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/short2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sf_pro_text_medium"
                         android:text="BOM"
-                        android:fontFamily="@font/sf_pro_text_medium"/>
+                        android:textColor="@color/blue"
+                        android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/arrival_city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="Mumbai"
                         android:textColor="@color/txt_color"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/sf_pro_text_regular"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -153,18 +162,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thu 05 Sept 2019"
+                        android:fontFamily="@font/sf_pro_text_light"
+                        android:text="Thu 25 Nov 2021"
                         android:textColor="@color/grey"
-                        android:textSize="13.3sp"
-                        android:fontFamily="@font/sf_pro_text_light"/>
+                        android:textSize="13.3sp" />
 
                     <TextView
+                        android:id="@+id/depart_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_light"
                         android:text="14:00"
                         android:textColor="@color/grey"
-                        android:textSize="13.3sp"
-                        android:fontFamily="@font/sf_pro_text_light"/>
+                        android:textSize="13.3sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -177,18 +187,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thu 05 Sept 2019"
+                        android:fontFamily="@font/sf_pro_text_light"
+                        android:text="Thu 23 Nov 2021"
                         android:textColor="@color/grey"
-                        android:textSize="13.3sp"
-                        android:fontFamily="@font/sf_pro_text_light"/>
+                        android:textSize="13.3sp" />
 
                     <TextView
+                        android:id="@+id/arrival_Txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_light"
                         android:text="21:00"
                         android:textColor="@color/grey"
-                        android:textSize="13.3sp"
-                        android:fontFamily="@font/sf_pro_text_light"/>
+                        android:textSize="13.3sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

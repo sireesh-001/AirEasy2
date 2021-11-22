@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class FlightAdapter extends RecyclerView.ViewHolder {
+public class BookFlightPagerAdapter extends RecyclerView.ViewHolder {
 //    FirebaseRecyclerAdapter<FlightModel, ViewHolder> firebaseRecyclerAdapter;
 //    FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Context context;
@@ -73,7 +73,7 @@ public void setItemClickListener(ItemClickListener itemClickListener){
     this.itemClickListener=itemClickListener;
 }
 
-        public FlightAdapter(View itemView) {
+        public BookFlightPagerAdapter(View itemView) {
             super(itemView);
 
 //            flight_Img = itemView.findViewById(R.id.flight_Img);

@@ -1,7 +1,6 @@
 package com.cuberto.AirEasy;
 
 import android.app.Dialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,20 +14,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-import com.cuberto.AirEasy.Adapter.FlightAdapter;
+import com.cuberto.AirEasy.Adapter.BookFlightPagerAdapter;
 import com.cuberto.AirEasy.ModelClass.FlightModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -41,7 +37,7 @@ String clickeditem;
     TextView txtmobepay,tvSubtitle;
     ImageView imageView;
     String number,classes,f_date="",d_date="",form1,dest,way,type;
-FirebaseRecyclerAdapter<FlightModel,FlightAdapter> firebaseRecyclerAdapter;
+FirebaseRecyclerAdapter<FlightModel, BookFlightPagerAdapter> firebaseRecyclerAdapter;
 FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     Integer[] flight_Img = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background};
@@ -56,7 +52,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 //    String[] depart_txt = {"15:00","16:00","18:00"};
 
     private RecyclerView recyclerView;
-    private FlightAdapter flightAdapter;
+    private BookFlightPagerAdapter bookFlightPagerAdapter;
     private ArrayList<FlightModel> flightModels;
 
     View view1,view2,view3,view4,view5;
@@ -234,9 +230,9 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 
         }
         itemFirebaseRecyclerOptions=new FirebaseRecyclerOptions.Builder<FlightModel>().setQuery(query,FlightModel.class).build();
-        firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightModel, FlightAdapter>(itemFirebaseRecyclerOptions) {
+        firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightModel, BookFlightPagerAdapter>(itemFirebaseRecyclerOptions) {
             @Override
-            public void onBindViewHolder(@NonNull final FlightAdapter holder, final int position,FlightModel model) {
+            public void onBindViewHolder(@NonNull final BookFlightPagerAdapter holder, final int position, FlightModel model) {
 
 
 //                holder.flight_Img.setImageResource(model.getFlight_Img());
@@ -269,9 +265,9 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
 
             @NonNull
             @Override
-            public FlightAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public BookFlightPagerAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_flight, parent, false);
-                FlightAdapter viewHolder=new FlightAdapter(view);
+                BookFlightPagerAdapter viewHolder=new BookFlightPagerAdapter(view);
                 return viewHolder;
             }
         };

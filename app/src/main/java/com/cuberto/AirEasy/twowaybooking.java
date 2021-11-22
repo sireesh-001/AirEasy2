@@ -19,16 +19,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 
-import com.cuberto.AirEasy.Adapter.FlightAdapter;
 import com.cuberto.AirEasy.Adapter.FlightSearchResultRecyAdapter;
-import com.cuberto.AirEasy.ModelClass.FlightModel;
 import com.cuberto.AirEasy.ModelClass.FlightSearchResultModelClass;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

@@ -104,7 +104,6 @@ public class successful extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(successful.this,fare_rules.class);
                 intent.putExtra("price",price.toString());
-                intent.putExtra("class",user.classes.toString());
                 startActivity(intent);
             }
         });
@@ -123,7 +122,7 @@ public class successful extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(successful.this, booking_details.class);
-
+                intent.putExtra("logged",logged);
                 startActivity(intent);
             }
         });

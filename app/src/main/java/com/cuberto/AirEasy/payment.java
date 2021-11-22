@@ -68,7 +68,7 @@ textView5.setText("₹ "+price);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CusomterModel cusomterModel=new CusomterModel(model,price,user.classes,object);
+                CusomterModel cusomterModel=new CusomterModel(model,price,user.Number.substring(0,1),object);
                 databaseReference1.push().setValue(cusomterModel);
 
                 Intent intent = new Intent(payment.this,successful.class);

@@ -374,13 +374,13 @@
                         android:orientation="vertical"
                         android:overScrollMode="never" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_regular"
-                        android:text="FASD21"
-                        android:textColor="@color/txt_color"
-                        android:textSize="15sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                        android:text="FASD21"-->
+<!--                        android:textColor="@color/txt_color"-->
+<!--                        android:textSize="15sp" />-->
                 </LinearLayout>
 
 

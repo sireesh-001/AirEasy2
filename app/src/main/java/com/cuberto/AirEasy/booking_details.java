@@ -27,7 +27,7 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
     TextView textView,tvFlight;
 
     LinearLayout llFlight;
-
+String logged;
     Fragment fragment;
     FirebaseRecyclerAdapter<TravelModel, SuccessAdapter> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
@@ -40,7 +40,7 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
         {
             getWindow().setNavigationBarColor(getResources().getColor(R.color.viewline));
         }
-
+        logged=getIntent().getStringExtra("logged");
         imageView = findViewById(R.id.imgback);
         textView = findViewById(R.id.txtmobepay);
 
@@ -93,6 +93,9 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
     private void loadFragment(Fragment fragment) {
         // load fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putString("logged", logged);
+        fragment.setArguments(bundle);
         transaction.replace(R.id.framlayout, fragment);
         transaction.commit();
     }
