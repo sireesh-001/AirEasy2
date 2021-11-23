@@ -1,9 +1,13 @@
 package com.cuberto.AirEasy;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,9 +16,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -173,6 +180,27 @@ public class flight_details extends AppCompatActivity {
                 Log.i("DAta","Failed to read value." + error.toException());
             }
         });
+TextView whatsapp=findViewById(R.id.whatsapp);
+whatsapp.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        sendwhatsapp();
+    }
+});
+TextView call=findViewById(R.id.call);
+call.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        callPhone();
+    }
+});
+TextView email=findViewById(R.id.mail);
+email.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        sendEmail();
+    }
+});
 
         LinearLayout linearLayout=findViewById(R.id.rules);
         linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -204,4 +232,54 @@ public class flight_details extends AppCompatActivity {
         return true;
 
     }
+    void callPhone(){
+//        Intent intent=new Intent(Intent.ACTION_CALL);
+//        Uri uri=Uri.parse("tel:+917660993300");
+//        intent.setData(uri);
+//        String[] permissions={Manifest.permission.CALL_PHONE};
+//        if (ActivityCompat.checkSelfPermission(flight_details.this,
+//                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(flight_details.this,permissions,100);
+//        }
+//        startActivity(intent);
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:07660993300"));
+
+        if (ActivityCompat.checkSelfPermission(flight_details.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
+
+
+    }
+    void sendwhatsapp(){
+        Intent waIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=" + "917660993300" + "&text=" + "Id "+clickeditem+" : Please help me out with my booking"));
+        startActivity(waIntent);
+    }
+    protected void sendEmail() {
+        Log.i("Send email", "");
+
+        String[] TO = {"koduru.reddy.19cse@bmu.edu.in"};
+        String[] CC = {"sireeshr001@gmail.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "AirEasy Customer Care Id:"+clickeditem);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Please Write your problem here \n\n\n\n\n\n\n\n\n\n\n Regards\nAirEasy Team\nCEO Sireesh Reddy");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(flight_details.this,
+                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

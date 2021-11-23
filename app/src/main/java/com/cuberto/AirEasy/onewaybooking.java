@@ -45,7 +45,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     DatabaseReference databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
     private RecyclerView recyclerView;
     private BookFlightPagerAdapter bookFlightPagerAdapter;
-    private ArrayList<FlightModel> flightModels;
+    private ArrayList<FlightModel> flightModels=new ArrayList<FlightModel>();
 
     View view1,view2,view3,view4,view5;
     LinearLayout linear1,linear2,linear3,linear4,linear5,sort_linear,filterLinear;
@@ -56,6 +56,9 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
     String date="01";
     String logged;
     public static String flight;
+    TextView id1;
+    TextView id2;
+    TextView id3;
     Userdetails user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +106,7 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         });
 
         txtmobepay.setText(user.from1+" To "+user.dest);
-        tvSubtitle.setText("23 Nov 2021" +" sept | "+user.Number+" Adult | "+user.classes+" class");
+        tvSubtitle.setText("23 Nov 2021" +" | "+user.Number+" Adult | "+user.classes+" class");
 
 
         /*----------Recycler view code------------*/
@@ -150,6 +153,11 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
         linear3.setOnClickListener(this);
         linear4.setOnClickListener(this);
         linear5.setOnClickListener(this);
+
+         id1=findViewById(R.id.id1);
+        id2=findViewById(R.id.id2);
+        id3=findViewById(R.id.id3);
+
 
         sort_linear = findViewById(R.id.sort_linear);
         sort_linear.setOnClickListener(new View.OnClickListener() {
@@ -226,6 +234,14 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
             @Override
             public void onBindViewHolder(@NonNull final BookFlightPagerAdapter holder, final int position, FlightModel model) {
 
+                flightModels.add(model);
+                if(date.equals("01"))
+                    id1.setText("₹"+flightModels.get(0).getRupees_Txt());
+                if(date.equals("02"))
+                    id2.setText("₹"+flightModels.get(0).getRupees_Txt());
+                if(date.equals("03"))
+                    id3.setText("₹"+flightModels.get(0).getRupees_Txt());
+
                 if(model.getAirIndia_Txt().equals("Air India"))
                 {
                     holder.flight_Img.setImageResource(R.drawable.airindialogo);
@@ -292,6 +308,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
             case R.id.linear1:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
                 date="01";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.GONE);
@@ -302,6 +319,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
             case R.id.linear2:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("02");
                 date="02";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.VISIBLE);
@@ -312,6 +330,7 @@ recyclerView.setAdapter(firebaseRecyclerAdapter);
             case R.id.linear3:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("03");
                 date="03";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.GONE);

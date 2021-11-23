@@ -239,7 +239,7 @@ else{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(flight_traveller.this, payment.class);
-                if(list.size()==number && checkBox1.isSelected()){
+                if(list.size()==number && checkBox1.isChecked()){
                     Bundle args = new Bundle();
                     args.putSerializable("ARRAYLIST",(Serializable)list);
                 intent.putExtra("list", args);

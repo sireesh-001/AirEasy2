@@ -46,11 +46,12 @@
                             android:fontFamily="@font/sf_pro_text_light"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:text="Fri, 05 sep"
+                            android:text="Tus, 23 Nov"
                             android:textColor="@color/txt_color"
                             android:textSize="13.3sp" />
 
                         <TextView
+                            android:id="@+id/id1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -88,11 +89,12 @@
                             android:fontFamily="@font/sf_pro_text_light"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:text="Sat, 06 sep"
+                            android:text="Wed 24 Nov"
                             android:textColor="@color/txt_color"
                             android:textSize="13.3sp" />
 
                         <TextView
+                            android:id="@+id/id2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -131,11 +133,12 @@
                             android:fontFamily="@font/sf_pro_text_light"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:text="Sun, 07 sep"
+                            android:text="Thus 25 Nov"
                             android:textColor="@color/txt_color"
                             android:textSize="13.3sp" />
 
                         <TextView
+                            android:id="@+id/id3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -174,7 +177,7 @@
                             android:fontFamily="@font/sf_pro_text_light"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:text="Mon, 08 sep"
+                            android:text="Fri 26 Nov"
                             android:textColor="@color/txt_color"
                             android:textSize="13.3sp" />
 
@@ -217,7 +220,7 @@
                             android:fontFamily="@font/sf_pro_text_light"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
-                            android:text="Tue, 09 sep"
+                            android:text="Sat 27 Nov"
                             android:textColor="@color/txt_color"
                             android:textSize="13.3sp" />
 

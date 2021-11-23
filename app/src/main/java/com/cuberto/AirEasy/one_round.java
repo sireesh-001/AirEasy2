@@ -27,6 +27,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.cuberto.AirEasy.ModelClass.FlightModel;
+
 import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
@@ -239,62 +241,7 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
         textView5=findViewById(R.id.shortf);
         textView6=findViewById(R.id.shortd);
 
-        searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String number=spinner_travellers.getTransitionName();
-//                String classes=spinner_class.getTransitionName();
-                number=spinner_travellers.getSelectedItem().toString();
-                classes=spinner_class.getSelectedItem().toString();
-                String type="stop";
-                String way;
-                String form1=textView4.getText().toString();
-                String dest=textView3.getText().toString();
-                if(checkBox.isChecked()){
-                    type="Non stop";
-                }
-                if(type.equals("stop"))
-                {
-                    flight=form1+"_"+dest+"_s";
-                }
-                else{
-                    flight=form1+"_"+dest+"_ns";
-                }
 
-                if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
-                    way="oneway";
-                    user.from1=form1;
-                    user.dest=dest;
-                    user.f_date=f_date;
-                    user.d_date=d_date;
-                    user.way=way;
-                    user.classes=classes;
-                    user.Number=number;
-                    user.type=type;
-                    Intent intent = new Intent(one_round.this,onewaybooking.class);
-                    intent.putExtra("details",user);
-                    intent.putExtra("logged",logged);
-                    intent.putExtra("flight",flight);
-                    startActivity(intent);
-                }
-                else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
-                    way="twoway";
-                    user.from1=form1;
-                    user.dest=dest;
-                    user.f_date=f_date;
-                    user.d_date=d_date;
-                    user.way=way;
-                    user.classes=classes;
-                    user.Number=number;
-                    user.type=type;
-                Intent intent = new Intent(one_round.this,twowaybooking.class);
-                intent.putExtra("details",user);
-                intent.putExtra("logged",logged);
-                intent.putExtra("flight",flight);
-                startActivity(intent);
-                }
-            }
-        });
 
         imageView = findViewById(R.id.imgback);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -384,7 +331,8 @@ city1.setOnClickListener(new View.OnClickListener() {
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
-                    f_date=""+formatter.format(myCalendar.getTime().getDate());
+                    user.f_date=""+ selectedday;
+//                    f_date=""+formatter.format(myCalendar.getTime().getDate());
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
@@ -404,16 +352,73 @@ city1.setOnClickListener(new View.OnClickListener() {
                     myCalendar.set(Calendar.YEAR, selectedyear);
                     myCalendar.set(Calendar.MONTH, selectedmonth);
                     myCalendar.set(Calendar.DAY_OF_MONTH, selectedday);
+//                    d_date=""+selectedday;
                     SimpleDateFormat formatter = new SimpleDateFormat("d MMM,yyyy");
 
                     today2.setText(formatter.format(myCalendar.getTime()));
                     mDay = selectedday;
                     mMonth = selectedmonth;
                     mYear = selectedyear;
-                    d_date=""+formatter.format(myCalendar.getTime().getDate());
+                    user.d_date=""+selectedday;
+//                    =""+formatter.format(myCalendar.getTime().getDate());
                 }
             }, mYear, mMonth, mDay);
             mDatePicker.show();
+        });
+
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String number=spinner_travellers.getTransitionName();
+//                String classes=spinner_class.getTransitionName();
+                number=spinner_travellers.getSelectedItem().toString();
+                classes=spinner_class.getSelectedItem().toString();
+                String type="stop";
+                String way;
+                String form1=textView4.getText().toString();
+                String dest=textView3.getText().toString();
+                if(checkBox.isChecked()){
+                    type="Non stop";
+                }
+                if(type.equals("stop"))
+                {
+                    flight=form1+"_"+dest+"_s";
+                }
+                else{
+                    flight=form1+"_"+dest+"_ns";
+                }
+
+                if(textView1.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                    way="oneway";
+                    user.from1=form1;
+                    user.dest=dest;
+                    user.way=way;
+                    user.classes=classes;
+                    user.Number=number;
+                    user.type=type;
+                    Intent intent = new Intent(one_round.this,onewaybooking.class);
+                    intent.putExtra("details",user);
+                    intent.putExtra("logged",logged);
+                    intent.putExtra("flight",flight);
+                    startActivity(intent);
+                }
+                else if(textView2.getCurrentTextColor()==Color.parseColor("#ffffff")){
+                    way="twoway";
+                    user.from1=form1;
+                    user.dest=dest;
+                    user.f_date=f_date;
+                    user.d_date=d_date;
+                    user.way=way;
+                    user.classes=classes;
+                    user.Number=number;
+                    user.type=type;
+                    Intent intent = new Intent(one_round.this,twowaybooking.class);
+                    intent.putExtra("details",user);
+                    intent.putExtra("logged",logged);
+                    intent.putExtra("flight",flight);
+                    startActivity(intent);
+                }
+            }
         });
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
                 new IntentFilter("custom-message"));

@@ -147,6 +147,7 @@
         android:editable="false"
         android:paddingLeft="60dp"
         android:text="  Find a flight"
+        android:fontFamily="@font/sf_pro_text_medium"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
@@ -155,7 +156,7 @@
         android:layout_width="36dp"
         android:layout_height="28dp"
         android:layout_below="@id/textView2"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="65dp"
         app:srcCompat="@drawable/img_3" />
 

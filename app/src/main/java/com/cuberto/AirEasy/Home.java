@@ -82,5 +82,14 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageView imageView1=findViewById((R.id.imageView6));
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,profile.class);
+                intent.putExtra("logged",number);
+                startActivity(intent);
+            }
+        });
     }
 }

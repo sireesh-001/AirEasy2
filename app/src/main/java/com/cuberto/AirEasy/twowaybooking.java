@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import java.util.ArrayList;
 
 import com.cuberto.AirEasy.Adapter.FlightSearchResultRecyAdapter;
+import com.cuberto.AirEasy.ModelClass.FlightModel;
 import com.cuberto.AirEasy.ModelClass.FlightSearchResultModelClass;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -44,10 +45,13 @@ public class twowaybooking extends AppCompatActivity implements View.OnClickList
     LinearLayout linear1, linear2, linear3, linear4, linear5, sort_linear, filterLinear;
     View view1, view2, view3, view4, view5;
     Dialog slideDialog;
-    private ArrayList<FlightSearchResultModelClass> flightSearchResultModelClasses;
+    private ArrayList<FlightSearchResultModelClass> flightModels=new ArrayList<FlightSearchResultModelClass>();
     private RecyclerView recyclerView;
     private FlightSearchResultRecyAdapter bonusRecyAdapter;
     ImageView ivCalaender;
+    TextView id1;
+    TextView id2;
+    TextView id3;
     public static String flight;
     Userdetails user;
     String date="01";
@@ -61,7 +65,9 @@ String logged;
         logged=getIntent().getStringExtra("logged");
         flight=getIntent().getStringExtra("flight");
 
-
+        id1=findViewById(R.id.id1);
+        id2=findViewById(R.id.id2);
+        id3=findViewById(R.id.id3);
         recyclerView =findViewById(R.id.rvlflightSearchResult);
 //        flightSearchResultModelClasses = new ArrayList<>();
 //
@@ -131,7 +137,6 @@ String logged;
                 layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
                 layoutParams.height = height;
                 layoutParams.gravity = Gravity.BOTTOM;
-
 
                 slideDialog.getWindow().setAttributes(layoutParams);
 
@@ -203,7 +208,13 @@ String logged;
         firebaseRecyclerAdapter =new FirebaseRecyclerAdapter<FlightSearchResultModelClass, FlightSearchResultRecyAdapter>(itemFirebaseRecyclerOptions) {
             @Override
             public void onBindViewHolder(@NonNull final FlightSearchResultRecyAdapter holder, final int position, FlightSearchResultModelClass model) {
-
+                flightModels.add(model);
+                if(date.equals("01"))
+                    id1.setText("₹"+flightModels.get(0).getRupees_Txt());
+                if(date.equals("02"))
+                    id2.setText("₹"+flightModels.get(0).getRupees_Txt());
+                if(date.equals("03"))
+                    id3.setText("₹"+flightModels.get(0).getRupees_Txt());
                 holder.arrival_city.setText(model.getarrival_city());
                 holder.depart_city.setText(model.getdepart_city());
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
@@ -250,6 +261,7 @@ String logged;
             case R.id.linear1:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("01");
                 date="01";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.GONE);
@@ -260,6 +272,7 @@ String logged;
             case R.id.linear2:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("02");
                 date="02";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.VISIBLE);
@@ -270,6 +283,7 @@ String logged;
             case R.id.linear3:
                 databaseReference=firebaseDatabase.getReference("login").child("flights").child("03");
                 date="03";
+                flightModels.clear();
                 update();
                 view1.setVisibility(View.GONE);
                 view2.setVisibility(View.GONE);

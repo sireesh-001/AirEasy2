@@ -3,6 +3,12 @@
     package="com.cuberto.AirEasy" >
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-feature android:name="android.hardware.screen.portrait" />
+    <uses-permission android:name="android.permission.CAMERA2"/>
+    <uses-permission android:name="android:hardware.camera.full"/>
+    <uses-permission android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:screenOrientation="portrait"
         android:allowBackup="true"
@@ -30,6 +36,7 @@
         <activity android:name=".booking_details" android:screenOrientation="portrait"/>
         <activity android:name=".FlightFilter_mpActivity" android:screenOrientation="portrait"/>
         <activity android:name=".flight_traveller" android:screenOrientation="portrait"/>
+        <activity android:name=".profile" android:screenOrientation="portrait"/>
         <activity android:name=".SignUp" android:screenOrientation="portrait"/>
         <activity android:name=".fare_rules" android:screenOrientation="portrait"/>
         <activity android:name=".successful" android:screenOrientation="portrait"/>
