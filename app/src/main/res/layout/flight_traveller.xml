@@ -649,7 +649,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16.7dp"
@@ -665,6 +665,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/gsttext"
+                    android:layout_toRightOf="@id/gst"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="Add GST TIN no. for business trip"
                     android:textColor="@color/txt_color"
@@ -673,12 +676,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/gsttext"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/sf_pro_text_regular"
                     android:text="(optional)"
                     android:textColor="@color/hint_txt_color"
                     android:textSize="13.3sp" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/gstl"

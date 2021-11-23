@@ -162,7 +162,7 @@
 
     <RelativeLayout
         android:id="@+id/men_"
-        android:layout_width="421dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/hv"
         android:layout_alignParentLeft="true"
