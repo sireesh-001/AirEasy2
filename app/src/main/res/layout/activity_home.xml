@@ -164,10 +164,10 @@
         android:id="@+id/men_"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_below="@id/hv"
+
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="45dp">
+        android:layout_alignParentBottom="true">
 
         <!--        <ImageView-->
         <!--            android:id="@+id/imageView3"-->
