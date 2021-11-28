@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sfpro_display_medium"
-            android:text="Airtime Fee + MobePay Fee"
+            android:text="Airtime Fee + AirEasy Fee"
             android:textColor="#adadad"
             android:textSize="12.7sp" />
     </LinearLayout>

@@ -100,16 +100,7 @@
                 android:textColorHint="@color/txt_color"
                 android:textSize="15sp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_gravity="center"
-                android:text="change Email Or Password"
-                android:backgroundTint="#ff8325"
-                android:textColor="@color/white"
 
-                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -290,7 +281,7 @@
                 android:id="@+id/logout"
                 android:layout_width="116dp"
                 android:layout_height="49dp"
-                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/loding"
                 android:fontFamily="@font/sf_pro_text_medium"
@@ -298,6 +289,19 @@
                 android:textAllCaps="false"
                 android:textColor="@color/orange"
                 android:textSize="20dp" />
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="-50dp"
+                android:background="@drawable/changepass"
+                android:backgroundTint="@color/white"
+                android:text="Change Email Or Password"
+                android:textAllCaps="false"
+
+                android:textColor="@color/orange"
+                android:textSize="14dp" />
 
         </LinearLayout>
     </ScrollView>
