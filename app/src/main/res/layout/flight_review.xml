@@ -293,6 +293,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
+                                    android:id="@+id/depart_name"
                                     android:fontFamily="@font/sf_pro_text_regular"
                                     android:text="Hyderabad international airport"
                                     android:textColor="@color/hint_txt_color"
@@ -363,6 +364,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:id="@+id/arrival_name"
                                     android:layout_marginTop="5dp"
                                     android:fontFamily="@font/sf_pro_text_regular"
                                     android:text="Mumbai international airport"

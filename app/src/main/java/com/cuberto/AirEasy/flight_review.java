@@ -68,29 +68,56 @@ public class flight_review extends AppCompatActivity {
         TextView info9=findViewById(R.id.info6);
         TextView info11=findViewById(R.id.number);
        ImageView flight_Img = findViewById(R.id.flight_Img);
+       TextView textView1=findViewById(R.id.depart_name);
+       TextView textView2=findViewById(R.id.arrival_name);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
 
+                if(model.getdepart_city().equals("Hyderabad"))
+                {
+                    textView1.setText("Rajiv Gandhi International Airport");
 
+                }
+                else if(model.getdepart_city().equals("Delhi"))
+                {
+                    textView1.setText("Indira Gandhi International Airport");
+                }
+                else if(model.getdepart_city().equals("Chennai"))
+                {
+                    textView1.setText("Chennai International Airport");
+                }
+                if(model.getarrival_city().equals("Hyderabad"))
+                {
+                    textView2.setText("Rajiv Gandhi International Airport");
+
+                }
+                else if(model.getarrival_city().equals("Delhi"))
+                {
+                    textView2.setText("Indira Gandhi International Airport");
+                }
+                else if(model.getarrival_city().equals("Chennai"))
+                {
+                    textView2.setText("Chennai International Airport");
+                }
                 if(model.getAirIndia_Txt().equals("Air India"))
                 {
                     flight_Img.setImageResource(R.drawable.airindialogo);
                 }
-                if(model.getAirIndia_Txt().equals("Vistara"))
+                else if(model.getAirIndia_Txt().equals("Vistara"))
                 {
                     flight_Img.setImageResource(R.drawable.vistaralogo);
                 }
-                if(model.getAirIndia_Txt().equals("GoAir"))
+                else if(model.getAirIndia_Txt().equals("GoAir"))
                 {
                     flight_Img.setImageResource(R.drawable.goairlogo);
                 }
-                if(model.getAirIndia_Txt().equals("Spicejet"))
+                else if(model.getAirIndia_Txt().equals("Spicejet"))
                 {
                     flight_Img.setImageResource(R.drawable.spicejetlogo);
                 }
-                if(model.getAirIndia_Txt().equals("Indigo"))
+                else if(model.getAirIndia_Txt().equals("Indigo"))
                 {
                     flight_Img.setImageResource(R.drawable.indigologo);
                 }

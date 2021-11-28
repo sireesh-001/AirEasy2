@@ -41,6 +41,7 @@ public class successful extends AppCompatActivity {
     FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
     private RecyclerView recyclerView;
     DatabaseReference databaseReference,databaseReference1,databaseReference2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,27 +77,55 @@ public class successful extends AppCompatActivity {
         TextView textView5=findViewById(R.id.price);
         textView5.setText("₹ "+price);
         ImageView flight_Img = findViewById(R.id.flight_Img);
+        TextView textView12=findViewById(R.id.depart_name);
+        TextView textView22=findViewById(R.id.arrival_name);
         databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FlightModel model = dataSnapshot.child(flight).getValue(FlightModel.class);
+                if(model.getdepart_city().equals("Hyderabad"))
+                {
+                    textView12.setText("Rajiv Gandhi International Airport");
+
+                }
+                else if(model.getdepart_city().equals("Delhi"))
+                {
+                    textView12.setText("Indira Gandhi International Airport");
+                }
+                else if(model.getdepart_city().equals("Chennai"))
+                {
+                    textView12.setText("Chennai International Airport");
+                }
+                if(model.getarrival_city().equals("Hyderabad"))
+                {
+                    textView22.setText("Rajiv Gandhi International Airport");
+
+                }
+                else if(model.getarrival_city().equals("Delhi"))
+                {
+                    textView22.setText("Indira Gandhi International Airport");
+                }
+                else if(model.getarrival_city().equals("Chennai"))
+                {
+                    textView22.setText("Chennai International Airport");
+                }
                 if(model.getAirIndia_Txt().equals("Air India"))
                 {
                     flight_Img.setImageResource(R.drawable.airindialogo);
                 }
-                if(model.getAirIndia_Txt().equals("Vistara"))
+                else if(model.getAirIndia_Txt().equals("Vistara"))
                 {
                     flight_Img.setImageResource(R.drawable.vistaralogo);
                 }
-                if(model.getAirIndia_Txt().equals("GoAir"))
+                else if(model.getAirIndia_Txt().equals("GoAir"))
                 {
                     flight_Img.setImageResource(R.drawable.goairlogo);
                 }
-                if(model.getAirIndia_Txt().equals("Spicejet"))
+                else if(model.getAirIndia_Txt().equals("Spicejet"))
                 {
                     flight_Img.setImageResource(R.drawable.spicejetlogo);
                 }
-                if(model.getAirIndia_Txt().equals("Indigo"))
+                else if(model.getAirIndia_Txt().equals("Indigo"))
                 {
                     flight_Img.setImageResource(R.drawable.indigologo);
                 }

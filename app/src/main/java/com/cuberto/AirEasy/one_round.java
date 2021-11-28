@@ -215,10 +215,6 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     Userdetails user;
     String flight;
     String number,classes;
-    LatLng hyderabad = new LatLng(17.2403, 78.4297);
-    LatLng mumbai = new LatLng(19.097403, 72.874245);
-    LatLng chennai = new LatLng(12.988166, 80.176506);
-    LatLng delhi = new LatLng(28.556160, 77.100281);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -246,8 +242,25 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
         textView2=findViewById(R.id.trip_Txt);
         textView5=findViewById(R.id.shortf);
         textView6=findViewById(R.id.shortd);
+ImageView imageView6=findViewById(R.id.mapmark1);
+imageView6.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(one_round.this,MapsActivity2.class);
+        intent.putExtra("city",textView4.getText().toString());
+        startActivity(intent);
+    }
+});
 
-
+        ImageView imageView7=findViewById(R.id.mapmark2);
+        imageView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(one_round.this,MapsActivity2.class);
+                intent.putExtra("city",textView3.getText().toString());
+                startActivity(intent);
+            }
+        });
 
         imageView = findViewById(R.id.imgback);
         imageView.setOnClickListener(new View.OnClickListener() {

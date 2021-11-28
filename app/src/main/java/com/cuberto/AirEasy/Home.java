@@ -41,11 +41,11 @@ public class Home extends AppCompatActivity {
                     String pass=String.valueOf(task.getResult().getValue());
                     Log.i("getting data:", pass);
 //                    StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(pass);
-                    ImageView imageView=findViewById(R.id.image6);
-//                    Glide.with(Home.this /* context */)
-//                            .load(storageReference)
-//                            .into(imageView);
-                    Picasso.get().load(pass).into(imageView);
+//                    ImageView imageView=findViewById(R.id.image6);
+////                    Glide.with(Home.this /* context */)
+////                            .load(storageReference)
+////                            .into(imageView);
+//                    Picasso.get().load(pass).into(imageView);
                 }
             }
         });

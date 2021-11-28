@@ -19,6 +19,8 @@ import com.cuberto.AirEasy.AirEasy.FlightFragment;
 import com.cuberto.AirEasy.ModelClass.TravelModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class booking_details extends AppCompatActivity implements View.OnClickListener {
@@ -28,10 +30,12 @@ public class booking_details extends AppCompatActivity implements View.OnClickLi
 
     LinearLayout llFlight;
 String logged;
+String yes=null;
     Fragment fragment;
     FirebaseRecyclerAdapter<TravelModel, SuccessAdapter> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<TravelModel> itemFirebaseRecyclerOptions;
-
+    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +45,13 @@ String logged;
             getWindow().setNavigationBarColor(getResources().getColor(R.color.viewline));
         }
         logged=getIntent().getStringExtra("logged");
+        yes=getIntent().getStringExtra("yes");
         imageView = findViewById(R.id.imgback);
         textView = findViewById(R.id.txtmobepay);
-
+        if(yes!=null){
+            databaseReference1=firebaseDatabase.getReference("login").child("users").child(logged).child("flight_details").child(yes);
+            databaseReference1.removeValue();
+        }
         textView.setText("Bookings");
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

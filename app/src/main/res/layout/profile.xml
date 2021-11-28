@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".EditProfile">
+    tools:context=".profile">
 
     <include layout="@layout/tolbarprofile" />
 
@@ -299,7 +299,7 @@
                 android:backgroundTint="@color/white"
                 android:text="Change Email Or Password"
                 android:textAllCaps="false"
-
+android:id="@+id/change"
                 android:textColor="@color/orange"
                 android:textSize="14dp" />
 

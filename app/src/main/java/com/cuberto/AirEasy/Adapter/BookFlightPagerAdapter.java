@@ -77,8 +77,8 @@ public void setItemClickListener(ItemClickListener itemClickListener){
             super(itemView);
 
             flight_Img = itemView.findViewById(R.id.flight_Img);
-            arrival_city=itemView.findViewById(R.id.arrival_city);
-            depart_city=itemView.findViewById(R.id.depart_city);
+            depart_city=itemView.findViewById(R.id.arrival_city);
+            arrival_city=itemView.findViewById(R.id.depart_city);
             airIndia_Txt = itemView.findViewById(R.id.airIndia_Txt);
             number_Txt = itemView.findViewById(R.id.number_Txt);
             rupees_Txt = itemView.findViewById(R.id.rupees_Txt);

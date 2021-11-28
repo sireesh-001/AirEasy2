@@ -1,5 +1,8 @@
 package com.cuberto.AirEasy;
 
+import static com.cuberto.AirEasy.NotificationChannels.Chl_popup;
+
+import android.app.Notification;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -13,6 +16,8 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.cuberto.AirEasy.ModelClass.CusomterModel;
 import com.cuberto.AirEasy.ModelClass.FlightModel;
@@ -35,11 +40,12 @@ public class payment extends AppCompatActivity implements View.OnClickListener{
     TextView txt1, txt2, txt3, price_Txt, price1_Txt, price2_Txt,txtmobepay;
 
     Button next;
-
+NotificationManagerCompat notificationManagerCompat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment);
+        notificationManagerCompat=NotificationManagerCompat.from(payment.this);
         String logged=getIntent().getStringExtra("logged");
         String flight=getIntent().getStringExtra("flight");
         String date=getIntent().getStringExtra("date");
@@ -70,7 +76,10 @@ textView5.setText("₹ "+price);
             public void onClick(View v) {
                 CusomterModel cusomterModel=new CusomterModel(model,price,user.Number.substring(0,1),object);
                 databaseReference1.push().setValue(cusomterModel);
-
+                Notification notification=new NotificationCompat.Builder(payment.this,Chl_popup).setSmallIcon(R.drawable.popupicon)
+                        .setContentTitle("Flight Booking Sucessful")
+                        .setContentText("Flight booked from "+user.from1+" to "+user.dest +" in "+user.classes).setPriority(NotificationCompat.PRIORITY_HIGH).setCategory(NotificationCompat.CATEGORY_MESSAGE).build();
+                notificationManagerCompat.notify(1,notification);
                 Intent intent = new Intent(payment.this,successful.class);
                 intent.putExtra("number",number);
                 intent.putExtra("fmodel",model);

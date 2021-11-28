@@ -102,12 +102,15 @@
                         android:textSize="26sp" />
 
                     <ImageView
-                        android:layout_width="30dp"
                         android:id="@+id/mapmark1"
+                        android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginTop="-35dp"
-                        android:src="@drawable/mapmarker" />
+                        android:background="#ffffff"
+                        android:src="@drawable/mapmarker"
+                        android:backgroundTint="@null"
+                        />
 
                     <TextView
                         android:id="@+id/value"
@@ -160,6 +163,7 @@
                         android:textSize="26sp" />
 
                     <ImageView
+                        android:id="@+id/mapmark2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="115dp"

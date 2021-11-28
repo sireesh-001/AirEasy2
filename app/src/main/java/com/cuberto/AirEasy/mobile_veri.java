@@ -2,6 +2,7 @@ package com.cuberto.AirEasy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
@@ -42,7 +44,17 @@ public class mobile_veri extends AppCompatActivity {
         StartFirebaseLogin();
         user = (User) getIntent().getSerializableExtra("key");
         TextView textView1=findViewById(R.id.number);
-        textView1.setText(""+user.mnumber);
+        textView1.setText(" "+user.mnumber+" and "+user.email);
+        TextView textView5=findViewById(R.id.time);
+        new CountDownTimer(60000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                textView5.setText("Seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                textView5.setText("Received");
+            }
+        }.start();
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(auth)
                         .setPhoneNumber("+91"+user.mnumber)// Phone number to verify

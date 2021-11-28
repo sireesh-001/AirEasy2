@@ -201,6 +201,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
+                                    android:id="@+id/depart_name"
                                     android:fontFamily="@font/sf_pro_text_regular"
                                     android:text="Hyderabad international airport"
                                     android:textColor="@color/hint_txt_color"
@@ -272,6 +273,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
+                                    android:id="@+id/arrival_name"
                                     android:fontFamily="@font/sf_pro_text_regular"
                                     android:text="Mumbai international airport"
                                     android:textAlignment="viewEnd"
@@ -912,6 +914,7 @@ Regarding any query contact us on below"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="23.3dp"
                     android:gravity="center"
+
                     android:orientation="horizontal">
 
 <!--                    <TextView-->
@@ -933,7 +936,7 @@ Regarding any query contact us on below"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="25.3dp"
+android:id="@+id/share"
                         android:background="@drawable/rect_green_border"
                         android:fontFamily="@font/sf_pro_text_regular"
                         android:paddingLeft="16.7dp"

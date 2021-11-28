@@ -1,8 +1,10 @@
 package com.cuberto.AirEasy;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,6 +61,22 @@ String logged=getIntent().getStringExtra("logged");
         storage=FirebaseStorage.getInstance();
         storageReference = storage.getReference();
         DatabaseReference databaseReference=firebaseDatabase.getReference("login").child("users").child(logged).child("Profile_info");
+        Button button2=findViewById(R.id.change);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+Intent intent=new Intent(profile.this,change_email.class);
+intent.putExtra("logged",logged);
+startActivity(intent);
+            }
+        });
+        Button button4=findViewById(R.id.logout);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             triggerRebirth(profile.this);
+            }
+        });
         backImg = findViewById(R.id.backImg);
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,6 +218,14 @@ databaseReference.push().setValue(model);
 //        }
 //        return directory.getAbsolutePath();
 //    }
+public static void triggerRebirth(Context context) {
+    PackageManager packageManager = context.getPackageManager();
+    Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
+    ComponentName componentName = intent.getComponent();
+    Intent mainIntent = Intent.makeRestartActivityTask(componentName);
+    context.startActivity(mainIntent);
+    Runtime.getRuntime().exit(0);
+}
     public void startcamera(){
 
 //        if (filePath != null) {

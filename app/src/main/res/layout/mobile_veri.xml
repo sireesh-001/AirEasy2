@@ -11,46 +11,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="16.7dp"
         android:layout_marginLeft="16.7dp"
+        android:layout_marginRight="16.7dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="13.7dp"
-            android:src="@drawable/back_black"/>
+            android:src="@drawable/back_black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20.7sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sfprorounded_semibold"
+            android:gravity="center"
             android:text="Enter Verification Code"
             android:textColor="@color/txt_color"
-            android:fontFamily="@font/sfprorounded_semibold"
-            android:layout_marginTop="20dp"
-            android:gravity="center"/>
+            android:textSize="20.7sp" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#ff8325"
-            android:paddingLeft="19dp"
-            android:paddingRight="19dp"
-            android:paddingTop="11dp"
-            android:paddingBottom="11dp"
             android:layout_marginTop="16dp"
-            android:orientation="vertical">
+            android:background="#ff8325"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="19dp"
+            android:paddingTop="11dp"
+            android:paddingRight="19dp"
+            android:paddingBottom="11dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_text_regular"
                 android:text="We have sent 4 digit verification code on"
-                android:textSize="14sp"
-                android:fontFamily="@font/sf_pro_text_regular"/>
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
 
             <LinearLayout
@@ -60,23 +60,23 @@
 
 
                 <TextView
+                    android:id="@+id/number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/sf_pro_text_regular"
                     android:text="9429283905"
-                    android:id="@+id/number"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/sf_pro_text_regular"/>
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="@string/edit"
-                    android:id="@+id/edit"
-                    android:textSize="14sp"
                     android:layout_marginLeft="3dp"
-                    android:fontFamily="@font/sf_pro_text_regular"/>
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="@string/edit"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -88,8 +88,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="72dp"
-            android:textColor="@color/txt_color"
             android:itemBackground="@color/white"
+            android:textColor="@color/txt_color"
             app:bar_enabled="true"
             app:bar_height="2dp"
             app:height="40dp"
@@ -98,25 +98,51 @@
             app:width="40dp" />
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00:30"
-            android:textColor="@color/red"
-            android:textSize="15sp"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/sf_pro_text_regular"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="00:30"
+            android:textColor="@color/red"
+            android:textSize="15sp" />
 
+<!--        <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="26dp"-->
+<!--                    android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Email "-->
+<!--                    android:textColor="#939297"-->
+<!--                    android:textSize="20sp" />-->
+<!--        <in.aabhasjindal.otptextview.OtpTextView-->
+<!--            android:id="@+id/otp_view1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="45dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:itemBackground="@color/white"-->
+<!--            android:textColor="@color/txt_color"-->
+<!--            app:bar_enabled="true"-->
+<!--            app:bar_height="2dp"-->
+<!--            app:height="40dp"-->
+<!--            app:length="6"-->
+<!--            app:otp_text_size="24dp"-->
+<!--            app:width="40dp" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="12.7sp"
-            android:layout_marginTop="26dp"
-            android:text="Didn’t get code? Resend"
-            android:textColor="#939297"
-            android:fontFamily="@font/sf_pro_text_regular"
-            android:gravity="center"/>
+<!--        <TextView-->
+<!--            android:id="@+id/time1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:fontFamily="@font/sf_pro_text_regular"-->
+<!--            android:gravity="center"-->
+<!--            android:text="00:30"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="15sp" />-->
+
     </LinearLayout>
 
 
