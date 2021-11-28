@@ -101,6 +101,13 @@
                         android:textColor="@color/txt_color"
                         android:textSize="26sp" />
 
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="-35dp"
+                        android:src="@drawable/mapmarker" />
+
                     <TextView
                         android:id="@+id/value"
                         android:layout_width="wrap_content"
@@ -150,6 +157,13 @@
                         android:text="DEL"
                         android:textColor="@color/txt_color"
                         android:textSize="26sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="-35dp"
+                        android:src="@drawable/mapmarker" />
 
                     <TextView
                         android:id="@+id/value2"
