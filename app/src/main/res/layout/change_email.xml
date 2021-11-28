@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".EditProfile">
+    android:orientation="vertical">
+<!--    tools:context=".EditProfile">-->
 
-    <include layout="@layout/tolbarprofile" />
+<!--    <include layout="@layout/tolbarprofile" />-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="Name "
+                android:text="Existing Email "
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -62,7 +62,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="John Doe"
+                android:hint="Enter the existing email"
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
@@ -78,7 +78,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="Email "
+                android:text="New Email "
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -91,7 +91,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="John@gmail.com"
+                android:hint="Enter the new Email"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
@@ -100,17 +100,6 @@
                 android:textColorHint="@color/txt_color"
                 android:textSize="15sp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_gravity="center"
-                android:text="change Email Or Password"
-                android:backgroundTint="#ff8325"
-                android:textColor="@color/white"
-
-                />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,7 +107,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="Phone "
+                android:text="confirm Email "
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -131,7 +120,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="9129371123"
+                android:hint=""
                 android:inputType="number"
                 android:maxLength="10"
                 android:paddingLeft="15dp"
@@ -141,6 +130,17 @@
                 android:textColorHint="@color/txt_color"
                 android:textSize="15sp" />
 
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rect_gray_border"
+                android:layout_marginLeft="156.7dp"
+                android:layout_marginTop="20.7dp"
+                android:layout_marginRight="1.7dp"
+                android:text="update Email"
+                android:backgroundTint="#ff8325"
+                android:textColor="@color/white"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="Passport No."
+                android:text="Existing password"
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -161,7 +161,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="V2558928"
+                android:hint="Enter the Existing password"
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
@@ -177,7 +177,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="City "
+                android:text="New password "
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -190,7 +190,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="Vadodara"
+                android:hint="Enter the new password"
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
@@ -206,7 +206,7 @@
                 android:layout_marginTop="23.3dp"
                 android:fontFamily="@font/sf_pro_text_regular"
                 android:gravity="center"
-                android:text="State "
+                android:text="Confirm password "
                 android:textColor="@color/txt_color"
                 android:textSize="13.3sp" />
 
@@ -219,65 +219,7 @@
                 android:layout_marginRight="16.7sp"
                 android:background="@drawable/rect_gray_border"
                 android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="Gujarat"
-                android:inputType="text"
-                android:paddingLeft="15dp"
-                android:paddingTop="14dp"
-                android:paddingBottom="14dp"
-                android:textColor="@color/txt_color"
-                android:textColorHint="@color/txt_color"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7sp"
-                android:layout_marginTop="23.3dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:gravity="center"
-                android:text="Country "
-                android:textColor="@color/txt_color"
-                android:textSize="13.3sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/nation"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="6.7dp"
-                android:layout_marginRight="16.7sp"
-                android:background="@drawable/rect_gray_border"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="India"
-                android:inputType="text"
-                android:paddingLeft="15dp"
-                android:paddingTop="14dp"
-                android:paddingBottom="14dp"
-                android:textColor="@color/txt_color"
-                android:textColorHint="@color/txt_color"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16.7sp"
-                android:layout_marginTop="23.3dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:gravity="center"
-                android:text="Zip Code "
-                android:textColor="@color/txt_color"
-                android:textSize="13.3sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/zip"
-                android:layout_marginLeft="16.7dp"
-                android:layout_marginTop="6.7dp"
-                android:layout_marginRight="16.7sp"
-                android:background="@drawable/rect_gray_border"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:hint="391231"
+                android:hint=""
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
@@ -287,17 +229,73 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/logout"
-                android:layout_width="116dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/loding"
-                android:fontFamily="@font/sf_pro_text_medium"
-                android:text="Log out"
-                android:textAllCaps="false"
-                android:textColor="@color/orange"
-                android:textSize="20dp" />
+                android:layout_width="190dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rect_gray_border"
+                android:layout_marginLeft="126.7dp"
+                android:layout_marginTop="20.7dp"
+                android:layout_marginRight="1.7dp"
+                android:text="update Password"
+                android:backgroundTint="#ff8325"
+                android:textColor="@color/white"/>
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="16.7sp"-->
+<!--                android:layout_marginTop="23.3dp"-->
+<!--                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Country "-->
+<!--                android:textColor="@color/txt_color"-->
+<!--                android:textSize="13.3sp" />-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/nation"-->
+<!--                android:layout_marginLeft="16.7dp"-->
+<!--                android:layout_marginTop="6.7dp"-->
+<!--                android:layout_marginRight="16.7sp"-->
+<!--                android:background="@drawable/rect_gray_border"-->
+<!--                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                android:hint="India"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingLeft="15dp"-->
+<!--                android:paddingTop="14dp"-->
+<!--                android:paddingBottom="14dp"-->
+<!--                android:textColor="@color/txt_color"-->
+<!--                android:textColorHint="@color/txt_color"-->
+<!--                android:textSize="15sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="16.7sp"-->
+<!--                android:layout_marginTop="23.3dp"-->
+<!--                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Zip Code "-->
+<!--                android:textColor="@color/txt_color"-->
+<!--                android:textSize="13.3sp" />-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/zip"-->
+<!--                android:layout_marginLeft="16.7dp"-->
+<!--                android:layout_marginTop="6.7dp"-->
+<!--                android:layout_marginRight="16.7sp"-->
+<!--                android:background="@drawable/rect_gray_border"-->
+<!--                android:fontFamily="@font/sf_pro_text_regular"-->
+<!--                android:hint="391231"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingLeft="15dp"-->
+<!--                android:paddingTop="14dp"-->
+<!--                android:paddingBottom="14dp"-->
+<!--                android:textColor="@color/txt_color"-->
+<!--                android:textColorHint="@color/txt_color"-->
+<!--                android:textSize="15sp" />-->
 
         </LinearLayout>
     </ScrollView>

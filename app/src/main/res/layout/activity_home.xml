@@ -73,12 +73,12 @@
                 android:src="@drawable/discount22"
                 android:layout_marginLeft="15dp" />
 
-            <ImageButton
-                android:id="@+id/image6"
-                android:layout_width="340dp"
-                android:layout_height="190dp"
-                android:src="@drawable/discount33"
-                android:layout_marginLeft="15dp" />
+<!--            <ImageButton-->
+
+<!--                android:layout_width="340dp"-->
+<!--                android:layout_height="190dp"-->
+<!--                android:src="@drawable/discount33"-->
+<!--                android:layout_marginLeft="15dp" />-->
 
             <ImageButton
                 android:layout_width="340dp"
