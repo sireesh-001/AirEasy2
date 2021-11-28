@@ -103,6 +103,7 @@
 
                     <ImageView
                         android:layout_width="30dp"
+                        android:id="@+id/mapmark1"
                         android:layout_height="30dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginTop="-35dp"

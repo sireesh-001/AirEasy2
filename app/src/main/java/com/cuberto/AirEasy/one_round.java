@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.cuberto.AirEasy.ModelClass.FlightModel;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.w3c.dom.Text;
 
@@ -214,6 +215,11 @@ public class one_round extends AppCompatActivity implements View.OnClickListener
     Userdetails user;
     String flight;
     String number,classes;
+    LatLng hyderabad = new LatLng(17.2403, 78.4297);
+    LatLng mumbai = new LatLng(19.097403, 72.874245);
+    LatLng chennai = new LatLng(12.988166, 80.176506);
+    LatLng delhi = new LatLng(28.556160, 77.100281);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
