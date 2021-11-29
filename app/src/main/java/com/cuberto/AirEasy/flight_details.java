@@ -413,14 +413,14 @@ share.setOnClickListener(new View.OnClickListener() {
         canvas.drawBitmap(scaledbmp, 56, 40, paint);
         title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         title.setTextSize(15);
-        title.setColor(ContextCompat.getColor(this, R.color.purple_200));
-        canvas.drawText("A portal for IT professionals.", 209, 100, title);
-        canvas.drawText("Geeks for Geeks", 209, 80, title);
+        title.setColor(ContextCompat.getColor(this, R.color.dark_blue));
+        canvas.drawText("Flight from "+dcity+" to "+acity+" has been booked, Successfully on "+ddate+ "Flight No: "+numbers, 209, 100, title);
+        canvas.drawText("AirEasy", 209, 80, title);
         title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-        title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+        title.setColor(ContextCompat.getColor(this, R.color.dark_blue));
         title.setTextSize(15);
         title.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText("This is sample document which we have created.", 396, 560, title);
+        canvas.drawText("This is Flight Ticket which we have created.", 396, 560, title);
         pdfDocument.finishPage(myPage);
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "AirEasy Ticket.pdf");
 
@@ -442,16 +442,16 @@ void generateInvoice(){
     canvas.drawBitmap(scaledbmp, 56, 40, paint);
     title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
     title.setTextSize(15);
-    title.setColor(ContextCompat.getColor(this, R.color.purple_200));
-    canvas.drawText("A portal for IT professionals.", 209, 100, title);
-    canvas.drawText("Geeks for Geeks", 209, 80, title);
+    title.setColor(ContextCompat.getColor(this, R.color.dark_blue));
+    canvas.drawText("Flight from "+dcity+" to "+acity+" has been booked, Successfully on "+ddate+ "Flight No: "+numbers, 209, 100, title);
+    canvas.drawText("AirEasy", 209, 80, title);
     title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-    title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+    title.setColor(ContextCompat.getColor(this, R.color.dark_blue));
     title.setTextSize(15);
     title.setTextAlign(Paint.Align.CENTER);
-    canvas.drawText("This is sample document which we have created.", 396, 560, title);
+    canvas.drawText("This is a Invoice file for Flight no: "+numbers+" which we have created.", 396, 560, title);
     pdfDocument.finishPage(myPage);
-    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "AirEasy Ticket.pdf");
+    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "AirEasy Invoice.pdf");
 
     try {
         pdfDocument.writeTo(new FileOutputStream(file));
