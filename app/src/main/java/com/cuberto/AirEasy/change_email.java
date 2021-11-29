@@ -58,7 +58,7 @@ public class change_email extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(change_email.this,profile.class);
+                Intent intent=new Intent(change_email.this,Home.class);
                 intent.putExtra("logged",logged);
                 startActivity(intent);
             }
