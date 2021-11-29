@@ -208,7 +208,8 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/imageView2"
-            tools:srcCompat="@drawable/insurancepolicy" />
+            android:src="@drawable/insurancepolicy"
+            />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -274,8 +275,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView6"
-            android:layout_marginStart="62dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/textView5"
             android:fontFamily="@font/roboto_medium"

@@ -2,6 +2,7 @@ package com.cuberto.AirEasy;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,20 @@ public class FlightChooseDateActivity extends AppCompatActivity {
 
         tvTitle.setText("Choose Date");
         tvReset.setVisibility(View.GONE);
+        ImageView imageView=findViewById(R.id.back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        TextView textView=findViewById(R.id.apply);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         final Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.YEAR, 10);

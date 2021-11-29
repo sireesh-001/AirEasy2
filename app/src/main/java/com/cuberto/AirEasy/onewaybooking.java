@@ -267,10 +267,10 @@ FirebaseRecyclerOptions<FlightModel> itemFirebaseRecyclerOptions;
                 holder.airIndia_Txt.setText(model.getAirIndia_Txt());
                 holder.number_Txt.setText(model.getNumber_Txt());
                 holder.rupees_Txt.setText("₹"+model.getRupees_Txt());
-                holder.arrival_Txt.setText(model.getArrival_Txt());
+                holder.arrival_Txt.setText(model.getDepart_txt());
                 holder.hour_txt.setText(model.getHour_txt());
                 holder.stop_txt.setText(model.getStop_txt());
-                holder.depart_txt.setText(model.getDepart_txt());
+                holder.depart_txt.setText(model.getArrival_Txt());
 
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override

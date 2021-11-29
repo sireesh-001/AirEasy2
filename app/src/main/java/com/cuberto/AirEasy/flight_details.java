@@ -94,6 +94,7 @@ public class flight_details extends AppCompatActivity {
         TextView info5=findViewById(R.id.arrival_Txt);
         TextView info6=findViewById(R.id.hour_txt);
         TextView info7=findViewById(R.id.stop_txt);
+        TextView info12=findViewById(R.id.depart_txt);
         TextView info8=findViewById(R.id.info5);
         TextView info10=findViewById(R.id.tofrom);
         TextView info9=findViewById(R.id.info6);
@@ -229,6 +230,7 @@ name=model.firstname;
                 info3.setText(""+model.getAirIndia_Txt());
                 info4.setText(""+model.getNumber_Txt());
                 info5.setText(""+model.getDepart_txt());
+                info12.setText(""+model.getArrival_Txt());
                 info6.setText(""+model.getHour_txt());
                 info7.setText(""+model.getStop_txt());
                 info8.setText("23 Nov 2021");

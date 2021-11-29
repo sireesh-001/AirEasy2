@@ -1,5 +1,6 @@
 package com.cuberto.AirEasy;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,6 +68,7 @@ public class successful extends AppCompatActivity {
         TextView info3=findViewById(R.id.info3);
         TextView info4=findViewById(R.id.info4);
         TextView info5=findViewById(R.id.arrival_Txt);
+        TextView info12=findViewById(R.id.depart_txt);
         TextView info6=findViewById(R.id.hour_txt);
         TextView info7=findViewById(R.id.stop_txt);
         TextView info8=findViewById(R.id.info5);
@@ -134,10 +138,11 @@ public class successful extends AppCompatActivity {
                 info3.setText(""+model.getAirIndia_Txt());
                 info4.setText(""+model.getNumber_Txt());
                 info5.setText(""+model.getDepart_txt());
+                info12.setText(""+model.getArrival_Txt());
                 info6.setText(""+model.getHour_txt());
                 info7.setText(""+model.getStop_txt());
-                info8.setText(""+user.f_date);
-                info9.setText(""+user.f_date);
+//                info8.setText(""+user.f_date);
+//                info9.setText(""+user.f_date);
                 number1=user.Number.substring(0,1);
                 number=Integer.parseInt(number1);
             }
@@ -146,7 +151,20 @@ public class successful extends AppCompatActivity {
                 Log.i("DAta","Failed to read value." + error.toException());
             }
         });
-
+        TextView share=findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendshare();
+            }
+        });
+        TextView whatsapp=findViewById(R.id.whatsapp);
+        whatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendwhatsapp();
+            }
+        });
 
 
         LinearLayout textView7=findViewById(R.id.tc);
@@ -224,7 +242,29 @@ public class successful extends AppCompatActivity {
 
         firebaseRecyclerAdapter.startListening();
         recyclerView.setAdapter(firebaseRecyclerAdapter);
-    }}
+    }
+    void sendwhatsapp(){
+        Intent waIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=" + "917660993300" + "&text=" + "Please help me out with my booking"));
+        startActivity(waIntent);
+    }
+    void sendshare() {
+        Log.i("Send email", "");
+
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear Customer,Your flight booking is confirmed for travel from  on 23 Nov 2021 \n\nYour flight  will depart from Terminal 1, Chennai International Airport \n\nCabin baggage per adult/child is 7Kgs and check-in baggage is 15Kgs.\\n\\nImportant information: We wish to remind you that AirEasy never asks for your personal banking and security details like passwords, CVV, OTP, etc. For any queries, please reach out to us via the help section on our mobile app");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(successful.this,
+                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+}
 
 
 
