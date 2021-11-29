@@ -89,28 +89,27 @@
                         android:text="From"
                         android:textColor="@color/hint_txt_color"
                         android:textSize="15sp" />
+                    <ImageView
+                        android:id="@+id/mapmark1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="#ffffff"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@null"
+                        android:src="@drawable/img42" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="23dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/sf_pro_text_medium"
                         android:text="HYD"
                         android:id="@+id/shortf"
                         android:textColor="@color/txt_color"
                         android:textSize="26sp" />
 
-                    <ImageView
-                        android:id="@+id/mapmark1"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="-35dp"
-                        android:background="#ffffff"
-                        android:src="@drawable/mapmarker"
-                        android:backgroundTint="@null"
-                        />
 
                     <TextView
                         android:id="@+id/value"
@@ -134,12 +133,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="147dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/tocity"
                     android:background="@drawable/rectangle_grayborder"
-                    android:orientation="vertical">
-
+                    android:orientation="vertical"
+                    android:paddingBottom="21dp"
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,25 +150,25 @@
                         android:text="To"
                         android:textColor="@color/hint_txt_color"
                         android:textSize="15sp" />
-
+                    <ImageView
+                        android:id="@+id/mapmark2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/img42"
+                        app:srcCompat="@drawable/img42" />
                     <TextView
                         android:id="@+id/shortd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="23dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/sf_pro_text_medium"
                         android:text="DEL"
                         android:textColor="@color/txt_color"
                         android:textSize="26sp" />
 
-                    <ImageView
-                        android:id="@+id/mapmark2"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="115dp"
-                        android:layout_marginTop="-35dp"
-                        android:src="@drawable/mapmarker" />
 
                     <TextView
                         android:id="@+id/value2"

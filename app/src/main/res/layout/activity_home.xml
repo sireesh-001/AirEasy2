@@ -208,7 +208,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/imageView2"
-            app:srcCompat="@drawable/img13" />
+            tools:srcCompat="@drawable/insurancepolicy" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -246,13 +246,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView4"
-            android:layout_marginStart="65dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textView3"
             android:fontFamily="@font/roboto_medium"
             android:letterSpacing="0.01"
-            android:text="Alerts"
+            android:text="Fare Rules"
             android:textColor="#000000"
             android:textSize="12sp" />
 
@@ -261,8 +260,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView5"
-            android:layout_marginStart="62dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textView4"
             android:fontFamily="@font/roboto_medium"

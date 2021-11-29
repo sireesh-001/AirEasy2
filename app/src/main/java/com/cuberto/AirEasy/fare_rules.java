@@ -29,8 +29,9 @@ String classes=getIntent().getStringExtra("class");
 
 TextView textView=findViewById(R.id.price);
 TextView textView1=findViewById(R.id.classes);
+if(price!=null && classes!=null){
 textView.setText("₹"+price);
-textView1.setText(""+classes);
+textView1.setText(""+classes);}
 
 ImageView imageView=findViewById(R.id.back);
 imageView.setOnClickListener(new View.OnClickListener() {

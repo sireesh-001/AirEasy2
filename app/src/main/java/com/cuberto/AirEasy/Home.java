@@ -73,6 +73,15 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageView imageView2=findViewById(R.id.imageView4);
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,fare_rules.class);
+                startActivity(intent);
+            }
+        });
+
         ImageView imageView=findViewById(R.id.imageView5);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

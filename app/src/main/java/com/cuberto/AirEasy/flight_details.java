@@ -100,7 +100,7 @@ public class flight_details extends AppCompatActivity {
         ImageView flight_Img = findViewById(R.id.flight_Img);
         TextView textView1=findViewById(R.id.depart_name);
         TextView textView2=findViewById(R.id.arrival_name);
-        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.airindialogo);
+        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.circlelogo);
         scaledbmp = Bitmap.createScaledBitmap(bmp, 140, 140, false);
         if (checkPermission()) {
             Toast.makeText(flight_details.this, "Permission Granted", Toast.LENGTH_SHORT).show();
@@ -314,12 +314,14 @@ share.setOnClickListener(new View.OnClickListener() {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.share_booking:
+                sendshare();
+                return true;
             case R.id.download_ticket:
-//                startActivity(new Intent(this, About.class));
                 generatePDF();
                 return true;
             case R.id.print_invoice:
-//                startActivity(new Intent(this, Help.class));
+                generateInvoice();
                 return true;
             case R.id.cancel_booking:
                 Intent intent=new Intent(flight_details.this,booking_details.class);
@@ -430,7 +432,35 @@ share.setOnClickListener(new View.OnClickListener() {
         }
         pdfDocument.close();
     }
+void generateInvoice(){
+    PdfDocument pdfDocument = new PdfDocument();
+    Paint paint = new Paint();
+    Paint title = new Paint();
+    PdfDocument.PageInfo mypageInfo = new PdfDocument.PageInfo.Builder(pagewidth, pageHeight, 1).create();
+    PdfDocument.Page myPage = pdfDocument.startPage(mypageInfo);
+    Canvas canvas = myPage.getCanvas();
+    canvas.drawBitmap(scaledbmp, 56, 40, paint);
+    title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+    title.setTextSize(15);
+    title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+    canvas.drawText("A portal for IT professionals.", 209, 100, title);
+    canvas.drawText("Geeks for Geeks", 209, 80, title);
+    title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+    title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+    title.setTextSize(15);
+    title.setTextAlign(Paint.Align.CENTER);
+    canvas.drawText("This is sample document which we have created.", 396, 560, title);
+    pdfDocument.finishPage(myPage);
+    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "AirEasy Ticket.pdf");
 
+    try {
+        pdfDocument.writeTo(new FileOutputStream(file));
+        Toast.makeText(flight_details.this, "PDF file generated successfully.", Toast.LENGTH_SHORT).show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    pdfDocument.close();
+}
     private boolean checkPermission() {
         // checking of permissions.
         int permission1 = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
